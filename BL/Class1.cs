@@ -14,7 +14,7 @@ namespace BL
         {
             return 0;
         }
-        public int g6()
+        public int g770()
         {
             return 0;
         }
