@@ -10,5 +10,9 @@ namespace BL
     {
         public void f()
             { }
+        public int g2()
+        {
+            return 0;
+        }
     }
 }
