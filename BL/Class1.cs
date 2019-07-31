@@ -14,5 +14,9 @@ namespace BL
         {
             return 0;
         }
+        public int g6()
+        {
+            return 0;
+        }
     }
 }
