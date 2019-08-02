@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace MonitoringLifestyle
 {
     /// <summary>
-    /// Interaction logic for selectOptionUserControl.xaml
+    /// Interaction logic for Dashboard.xaml
     /// </summary>
-    public partial class selectOptionUserControl : UserControl
+    public partial class Dashboard : UserControl
     {
-        public selectOptionUserControl()
+        public Dashboard()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

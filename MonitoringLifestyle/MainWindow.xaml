@@ -6,8 +6,6 @@
         xmlns:materialDesign="http://materialDesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:MonitoringLifestyle"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" Height="3505" Width="550">
+    <Grid/>
 </Window>
