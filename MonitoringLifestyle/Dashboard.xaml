@@ -6,13 +6,21 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:MonitoringLifestyle"
              mc:Ignorable="d" 
-             d:DesignHeight="40" d:DesignWidth="550">
-    <Grid Height="40">
+             d:DesignHeight="70" d:DesignWidth="1090">
+    <StackPanel Orientation="Horizontal" Height="70" Width="1090">
+        <Grid HorizontalAlignment="Left" Height="70" Width="300" Background="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Image VerticalAlignment="Top" Source="C:\Users\Bracha\Desktop\ProjectImages\logo.png" Grid.Column="0" />
+
+        </Grid>
+    <Grid Height="30" Width="790"  HorizontalAlignment="Right" VerticalAlignment="Top">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="99*"/>
             <ColumnDefinition Width="75*"/>
             <ColumnDefinition Width="75*"/>
-            <ColumnDefinition Width="108*"/>
+            <ColumnDefinition Width="90*"/>
             <ColumnDefinition Width="103*"/>
             <ColumnDefinition Width="44*"/>
             <ColumnDefinition Width="46*"/>
@@ -20,15 +28,19 @@
         <Grid.Background>
             <SolidColorBrush Color="White"/>
         </Grid.Background>
-        <Image Source="C:\Users\Bracha\Desktop\ProjectImages\logo.png" Grid.Column="0"/>
-        <Button Grid.Column="1" Background="White" Content="About Us" BorderBrush="White"/>
-        <Button Grid.Column="2" Background="White" Content="Recipes" BorderBrush="White"/>
-        <Button Grid.Column="4" Background="White" Content="Contact Us" BorderBrush="White"/>
-        <Button Grid.Column="6" Background="White" BorderBrush="White">
+
+        <Button Grid.Column="0" Background="White" Content="About Us" BorderBrush="White" Margin="-5,0,0,0" FontSize="16"/>
+        <Button Grid.Column="2" Background="White" Content="Recipes" BorderBrush="White" FontSize="16"/>
+        <Button Grid.Column="1" Background="White" Content="Contact Us" BorderBrush="White" FontSize="16"/>
+        <Button Grid.Column="5" Background="White" BorderBrush="White">
             <materialDesign:PackIcon Kind="Power"/>
         </Button>
-        <Button Grid.Column="5" Background="White" BorderBrush="White">
-            <materialDesign:PackIcon Kind="Account"/>
+        <Button Grid.Column="4" Background="White" BorderBrush="White">
+            <materialDesign:PackIcon Kind="Account" FontSize="20"/>
         </Button>
+       
     </Grid>
+        
+    </StackPanel>
+
 </UserControl>
