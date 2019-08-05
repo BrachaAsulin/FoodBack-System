@@ -57,7 +57,7 @@
             <TextBlock Text="Date Of Birth" FontSize="36" VerticalAlignment="Center" FontFamily="Arial" Foreground="Gray"/>
             <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Width="800" Height="50" Margin="80,0,0,0" Text="DD MM YY"  FontSize="36" Foreground="#FF939B8A" FontFamily="Arial"/>
         </StackPanel>
-        <Button Template="{StaticResource ButtonBaseControlTemplate}" Grid.Row="5" HorizontalAlignment="Right" Width="400" Height="70" FontSize="16" Background="#FF25C9A4" Content="GREAT" Foreground="Black">
+        <Button  Template="{StaticResource ButtonBaseControlTemplate}" Grid.Row="5" HorizontalAlignment="Right" Width="400" Height="70" FontSize="16" Background="#FF25C9A4" Content="GREAT" Foreground="Black">
         </Button>
 
     </Grid>

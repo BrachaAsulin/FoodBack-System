@@ -25,8 +25,8 @@
             <ColumnDefinition Width="265*"/>
         </Grid.ColumnDefinitions>
         <TextBlock Grid.Row="0" HorizontalAlignment="center" VerticalAlignment="Bottom" Text="Contact Us" FontSize="24" FontFamily="Calisto MT" Foreground="#FF01847F" Height="39" Width="310" FontWeight="Bold" Grid.Column="1" Margin="54,0,57,3"/>
-        <TextBlock HorizontalAlignment="center" VerticalAlignment="Bottom" Text="Fill out a form to adjust a perfect diet for you!" FontSize="24" FontFamily="Calisto MT" Foreground="#FF070A0A" Height="42" Width="501" FontWeight="Bold" Margin="4,0,0,0" Grid.Column="1" Grid.Row="1"/>
-        <Button Grid.Column="0"  BorderBrush="White" Grid.Row="2">
+        
+        <Button Grid.Column="0"  BorderBrush="White" Grid.Row="1">
             <materialDesign:PackIcon Kind="Person" Width="46" Height="34" Foreground="#FF01847F" />
         </Button>
 
@@ -35,18 +35,20 @@
             <materialDesign:PackIcon Kind="send" Width="46" Height="34" Foreground="#FF01847F" />
         </Button>
 
-
-        <Button Grid.Column="0"  BorderBrush="White" Grid.Row="1" Margin="-1,0,1,0">
-            <materialDesign:PackIcon Kind="ArrowRight" Width="46" Height="34" Foreground="#FF01847F" />
+        <Button Grid.Column="0"  BorderBrush="White" Grid.Row="4">
+            <materialDesign:PackIcon Kind="ArrowRight" Width="46" Height="34" Foreground="#FF01847F"  />
         </Button>
-        <Button Grid.Column="0"  BorderBrush="White" Grid.Row="3">
+        
+
+        <Button Grid.Column="0"  BorderBrush="White" Grid.Row="2">
             <materialDesign:PackIcon Kind="Telephone" Width="46" Height="34" Foreground="#FF01847F" />
         </Button>
-        <Button Grid.Column="0"  BorderBrush="White" Grid.Row="4">
+        <Button Grid.Column="0"  BorderBrush="White" Grid.Row="3">
             <materialDesign:PackIcon Kind="Email" Width="46" Height="34" Foreground="#FF01847F" />
         </Button>
-        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="52" Grid.Row="2" TextWrapping="Wrap" Text="your name" VerticalAlignment="Top" Width="505"/>
-        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="42" Grid.Row="3" TextWrapping="Wrap" Text="your phone number" VerticalAlignment="Top" Width="505"/>
-        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="42" Grid.Row="4" TextWrapping="Wrap" Text="your email" VerticalAlignment="Top" Width="505"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="42" Grid.Row="1" TextWrapping="Wrap" Text="your name" VerticalAlignment="Top" Width="505" TextChanged="TextBox_TextChanged"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="42" Grid.Row="2" TextWrapping="Wrap" Text="your phone number" VerticalAlignment="Top" Width="505"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="42" Grid.Row="3" TextWrapping="Wrap" Text="your email" VerticalAlignment="Top" Width="505"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="42" Grid.Row="4" TextWrapping="Wrap" Text="your reqest" VerticalAlignment="Top" Width="505"/>
     </Grid> 
 </UserControl>

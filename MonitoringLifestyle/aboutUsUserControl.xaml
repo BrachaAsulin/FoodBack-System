@@ -24,10 +24,10 @@
 
             <ColumnDefinition Width="265*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Row="0" HorizontalAlignment="center" VerticalAlignment="Bottom" Text="About Monitoring Life Style" FontSize="24" FontFamily="Calisto MT" Foreground="#FF01847F" Height="39" Width="310" FontWeight="Bold" Grid.Column="1" Margin="39,0,114,10"/>
-        <TextBlock  HorizontalAlignment="center" VerticalAlignment="Bottom" Text="History:" FontSize="24" FontFamily="Calisto MT" Foreground="#FF070707" Height="67" Width="87" FontWeight="Bold" RenderTransformOrigin="0.139,-0.2" Grid.Row="1"/>
+        <TextBlock Grid.Row="0" HorizontalAlignment="center" VerticalAlignment="Bottom" Text="About food back" FontSize="24" FontFamily="Calisto MT" Foreground="#FF01847F" Height="39" Width="310" FontWeight="Bold" Grid.Column="1" Margin="39,0,114,10"/>
+        <TextBlock  HorizontalAlignment="center" Text="          History" FontSize="24" FontFamily="Calisto MT" Foreground="#FF070707" Width="242" FontWeight="Bold" RenderTransformOrigin="0.139,-0.2" Grid.Row="1" Grid.Column="1" Margin="59,10,162,56" Grid.RowSpan="2"/>
         <TextBlock Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Text="developed by Bracha and Noam in 2019" FontSize="24" FontFamily="Calisto MT" Foreground="#FF070707" Height="66" Width="550"  RenderTransformOrigin="-0.999,0.23" Grid.ColumnSpan="2"/>
-        <TextBlock Grid.Row="3" HorizontalAlignment="center" VerticalAlignment="Bottom" Text="Our Goals:" FontSize="24" FontFamily="Calisto MT" Foreground="#FF070707" Height="67" Width="550" FontWeight="Bold" Grid.ColumnSpan="2"/>
+        <TextBlock Grid.Row="3" HorizontalAlignment="center" VerticalAlignment="Bottom" Text="       Goal" FontSize="24" FontFamily="Calisto MT" Foreground="#FF070707" Height="57" Width="310" FontWeight="Bold" Grid.Column="1" Margin="92,0,61,0"/>
         <TextBlock Grid.Row="4" HorizontalAlignment="center" VerticalAlignment="Bottom" Text="Changing the food culture" FontSize="24" FontFamily="Calisto MT" Foreground="#FF070707" Height="38" Width="463" Grid.Column="1" Margin="10,0,-10,10" />
         <TextBlock Grid.Row="5" HorizontalAlignment="center" VerticalAlignment="Bottom" Text="Make us healthier" FontSize="24" FontFamily="Calisto MT" Foreground="#FF070707" Height="47" Width="453" Grid.Column="1" Margin="10,0,0,10" />
         <Button Grid.Column="0"  BorderBrush="White" Grid.Row="4">
