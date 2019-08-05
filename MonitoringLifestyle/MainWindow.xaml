@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialDesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:MonitoringLifestyle"
         mc:Ignorable="d"
-        Title="MainWindow" Height="700" Width="1100">
+        Title="MainWindow" WindowState="Maximized">
     <Grid>
         <local:Dashboard HorizontalAlignment="Stretch"  VerticalAlignment="top" Width="1100"/>
     </Grid>

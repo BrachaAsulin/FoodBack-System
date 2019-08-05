@@ -39,6 +39,7 @@
                     <RowDefinition Height="9*"/>
                 </Grid.RowDefinitions>
                 <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="0" Text="My daily diet" FontSize="24" Foreground="#FF070707" FontFamily="Calisto MT" Height="31" Width="144" RenderTransformOrigin="0.649,0.429" FontWeight="Bold"/>
+                
                 <Grid.Background>
                     <ImageBrush ImageSource="/Resources/daily.jpg" Stretch="UniformToFill"/>
                 </Grid.Background>

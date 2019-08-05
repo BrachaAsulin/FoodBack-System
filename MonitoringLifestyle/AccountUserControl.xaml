@@ -28,7 +28,7 @@
             <TextBox Grid.Row="3" HorizontalAlignment="Left" Width="500"/>
             <TextBlock Grid.Row="4" Text="YOUR PASSWORD" VerticalAlignment="Bottom" FontSize="18"/>
             <TextBox Grid.Row="5" HorizontalAlignment="Left" Width="500" />
-            <Button Grid.Row="7" Background="#FF21BD9F" Content="SIGN IN" Foreground="White" FontSize="24" Width="500" HorizontalAlignment="Left" FontFamily="Arial"/>
+            <Button Grid.Row="7" Background="#FF7EAA00" Content="SIGN IN" Foreground="White" FontSize="24" Width="500" HorizontalAlignment="Left" FontFamily="Arial"/>
         </Grid>
         <Grid Width="545"  Background="White">
             <Grid.RowDefinitions>
@@ -41,7 +41,7 @@
                 <TextBlock Text=" USER" FontSize="36" FontFamily="Arial" FontWeight="Bold" Foreground="#FF9E9898" />
             </StackPanel>
             <TextBlock Grid.Row="1" Text="Create a FoodBack account today" FontSize="24" FontFamily="Arial" FontWeight="Bold"/>
-            <Button Grid.Row="2" Background="#FF21BD9F" Width="500" HorizontalAlignment="left" Foreground="White" Content="REGISTER NOW" FontSize="24" FontFamily="Arial"/>
+            <Button Grid.Row="2" Background="#FF7EAA00" Width="500" HorizontalAlignment="left" Foreground="White" Content="REGISTER NOW" FontSize="24" FontFamily="Arial"/>
         </Grid>
     </StackPanel>
 </UserControl>
