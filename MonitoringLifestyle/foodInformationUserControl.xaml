@@ -53,7 +53,7 @@
                 <ImageBrush ImageSource="/Resources/milk.jpg" Stretch="UniformToFill"/>
             </Button.Background>
         </Button>
-        <Button  Template="{StaticResource ButtonBaseControlTemplate}" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" Width="173" FontSize="16"  Content="fresh" Foreground="Black" Margin="0,2,39,10">
+        <Button  Template="{StaticResource ButtonBaseControlTemplate}" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" Width="173" FontSize="16"  Content="dessert" Foreground="Black" Margin="0,2,39,10">
             <Button.Background>
                 <ImageBrush ImageSource="/Resources/cake.jpg" Stretch="UniformToFill"/>
             </Button.Background>
