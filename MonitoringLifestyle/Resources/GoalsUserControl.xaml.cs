@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MonitoringLifestyle
+namespace MonitoringLifestyle.Resources
 {
     /// <summary>
-    /// Interaction logic for GoalsUserControl1.xaml
+    /// Interaction logic for GoalsUserControl.xaml
     /// </summary>
-    public partial class GoalsUserControl1 : UserControl
+    public partial class GoalsUserControl : UserControl
     {
-        public GoalsUserControl1()
+        public GoalsUserControl()
         {
             InitializeComponent();
         }

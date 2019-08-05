@@ -93,6 +93,9 @@
     <Compile Include="NewAccountUserControl.xaml.cs">
       <DependentUpon>NewAccountUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Resources\GoalsUserControl.xaml.cs">
+      <DependentUpon>GoalsUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="selectOptionUserControl.xaml.cs">
       <DependentUpon>selectOptionUserControl.xaml</DependentUpon>
     </Compile>
@@ -129,6 +132,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="NewAccountUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\GoalsUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

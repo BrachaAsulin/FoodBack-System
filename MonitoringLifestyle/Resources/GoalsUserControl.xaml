@@ -1,9 +1,9 @@
-﻿<UserControl x:Class="MonitoringLifestyle.GoalsUserControl1"
+﻿<UserControl x:Class="MonitoringLifestyle.Resources.GoalsUserControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:MonitoringLifestyle"
+             xmlns:local="clr-namespace:MonitoringLifestyle.Resources"
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="1090">
     <Grid>
@@ -22,6 +22,5 @@
 
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" TextAlignment="Center" Text="Setting Goals &amp; Starting a Healthy Eating" FontSize="48" FontFamily="Arial" Foreground="#FF21BD9F" FontWeight="Bold"/>
-  
     </Grid>
 </UserControl>
