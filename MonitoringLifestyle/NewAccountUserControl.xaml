@@ -1,0 +1,65 @@
+﻿<UserControl x:Class="MonitoringLifestyle.NewAccountUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MonitoringLifestyle"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="1090">
+    <UserControl.Resources>
+        <ControlTemplate x:Key="TextBoxBaseControlTemplate" TargetType="{x:Type TextBoxBase}">
+            <Border Background="{TemplateBinding Background}" 
+                x:Name="Bd" BorderBrush="Black"
+                BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="7">
+                <ScrollViewer x:Name="PART_ContentHost"/>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" TargetName="Bd"/>
+                    <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        <ControlTemplate x:Key="ButtonBaseControlTemplate" TargetType="{x:Type ButtonBase}">
+            <Border Background="{TemplateBinding Background}" 
+                x:Name="Bd" BorderBrush="Black"
+                BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="7">
+                <StackPanel x:Name="PART_ContentHost"/>
+            </Border>
+        </ControlTemplate>
+    </UserControl.Resources>
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <TextBlock Text="First Name" FontSize="36" VerticalAlignment="Center" FontFamily="Arial" Foreground="Gray"/>
+            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Width="800" Height="50" Margin="113,0,0,0" FontSize="36"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <TextBlock Text="Last Name" FontSize="36" VerticalAlignment="Center" FontFamily="Arial" Foreground="Gray"/>
+            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Width="800" Height="50" Margin="115,0,0,0" FontSize="36"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <TextBlock Text="Email" FontSize="36" VerticalAlignment="Center" FontFamily="Arial" Foreground="Gray"/>
+            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Width="800" Height="50" Margin="198,0,0,0" FontSize="36"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Orientation="Horizontal">
+            <TextBlock Text="Password" FontSize="36" VerticalAlignment="Center" FontFamily="Arial" Foreground="Gray"/>
+            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Width="800" Height="50" Margin="130,0,0,0" FontSize="36"/>
+        </StackPanel>
+        <StackPanel Grid.Row="4" Orientation="Horizontal">
+            <TextBlock Text="Date Of Birth" FontSize="36" VerticalAlignment="Center" FontFamily="Arial" Foreground="Gray"/>
+            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Width="800" Height="50" Margin="80,0,0,0" Text="DD MM YY"  FontSize="36" Foreground="#FF939B8A" FontFamily="Arial"/>
+        </StackPanel>
+        <Button Template="{StaticResource ButtonBaseControlTemplate}" Grid.Row="5" HorizontalAlignment="Right" Width="400" Height="70" FontSize="16" Background="#FF25C9A4" Content="GREAT" Foreground="Black">
+        </Button>
+
+    </Grid>
+    
+</UserControl>

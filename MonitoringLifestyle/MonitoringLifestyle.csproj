@@ -81,6 +81,9 @@
     <Compile Include="Dashboard.xaml.cs">
       <DependentUpon>Dashboard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="NewAccountUserControl.xaml.cs">
+      <DependentUpon>NewAccountUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="selectOptionUserControl.xaml.cs">
       <DependentUpon>selectOptionUserControl.xaml</DependentUpon>
     </Compile>
@@ -104,6 +107,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="NewAccountUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="selectOptionUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -157,6 +164,14 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\daily.jpg" />
+    <Resource Include="Resources\evaluation.png" />
+    <Resource Include="Resources\evaluation2.jpg" />
+    <Resource Include="Resources\goals.jpg" />
+    <Resource Include="Resources\logo.png" />
+    <Resource Include="Resources\queries.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
