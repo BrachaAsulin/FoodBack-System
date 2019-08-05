@@ -1,0 +1,68 @@
+﻿<UserControl x:Class="MonitoringLifestyle.foodInformationUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MonitoringLifestyle"
+             mc:Ignorable="d" 
+             d:DesignHeight="350" d:DesignWidth="500">
+    <UserControl.Resources>
+        <ControlTemplate x:Key="TextBoxBaseControlTemplate" TargetType="{x:Type TextBoxBase}">
+            <Border Background="{TemplateBinding Background}" 
+                x:Name="Bd" BorderBrush="Black"
+                BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="7">
+                <ScrollViewer x:Name="PART_ContentHost"/>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" TargetName="Bd"/>
+                    <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        <ControlTemplate x:Key="ButtonBaseControlTemplate" TargetType="{x:Type ButtonBase}">
+            <Border Background="{TemplateBinding Background}" 
+                x:Name="Bd" BorderBrush="Black"
+                BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="70" Margin="0,-22,0,0">
+                <StackPanel x:Name="PART_ContentHost"/>
+            </Border>
+        </ControlTemplate>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70*"/>
+            <RowDefinition Height="115*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="115*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="265*"/>
+            <ColumnDefinition Width="265*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="         food" FontSize="36" Grid.Column="0" FontFamily="Arial" FontWeight="Bold" Margin="10,0,0,29" HorizontalAlignment="Left" Width="182"/>
+        <TextBlock Text="information" FontSize="36" FontFamily="Arial" FontWeight="Bold" Foreground="#FF9E9898" Margin="197,0,53,29" Grid.ColumnSpan="2"/>
+
+        <Button  Template="{StaticResource ButtonBaseControlTemplate}" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Width="173" FontSize="16" Content="meat" Foreground="Black" Margin="0,2,39,10">
+            <Button.Background>
+            <ImageBrush ImageSource="/Resources/meat.jpg" Stretch="UniformToFill"/>
+
+         </Button.Background>
+        </Button>
+        <Button  Template="{StaticResource ButtonBaseControlTemplate}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" Width="173" FontSize="16"  Content="milk" Foreground="Black" Margin="0,2,39,10">
+            <Button.Background>
+                <ImageBrush ImageSource="/Resources/milk.jpg" Stretch="UniformToFill"/>
+            </Button.Background>
+        </Button>
+        <Button  Template="{StaticResource ButtonBaseControlTemplate}" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" Width="173" FontSize="16"  Content="fresh" Foreground="Black" Margin="0,2,39,10">
+            <Button.Background>
+                <ImageBrush ImageSource="/Resources/cake.jpg" Stretch="UniformToFill"/>
+            </Button.Background>
+        </Button>
+        <Button  Template="{StaticResource ButtonBaseControlTemplate}" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right" Width="173" FontSize="16"  Content="snacks" Foreground="Black" Margin="0,2,39,10">
+            <Button.Background>
+                <ImageBrush ImageSource="/Resources/snacks.jpg" Stretch="UniformToFill"/>
+            </Button.Background>
+        </Button>
+
+    </Grid>
+</UserControl>
