@@ -75,8 +75,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="aboutUsUserControl.xaml.cs">
+      <DependentUpon>aboutUsUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AccountUserControl.xaml.cs">
       <DependentUpon>AccountUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="contactUsUserControl.xaml.cs">
+      <DependentUpon>contactUsUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Dashboard.xaml.cs">
       <DependentUpon>Dashboard.xaml</DependentUpon>
@@ -87,7 +93,15 @@
     <Compile Include="selectOptionUserControl.xaml.cs">
       <DependentUpon>selectOptionUserControl.xaml</DependentUpon>
     </Compile>
+    <Page Include="aboutUsUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AccountUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="contactUsUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
