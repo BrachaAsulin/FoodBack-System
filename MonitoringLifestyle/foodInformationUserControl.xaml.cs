@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace MonitoringLifestyle
 {
     /// <summary>
-    /// Interaction logic for contactUsUserControl.xaml
+    /// Interaction logic for foodInformationUserControl.xaml
     /// </summary>
-    public partial class contactUsUserControl : UserControl
+    public partial class foodInformationUserControl : UserControl
     {
-        public contactUsUserControl()
+        public foodInformationUserControl()
         {
             InitializeComponent();
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }

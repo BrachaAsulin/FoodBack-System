@@ -87,8 +87,8 @@
     <Compile Include="Dashboard.xaml.cs">
       <DependentUpon>Dashboard.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GoalsUserControl1.xaml.cs">
-      <DependentUpon>GoalsUserControl1.xaml</DependentUpon>
+    <Compile Include="foodInformationUserControl.xaml.cs">
+      <DependentUpon>foodInformationUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="NewAccountUserControl.xaml.cs">
       <DependentUpon>NewAccountUserControl.xaml</DependentUpon>
@@ -112,7 +112,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GoalsUserControl1.xaml">
+    <Page Include="foodInformationUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -193,6 +193,18 @@
     <Resource Include="Resources\goals.jpg" />
     <Resource Include="Resources\logo.png" />
     <Resource Include="Resources\queries.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cake.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\meat.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\milk.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\snacks.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
