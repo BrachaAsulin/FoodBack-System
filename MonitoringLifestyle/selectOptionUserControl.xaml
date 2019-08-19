@@ -25,7 +25,7 @@
                     <RowDefinition Height="14*"/>
                     <RowDefinition Height="9*"/>
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" HorizontalAlignment="center" VerticalAlignment="Bottom" Text="Goals" FontSize="24" FontFamily="Calisto MT" Foreground="#FF070707" Height="27" Width="65" FontWeight="Bold" TextDecorations="{x:Null}"/>
+                <TextBlock Grid.Row="0" HorizontalAlignment="center" VerticalAlignment="Bottom" Text="Goals" FontSize="24" FontFamily="Calisto MT" Foreground="#FF546E00" Height="27" Width="65" FontWeight="Bold" TextDecorations="{x:Null}"/>
                 <Grid.Background>
                     <ImageBrush ImageSource="/Resources/Goals.jpg" Stretch="UniformToFill"/>
                 </Grid.Background>
@@ -38,7 +38,7 @@
                     <RowDefinition Height="14*"/>
                     <RowDefinition Height="9*"/>
                 </Grid.RowDefinitions>
-                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="0" Text="My daily diet" FontSize="24" Foreground="#FF070707" FontFamily="Calisto MT" Height="31" Width="144" RenderTransformOrigin="0.649,0.429" FontWeight="Bold"/>
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="0" Text="My daily diet" FontSize="24" Foreground="#FF546E00" FontFamily="Calisto MT" Height="31" Width="144" RenderTransformOrigin="0.649,0.429" FontWeight="Bold"/>
                 
                 <Grid.Background>
                     <ImageBrush ImageSource="/Resources/daily.jpg" Stretch="UniformToFill"/>
@@ -51,7 +51,7 @@
                     <RowDefinition Height="14*"/>
                     <RowDefinition Height="9*"/>
                 </Grid.RowDefinitions>
-                <TextBlock HorizontalAlignment="center" VerticalAlignment="Bottom" Grid.Row="0" Text="Evaluation" FontSize="24" Foreground="#FF070707" FontFamily="Calisto MT" FontWeight="Bold" />
+                <TextBlock HorizontalAlignment="center" VerticalAlignment="Bottom" Grid.Row="0" Text="Evaluation" FontSize="24" Foreground="#FF546E00" FontFamily="Calisto MT" FontWeight="Bold" />
                 <Grid.Background>
                     <ImageBrush ImageSource="/Resources/evaluation2.jpg" Stretch="UniformToFill"/>
                 </Grid.Background>
@@ -63,7 +63,7 @@
                     <RowDefinition Height="14*"/>
                     <RowDefinition Height="9*"/>
                 </Grid.RowDefinitions>
-                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="0" Text="Food information" FontSize="24" Foreground="#FF070707" FontFamily="Calisto MT" FontWeight="Bold"/>
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="0" Text="Food information" FontSize="24" Foreground="#FF546E00" FontFamily="Calisto MT" FontWeight="Bold"/>
                 <Grid.Background>
                     <ImageBrush ImageSource="/Resources/queries.png"/>
                 </Grid.Background>
