@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,21 +16,13 @@ using System.Windows.Shapes;
 namespace MonitoringLifestyle
 {
     /// <summary>
-    /// Interaction logic for aboutUsUserControl.xaml
+    /// Interaction logic for EvaluationUserControl1.xaml
     /// </summary>
-    public partial class aboutUsUserControl : UserControl
+    public partial class EvaluationUserControl1 : UserControl
     {
-        public aboutUsUserControl()
+        public EvaluationUserControl1()
         {
             InitializeComponent();
-            DashboardVM dashboard = new DashboardVM();
-            dashboard.PropertyChanged += ShowUC;
-        }
-
-        private void ShowUC(object sender, PropertyChangedEventArgs e)
-        {
-            this.Visibility = Visibility.Visible;
-
         }
     }
 }

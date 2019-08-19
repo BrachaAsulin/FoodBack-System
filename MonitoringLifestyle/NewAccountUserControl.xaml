@@ -30,12 +30,14 @@
     </UserControl.Resources>
     <Grid Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="80"/>
-            <RowDefinition Height="80"/>
-            <RowDefinition Height="80"/>
-            <RowDefinition Height="80"/>
-            <RowDefinition Height="80"/>
-            <RowDefinition Height="100"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
             <TextBlock Text="First Name" FontSize="36" VerticalAlignment="Center" FontFamily="Arial" Foreground="Gray"/>
@@ -57,7 +59,15 @@
             <TextBlock Text="Date Of Birth" FontSize="36" VerticalAlignment="Center" FontFamily="Arial" Foreground="Gray"/>
             <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Width="800" Height="50" Margin="80,0,0,0" Text="DD MM YY"  FontSize="36" Foreground="#FF939B8A" FontFamily="Arial"/>
         </StackPanel>
-        <Button  Template="{StaticResource ButtonBaseControlTemplate}" Grid.Row="5" HorizontalAlignment="Right" Width="400" Height="70" FontSize="16" Background="#FF25C9A4" Content="GREAT" Foreground="Black">
+        <StackPanel Grid.Row="5" Orientation="Horizontal">
+            <TextBlock Text="Height" FontSize="36" VerticalAlignment="Center" FontFamily="Arial" Foreground="Gray"/>
+            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Width="800" Height="50" Margin="183,0,0,0"  FontSize="36" Foreground="#FF939B8A" FontFamily="Arial"/>
+        </StackPanel>
+        <StackPanel Grid.Row="6" Orientation="Horizontal">
+            <TextBlock Text="Weight" FontSize="36" VerticalAlignment="Center" FontFamily="Arial" Foreground="Gray"/>
+            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Width="800" Height="50" Margin="178,0,0,0"  FontSize="36" Foreground="#FF939B8A" FontFamily="Arial"/>
+        </StackPanel>
+        <Button Grid.Row="7" HorizontalAlignment="Right" Width="400" Height="70" FontSize="20" Background="#FF5A7900" Content="GREAT, REGISTER MY ACCOUNT" Foreground="White">
         </Button>
 
     </Grid>

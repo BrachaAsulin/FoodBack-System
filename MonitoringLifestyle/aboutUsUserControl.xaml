@@ -7,35 +7,31 @@
              xmlns:local="clr-namespace:MonitoringLifestyle"
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="550">
-    <Grid>
+    <Grid Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="115*"/>
-            <RowDefinition Height="115*"/>
-            <RowDefinition Height="115*"/>
-            <RowDefinition Height="115*"/>
-            <RowDefinition Height="115*"/>
-
-            <RowDefinition Height="115*"/>
-
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="50*"/>
 
-            <ColumnDefinition Width="265*"/>
-        </Grid.ColumnDefinitions>
-        <TextBlock Grid.Row="0" HorizontalAlignment="center" VerticalAlignment="Bottom" Text="About food back" FontSize="24" FontFamily="Calisto MT" Foreground="#FF01847F" Height="39" Width="310" FontWeight="Bold" Grid.Column="1" Margin="39,0,114,10"/>
-        <TextBlock  HorizontalAlignment="center" Text="          History" FontSize="24" FontFamily="Calisto MT" Foreground="#FF070707" Width="242" FontWeight="Bold" RenderTransformOrigin="0.139,-0.2" Grid.Row="1" Grid.Column="1" Margin="59,10,162,56" Grid.RowSpan="2"/>
-        <TextBlock Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Text="developed by Bracha and Noam in 2019" FontSize="24" FontFamily="Calisto MT" Foreground="#FF070707" Height="66" Width="550"  RenderTransformOrigin="-0.999,0.23" Grid.ColumnSpan="2"/>
-        <TextBlock Grid.Row="3" HorizontalAlignment="center" VerticalAlignment="Bottom" Text="       Goal" FontSize="24" FontFamily="Calisto MT" Foreground="#FF070707" Height="57" Width="310" FontWeight="Bold" Grid.Column="1" Margin="92,0,61,0"/>
-        <TextBlock Grid.Row="4" HorizontalAlignment="center" VerticalAlignment="Bottom" Text="Changing the food culture" FontSize="24" FontFamily="Calisto MT" Foreground="#FF070707" Height="38" Width="463" Grid.Column="1" Margin="10,0,-10,10" />
-        <TextBlock Grid.Row="5" HorizontalAlignment="center" VerticalAlignment="Bottom" Text="Make us healthier" FontSize="24" FontFamily="Calisto MT" Foreground="#FF070707" Height="47" Width="453" Grid.Column="1" Margin="10,0,0,10" />
-        <Button Grid.Column="0"  BorderBrush="White" Grid.Row="4">
-            <materialDesign:PackIcon Kind="ArrowRight" Width="46" Height="34" Foreground="#FF01847F"  />
-        </Button>
-        <Button Grid.Column="0"  BorderBrush="White" Grid.Row="5">
-            <materialDesign:PackIcon Kind="ArrowRight" Width="46" Height="34" Foreground="#FF01847F" />
-        </Button>
+        <TextBlock Grid.Row="0" HorizontalAlignment="center" VerticalAlignment="Center" Text="About Foodback" FontSize="24" FontFamily="Arial" Foreground="#FF5A7900" Height="39" Width="192" FontWeight="Bold" Margin="179,14"/>
+        <TextBlock Grid.Row="1" HorizontalAlignment="center" VerticalAlignment="Bottom" Text="History" FontSize="22" FontFamily="Arial" Foreground="#FF585364" Width="82" RenderTransformOrigin="0.139,-0.2" FontWeight="Bold"/>
+        <StackPanel Grid.Row="2" Orientation="Vertical">
+            <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Bottom" Text="FOODBACK was established in 2019 at a time when self-" FontSize="20" FontFamily="Arial" Foreground="#FF7F7D83" />
+            <TextBlock HorizontalAlignment="Center" Text="monitoring for lifestyle characteristics is trendy and is" FontSize="20" FontFamily="Arial" Background="White" Foreground="#FF7F7D83" />
+            <TextBlock HorizontalAlignment="Center" Text="gaining momentum with the development of wearable" FontSize="20" FontFamily="Arial" Foreground="#FF7F7D83" />
+            <TextBlock HorizontalAlignment="center" FontSize="20" FontFamily="Arial" Text="computing and personalized medicine." Foreground="#FF7F7D83" />
+        </StackPanel>
+        <TextBlock Grid.Row="3" HorizontalAlignment="center" VerticalAlignment="Bottom" Text="Our Goal" FontSize="22" FontFamily="Arial" Foreground="#FF585364" Height="27" Width="97" FontWeight="Bold" />
+        <StackPanel Grid.Row="4" Orientation="Vertical">
+            <TextBlock HorizontalAlignment="center" VerticalAlignment="Bottom" Text="We wish to change the food culture among all ages by" FontSize="20" FontFamily="Arial" Foreground="#FF7F7D83"  />
+            <TextBlock  HorizontalAlignment="center" VerticalAlignment="Bottom" Text="increasing awareness of the importance of" FontSize="20" FontFamily="Arial" Foreground="#FF7F7D83" />
+            <TextBlock HorizontalAlignment="Center" Text="monitoring the foods we eat in everyday" Foreground="#FF7F7D83" FontSize="20" FontFamily="Arial" />
+            <TextBlock HorizontalAlignment="Center" Text="life and as a result become healier." FontSize="20" FontFamily="Arial" Foreground="#FF7F7D83"/>
+        </StackPanel>
 
     </Grid>
 </UserControl>

@@ -6,8 +6,9 @@
         xmlns:materialDesign="http://materialDesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:MonitoringLifestyle"
         mc:Ignorable="d"
-        Title="MainWindow" WindowState="Maximized">
+        Title="MainWindow" WindowState="Maximized" Height="631" Width="1272" >
     <Grid>
-        <local:Dashboard HorizontalAlignment="Stretch"  VerticalAlignment="top" Width="1100"/>
+        <local:Dashboard HorizontalAlignment="Stretch"  VerticalAlignment="top"/>
+        <local:aboutUsUserControl x:Name="ABUserControl" HorizontalAlignment="Center" VerticalAlignment="Center" Height="446"  Width="744" Visibility="Hidden"/>
     </Grid>
 </Window>

@@ -20,9 +20,12 @@ namespace MonitoringLifestyle
     /// </summary>
     public partial class Dashboard : UserControl
     {
+        DashboardVM currentVM;
         public Dashboard()
         {
             InitializeComponent();
+            currentVM = new DashboardVM();
+            this.DataContext = currentVM;
         }
     }
 }

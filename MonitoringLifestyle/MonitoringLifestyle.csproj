@@ -57,6 +57,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -75,6 +77,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AboutUsCommand.cs" />
     <Compile Include="aboutUsUserControl.xaml.cs">
       <DependentUpon>aboutUsUserControl.xaml</DependentUpon>
     </Compile>
@@ -87,8 +90,16 @@
     <Compile Include="Dashboard.xaml.cs">
       <DependentUpon>Dashboard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DashboardModel.cs" />
+    <Compile Include="DashboardVM.cs" />
+    <Compile Include="EvaluationUserControl1.xaml.cs">
+      <DependentUpon>EvaluationUserControl1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="foodInformationUserControl.xaml.cs">
       <DependentUpon>foodInformationUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyDailyDietUserControl1.xaml.cs">
+      <DependentUpon>MyDailyDietUserControl1.xaml</DependentUpon>
     </Compile>
     <Compile Include="NewAccountUserControl.xaml.cs">
       <DependentUpon>NewAccountUserControl.xaml</DependentUpon>
@@ -98,6 +109,9 @@
     </Compile>
     <Compile Include="selectOptionUserControl.xaml.cs">
       <DependentUpon>selectOptionUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="weekPickerUserControl.xaml.cs">
+      <DependentUpon>weekPickerUserControl.xaml</DependentUpon>
     </Compile>
     <Page Include="aboutUsUserControl.xaml">
       <SubType>Designer</SubType>
@@ -112,6 +126,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Dashboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EvaluationUserControl1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -131,6 +149,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MyDailyDietUserControl1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="NewAccountUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -140,6 +162,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="selectOptionUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="weekPickerUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
