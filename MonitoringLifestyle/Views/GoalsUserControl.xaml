@@ -8,6 +8,7 @@
              d:DesignHeight="500" d:DesignWidth="1090">
     <StackPanel Orientation="Vertical">
         <TextBlock TextAlignment="Center" Text="Setting Goals &amp; Starting a Healthy Eating" FontSize="48" FontFamily="Arial" Foreground="#FF5A7900" FontWeight="Bold" Background="White"/>
+        <StackPanel Orientation="Horizontal">
         <Button Content="select a week"/>
         <Grid ShowGridLines="True" Height="426" Background="#FF3F9C44">
             <Grid.RowDefinitions>
@@ -64,5 +65,6 @@
             <TextBlock Grid.Row="5" Grid.Column="4" Background="White"/>
             <TextBlock Grid.Row="5" Grid.Column="5" Background="White"/>
         </Grid>
+        </StackPanel>
     </StackPanel>
 </UserControl>
