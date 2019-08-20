@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="MonitoringLifestyle.Views.contactUsUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:MonitoringLifestyle"
+             mc:Ignorable="d" 
+             d:DesignHeight="250" d:DesignWidth="600">
+    <Grid Name="GridContact" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="42"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="53*"/>
+            <ColumnDefinition Width="547*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" HorizontalAlignment="left" VerticalAlignment="Bottom" Text="Contact Us" FontSize="24" FontFamily="Arial" Foreground="#FF5A7900" Height="39" Width="127" FontWeight="Bold" Grid.Column="1" />
+
+        <materialDesign:PackIcon Grid.Column="0" Grid.Row="1" Kind="Person" Width="33" Height="25" Foreground="#FF5A7900" HorizontalAlignment="Center" Margin="10,0" Background="White" />
+
+
+
+        <Button Grid.Column="1"  BorderBrush="White" Grid.Row="5" Margin="420,0,0,0">
+            <materialDesign:PackIcon Kind="send" Width="46" Height="20" Foreground="#FF5A7900" />
+        </Button>
+
+        <materialDesign:PackIcon Grid.Column="0" Grid.Row="4" Kind="ArrowRight" Width="33" Height="30" Foreground="#FF5A7900" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,20,10,19" />
+
+
+        <materialDesign:PackIcon Grid.Column="0" Grid.Row="2" Kind="Telephone" Width="33" Height="Auto" Foreground="#FF5A7900" RenderTransformOrigin="0.5,0.5" Margin="10,0,0,10" VerticalAlignment="Stretch" />
+        <materialDesign:PackIcon Grid.Column="0" Grid.Row="3" Kind="Email" Width="33" Height="24" Foreground="#FF5A7900" Margin="10,0,0,0" />
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="35" Grid.Row="1" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="547" Foreground="#FFABADB3" FontSize="16" BorderBrush="#FFABADB3" Background="White" />
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="35" Grid.Row="2" TextWrapping="Wrap" Text="Phone number" VerticalAlignment="Top" Width="547" Foreground="#FFABADB3" FontSize="16"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="34" Grid.Row="3" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Width="547" Foreground="#FFABADB3" FontSize="16"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="69" Grid.Row="4" TextWrapping="Wrap" Text="Message" VerticalAlignment="Top" Width="547" Foreground="#FFABADB3" FontSize="16"/>
+    </Grid>
+</UserControl>

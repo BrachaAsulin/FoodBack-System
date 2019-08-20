@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MonitoringLifestyle
+namespace MonitoringLifestyle.Views
 {
     /// <summary>
     /// Interaction logic for selectOptionUserControl.xaml

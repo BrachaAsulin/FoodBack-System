@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BE
+namespace MonitoringLifestyle.ViewModels
 {
-    public class Class1
+    class ContactUsViewModel:IVM
     {
+
     }
 }

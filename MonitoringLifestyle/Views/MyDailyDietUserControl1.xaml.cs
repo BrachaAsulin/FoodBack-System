@@ -13,21 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MonitoringLifestyle
+namespace MonitoringLifestyle.Views
 {
     /// <summary>
-    /// Interaction logic for contactUsUserControl.xaml
+    /// Interaction logic for MyDailyDietUserControl1.xaml
     /// </summary>
-    public partial class contactUsUserControl : UserControl
+    public partial class MyDailyDietUserControl1 : UserControl
     {
-        public contactUsUserControl()
+        public MyDailyDietUserControl1()
         {
             InitializeComponent();
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }

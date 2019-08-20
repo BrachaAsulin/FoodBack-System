@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MonitoringLifestyle
+namespace MonitoringLifestyle.Views
 {
     /// <summary>
-    /// Interaction logic for aboutUsUserControl.xaml
+    /// Interaction logic for EvaluationUserControl1.xaml
     /// </summary>
-    public partial class aboutUsUserControl : UserControl
+    public partial class EvaluationUserControl1 : UserControl
     {
-        public aboutUsUserControl()
+        public EvaluationUserControl1()
         {
             InitializeComponent();
         }

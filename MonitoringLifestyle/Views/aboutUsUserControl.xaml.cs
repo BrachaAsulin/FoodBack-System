@@ -15,21 +15,19 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-
-namespace MonitoringLifestyle
+namespace MonitoringLifestyle.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for aboutUsUserControl.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class aboutUsUserControl : UserControl
     {
-        
-        public MainWindow()
+        public aboutUsUserControl()
         {
             InitializeComponent();
-            stackPanelMain.DataContext = myDashBoard.DashboardGrid.DataContext;
+            AboutUsGrid.DataContext = new AboutUsViewModel();
         }
 
-       
+    
     }
 }

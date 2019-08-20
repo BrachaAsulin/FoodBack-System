@@ -1,0 +1,121 @@
+﻿<UserControl x:Class="MonitoringLifestyle.Views.MyDailyDietUserControl1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MonitoringLifestyle"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="1090">
+    <StackPanel Orientation="Vertical" Background="White">
+        <TextBlock FontSize="48" Text="What you ate today?" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Arial" FontWeight="Bold" Foreground="#FF5A7900"/>
+        <Grid ShowGridLines="True" Height="445" Background="#FF3F9C44">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="116*"/>
+                <ColumnDefinition Width="156*"/>
+                <ColumnDefinition Width="156*"/>
+                <ColumnDefinition Width="156*"/>
+                <ColumnDefinition Width="156*"/>
+                <ColumnDefinition Width="155*"/>
+                <ColumnDefinition Width="156*"/>
+                <ColumnDefinition Width="39*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="2" Text="Calories" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="Arial" Foreground="White" FontWeight="Bold" />
+            <TextBlock Grid.Row="0" Grid.Column="3" Text="Fats" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="Arial" Foreground="White" FontWeight="Bold"  />
+            <TextBlock Grid.Row="0" Grid.Column="4" Text="Carbs" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="Arial" Foreground="White" FontWeight="Bold" />
+            <TextBlock Grid.Row="0" Grid.Column="5" Text="Proteins" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="Arial" Foreground="White" FontWeight="Bold"/>
+            <TextBlock Grid.Row="0" Grid.Column="6" Text="Sugar" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="Arial" Foreground="White" FontWeight="Bold" />
+            <TextBlock Grid.Row="0" Grid.Column="0" Background="White" Text="Breakfast" FontFamily="Arial" FontSize="22" FontWeight="Bold" />
+            <Grid Grid.Row="1" Grid.ColumnSpan="7" Background="White" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Row="0" Grid.Column="0" Background="{x:Null}" Content="Add Food" BorderBrush="{x:Null}" FontSize="18" FontWeight="Bold"/>
+            </Grid>
+            <TextBlock Grid.Row="2" Grid.Column="0" Background="White" Text="Lunch" FontFamily="Arial" FontSize="22" FontWeight="Bold" />
+
+            <Grid Grid.Row="3" Grid.ColumnSpan="7" Background="White" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+
+                </Grid.ColumnDefinitions>
+                <Button Grid.Row="0" Grid.Column="0" Background="{x:Null}" Content="Add Food" BorderBrush="{x:Null}" FontSize="18" FontWeight="Bold"/>
+            </Grid>
+            <TextBlock Grid.Row="4" Grid.Column="0" Background="White" Text="Dinner" FontFamily="Arial" FontSize="22" FontWeight="Bold" />
+
+            <Grid Grid.Row="5" Grid.ColumnSpan="7" Background="White" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+
+                </Grid.ColumnDefinitions>
+                <Button Grid.Row="0" Grid.Column="0" Background="{x:Null}" Content="Add Food" BorderBrush="{x:Null}" FontSize="18" FontWeight="Bold"/>
+            </Grid>
+            <TextBlock Grid.Row="6" Grid.Column="0" Background="White" Text="Snacks" FontFamily="Arial" FontSize="22" FontWeight="Bold" />
+
+            <Grid Grid.Row="7" Grid.ColumnSpan="7" Background="White" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Row="0" Grid.Column="0" Background="{x:Null}" Content="Add Food" BorderBrush="{x:Null}" FontSize="18" FontWeight="Bold"/>
+            </Grid>
+            <TextBlock Grid.Row="8" Grid.Column="1" Text="Totals" FontSize="18"/>
+            <TextBlock Grid.Row="9" Grid.Column="1" Text="Your Daily Goals" FontSize="18" Height="41" VerticalAlignment="Top"/>
+            <TextBlock Grid.Row="10" Grid.Column="1" Text="Remaining" FontSize="18"/>
+            <TextBlock Grid.Row="11" Grid.Column="2" Text="Calories" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="Arial" Foreground="White" FontWeight="Bold" />
+            <TextBlock Grid.Row="11" Grid.Column="3" Text="Fats" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="Arial" Foreground="White" FontWeight="Bold"  />
+            <TextBlock Grid.Row="11" Grid.Column="4" Text="Carbs" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="Arial" Foreground="White" FontWeight="Bold" />
+            <TextBlock Grid.Row="11" Grid.Column="5" Text="Proteins" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="Arial" Foreground="White" FontWeight="Bold"/>
+            <TextBlock Grid.Row="11" Grid.Column="6" Text="Sugar" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="Arial" Foreground="White" FontWeight="Bold" />
+        </Grid>
+    </StackPanel>
+</UserControl>

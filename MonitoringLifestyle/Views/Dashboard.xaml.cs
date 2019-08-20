@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MonitoringLifestyle.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,16 +14,17 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MonitoringLifestyle.Resources
+namespace MonitoringLifestyle.Views
 {
     /// <summary>
-    /// Interaction logic for GoalsUserControl.xaml
+    /// Interaction logic for Dashboard.xaml
     /// </summary>
-    public partial class GoalsUserControl : UserControl
+    public partial class Dashboard : UserControl
     {
-        public GoalsUserControl()
+        public Dashboard()
         {
             InitializeComponent();
+            DashboardGrid.DataContext = new DashboardVM(); ;
         }
     }
 }
