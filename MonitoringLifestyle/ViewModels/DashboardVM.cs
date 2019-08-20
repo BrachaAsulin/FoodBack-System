@@ -36,7 +36,7 @@ namespace MonitoringLifestyle.ViewModels
         public DashboardVM()
         {
             CurrentModel = new DashboardModel();
-            ChildUserControl = new selectOptionUserControl();
+            ChildUserControl = new selectOptionUserControl(this);
             AboutUs = new AboutUsCommand(this);
             ContactUs = new ContactUsCommand(this);
         }

@@ -7,7 +7,8 @@
              xmlns:local="clr-namespace:MonitoringLifestyle"
              mc:Ignorable="d" 
              d:DesignHeight="250" d:DesignWidth="550">
-    <Grid>
+    <Grid x:Name="selectOptionGrid">
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="115*"/>
             <RowDefinition Height="20*"/>
@@ -18,7 +19,7 @@
             <ColumnDefinition Width="20*"/>
             <ColumnDefinition Width="265*"/>
         </Grid.ColumnDefinitions>
-        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="265" Grid.Row="0" Grid.Column="0" Height="115" Foreground="#FF21BD9F"  RenderTransformOrigin="0.513,0.531" FontWeight="Bold">
+        <Button Command="{Binding Goals}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="265" Grid.Row="0" Grid.Column="0" Height="115" Foreground="#FF21BD9F"  RenderTransformOrigin="0.513,0.531" FontWeight="Bold">
             <Grid Height="115" Width="265">
 
                 <Grid.RowDefinitions>
@@ -32,7 +33,7 @@
             </Grid>
 
         </Button>
-        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="265" Grid.Row="0" Grid.Column="2" Height="115">
+        <Button Command="{Binding Daily}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="265" Grid.Row="0" Grid.Column="2" Height="115">
             <Grid Height="115" Width="265">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="14*"/>
@@ -45,7 +46,7 @@
                 </Grid.Background>
             </Grid>
         </Button>
-        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="265" Grid.Row="2" Grid.Column="0" Height="115" Foreground="#FF21BD9F" Background="#FFEEF7F5">
+        <Button Command="{Binding Evaluation}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="265" Grid.Row="2" Grid.Column="0" Height="115" Foreground="#FF21BD9F" Background="#FFEEF7F5">
             <Grid Height="115" Width="265">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="14*"/>
@@ -57,7 +58,7 @@
                 </Grid.Background>
             </Grid>
         </Button>
-        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="265" Grid.Row="2" Grid.Column="2" Height="115">
+        <Button Command="{Binding FoodInfo}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="265" Grid.Row="2" Grid.Column="2" Height="115">
             <Grid Height="115" Width="265">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="14*"/>

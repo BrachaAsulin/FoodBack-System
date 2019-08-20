@@ -79,8 +79,14 @@
     </ApplicationDefinition>
     <Compile Include="Commands\AboutUsCommand.cs" />
     <Compile Include="Commands\ContactUsCommand.cs" />
+    <Compile Include="Commands\DailyCommand.cs" />
+    <Compile Include="Commands\EvaluationCommand.cs" />
+    <Compile Include="Commands\FoodInformationCommand.cs" />
+    <Compile Include="Commands\GoalsCommand.cs" />
+    <Compile Include="Models\SelectOptionsModel.cs" />
     <Compile Include="ViewModels\AboutUsViewModel.cs" />
     <Compile Include="ViewModels\ContactUsViewModel.cs" />
+    <Compile Include="ViewModels\GoalsViewModel.cs" />
     <Compile Include="ViewModels\IVM.cs" />
     <Compile Include="ViewModels\SelectOptionViewModel.cs" />
     <Compile Include="Views\aboutUsUserControl.xaml.cs">
