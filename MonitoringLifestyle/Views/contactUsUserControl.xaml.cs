@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MonitoringLifestyle.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,16 +14,18 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MonitoringLifestyle
+namespace MonitoringLifestyle.Views
 {
     /// <summary>
-    /// Interaction logic for EvaluationUserControl1.xaml
+    /// Interaction logic for contactUsUserControl.xaml
     /// </summary>
-    public partial class EvaluationUserControl1 : UserControl
+    public partial class contactUsUserControl : UserControl
     {
-        public EvaluationUserControl1()
+        public contactUsUserControl()
         {
             InitializeComponent();
+            GridContact.DataContext = new ContactUsViewModel();
         }
+
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,24 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MonitoringLifestyle
+namespace MonitoringLifestyle.Views
 {
     /// <summary>
-    /// Interaction logic for aboutUsUserControl.xaml
+    /// Interaction logic for MyDailyDietUserControl1.xaml
     /// </summary>
-    public partial class aboutUsUserControl : UserControl
+    public partial class MyDailyDietUserControl1 : UserControl
     {
-        public aboutUsUserControl()
+        public MyDailyDietUserControl1()
         {
             InitializeComponent();
-            DashboardVM dashboard = new DashboardVM();
-            dashboard.PropertyChanged += ShowUC;
-        }
-
-        private void ShowUC(object sender, PropertyChangedEventArgs e)
-        {
-            this.Visibility = Visibility.Visible;
-
         }
     }
 }

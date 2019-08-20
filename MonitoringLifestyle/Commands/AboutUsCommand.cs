@@ -1,22 +1,23 @@
-﻿using System;
+﻿using MonitoringLifestyle.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
-namespace MonitoringLifestyle
+namespace MonitoringLifestyle.Commands
 {
     public class AboutUsCommand : ICommand
     {
+        public DashboardVM DashboardVM { get; set; }
 
-        public event Action<int> AboutUsEvent;
-
-        public event EventHandler CanExecuteChanged
+        public AboutUsCommand(DashboardVM dashboardVM)
         {
-            add { CommandManager.RequerySuggested += value; }
-            remove { CommandManager.RequerySuggested -= value; }
+            this.DashboardVM = dashboardVM;
         }
+        public event EventHandler CanExecuteChanged;
 
         public bool CanExecute(object parameter)
         {
@@ -25,7 +26,8 @@ namespace MonitoringLifestyle
 
         public void Execute(object parameter)
         {
-            AboutUsEvent(1);
+            DashboardVM.Operation(1);
+           
         }
     }
 }

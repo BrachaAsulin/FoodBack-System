@@ -13,16 +13,21 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MonitoringLifestyle
+namespace MonitoringLifestyle.Views
 {
     /// <summary>
-    /// Interaction logic for NewAccountUserControl.xaml
+    /// Interaction logic for selectOptionUserControl.xaml
     /// </summary>
-    public partial class NewAccountUserControl : UserControl
+    public partial class selectOptionUserControl : UserControl
     {
-        public NewAccountUserControl()
+        public selectOptionUserControl()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

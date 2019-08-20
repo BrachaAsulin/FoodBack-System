@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MonitoringLifestyle.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -22,15 +23,13 @@ namespace MonitoringLifestyle
     /// </summary>
     public partial class MainWindow : Window
     {
-
+        
         public MainWindow()
         {
             InitializeComponent();
-            MessageBox.Show("aaa");
-
-
-
+            stackPanelMain.DataContext = myDashBoard.DashboardGrid.DataContext;
         }
 
+       
     }
 }

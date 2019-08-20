@@ -1,5 +1,7 @@
-﻿using System;
+﻿using MonitoringLifestyle.ViewModels;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,21 +15,19 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MonitoringLifestyle
+namespace MonitoringLifestyle.Views
 {
     /// <summary>
-    /// Interaction logic for selectOptionUserControl.xaml
+    /// Interaction logic for aboutUsUserControl.xaml
     /// </summary>
-    public partial class selectOptionUserControl : UserControl
+    public partial class aboutUsUserControl : UserControl
     {
-        public selectOptionUserControl()
+        public aboutUsUserControl()
         {
             InitializeComponent();
+            AboutUsGrid.DataContext = new AboutUsViewModel();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+    
     }
 }

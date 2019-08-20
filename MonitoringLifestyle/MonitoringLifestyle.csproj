@@ -77,63 +77,68 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AboutUsCommand.cs" />
-    <Compile Include="aboutUsUserControl.xaml.cs">
+    <Compile Include="Commands\AboutUsCommand.cs" />
+    <Compile Include="Commands\ContactUsCommand.cs" />
+    <Compile Include="ViewModels\AboutUsViewModel.cs" />
+    <Compile Include="ViewModels\ContactUsViewModel.cs" />
+    <Compile Include="ViewModels\IVM.cs" />
+    <Compile Include="ViewModels\SelectOptionViewModel.cs" />
+    <Compile Include="Views\aboutUsUserControl.xaml.cs">
       <DependentUpon>aboutUsUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AccountUserControl.xaml.cs">
+    <Compile Include="Views\AccountUserControl.xaml.cs">
       <DependentUpon>AccountUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="contactUsUserControl.xaml.cs">
+    <Compile Include="Views\contactUsUserControl.xaml.cs">
       <DependentUpon>contactUsUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Dashboard.xaml.cs">
+    <Compile Include="Views\Dashboard.xaml.cs">
       <DependentUpon>Dashboard.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DashboardModel.cs" />
-    <Compile Include="DashboardVM.cs" />
-    <Compile Include="EvaluationUserControl1.xaml.cs">
+    <Compile Include="Models\DashboardModel.cs" />
+    <Compile Include="ViewModels\DashboardVM.cs" />
+    <Compile Include="Views\EvaluationUserControl1.xaml.cs">
       <DependentUpon>EvaluationUserControl1.xaml</DependentUpon>
     </Compile>
-    <Compile Include="foodInformationUserControl.xaml.cs">
+    <Compile Include="Views\foodInformationUserControl.xaml.cs">
       <DependentUpon>foodInformationUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MyDailyDietUserControl1.xaml.cs">
+    <Compile Include="Views\MyDailyDietUserControl1.xaml.cs">
       <DependentUpon>MyDailyDietUserControl1.xaml</DependentUpon>
     </Compile>
-    <Compile Include="NewAccountUserControl.xaml.cs">
+    <Compile Include="Views\NewAccountUserControl.xaml.cs">
       <DependentUpon>NewAccountUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GoalsUserControl.xaml.cs">
+    <Compile Include="Views\GoalsUserControl.xaml.cs">
       <DependentUpon>GoalsUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="selectOptionUserControl.xaml.cs">
+    <Compile Include="Views\selectOptionUserControl.xaml.cs">
       <DependentUpon>selectOptionUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="weekPickerUserControl.xaml.cs">
+    <Compile Include="Views\weekPickerUserControl.xaml.cs">
       <DependentUpon>weekPickerUserControl.xaml</DependentUpon>
     </Compile>
-    <Page Include="aboutUsUserControl.xaml">
+    <Page Include="Views\aboutUsUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AccountUserControl.xaml">
+    <Page Include="Views\AccountUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="contactUsUserControl.xaml">
+    <Page Include="Views\contactUsUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Dashboard.xaml">
+    <Page Include="Views\Dashboard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EvaluationUserControl1.xaml">
+    <Page Include="Views\EvaluationUserControl1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="foodInformationUserControl.xaml">
+    <Page Include="Views\foodInformationUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -149,23 +154,23 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="MyDailyDietUserControl1.xaml">
+    <Page Include="Views\MyDailyDietUserControl1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="NewAccountUserControl.xaml">
+    <Page Include="Views\NewAccountUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GoalsUserControl.xaml">
+    <Page Include="Views\GoalsUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="selectOptionUserControl.xaml">
+    <Page Include="Views\selectOptionUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="weekPickerUserControl.xaml">
+    <Page Include="Views\weekPickerUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -223,7 +228,6 @@
     <Resource Include="Resources\daily.jpg" />
     <Resource Include="Resources\evaluation.png" />
     <Resource Include="Resources\evaluation2.jpg" />
-    <Resource Include="Resources\goals.jpg" />
     <Resource Include="Resources\logo.png" />
     <Resource Include="Resources\queries.png" />
   </ItemGroup>
@@ -238,6 +242,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\snacks.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\goals.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

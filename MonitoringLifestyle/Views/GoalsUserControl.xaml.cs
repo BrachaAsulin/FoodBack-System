@@ -13,19 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MonitoringLifestyle
+namespace MonitoringLifestyle.Views
 {
     /// <summary>
-    /// Interaction logic for Dashboard.xaml
+    /// Interaction logic for GoalsUserControl.xaml
     /// </summary>
-    public partial class Dashboard : UserControl
+    public partial class GoalsUserControl : UserControl
     {
-        DashboardVM currentVM;
-        public Dashboard()
+        public GoalsUserControl()
         {
             InitializeComponent();
-            currentVM = new DashboardVM();
-            this.DataContext = currentVM;
         }
     }
 }

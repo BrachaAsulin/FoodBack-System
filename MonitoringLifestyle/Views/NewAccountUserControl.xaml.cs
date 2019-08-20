@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MonitoringLifestyle
+namespace MonitoringLifestyle.Views
 {
     /// <summary>
-    /// Interaction logic for AccountUserControl.xaml
+    /// Interaction logic for NewAccountUserControl.xaml
     /// </summary>
-    public partial class AccountUserControl : UserControl
+    public partial class NewAccountUserControl : UserControl
     {
-        public AccountUserControl()
+        public NewAccountUserControl()
         {
             InitializeComponent();
         }
