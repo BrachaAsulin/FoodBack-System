@@ -46,7 +46,7 @@
             <TextBox Grid.Row="2" Grid.Column="1"/>
             <TextBox Grid.Row="2" Grid.Column="2"/>
             <TextBox Grid.Row="2" Grid.Column="3"/>
-            <TextBox Grid.Row="2" Grid.Column="4"/>
+            <TextBox Grid.Row="2" Grid.Column="4" TextChanged="TextBox_TextChanged"/>
             <TextBox Grid.Row="2" Grid.Column="5"/>
             <TextBox Grid.Row="3" Grid.Column="1"/>
             <TextBox Grid.Row="3" Grid.Column="2"/>
