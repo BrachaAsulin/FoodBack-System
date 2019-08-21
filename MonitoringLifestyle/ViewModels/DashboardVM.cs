@@ -18,6 +18,9 @@ namespace MonitoringLifestyle.ViewModels
         public DashboardModel CurrentModel { get; set; }
         public ICommand AboutUs { get; set; }
         public ICommand ContactUs { get; set; }
+        public ICommand Home { get; set; }
+        public ICommand Account { get; set; }
+        public ICommand ShutDown { get; set; }
 
 
 
@@ -39,6 +42,9 @@ namespace MonitoringLifestyle.ViewModels
             ChildUserControl = new selectOptionUserControl(this);
             AboutUs = new AboutUsCommand(this);
             ContactUs = new ContactUsCommand(this);
+            Home = new HomeCommand(this);
+            Account = new AccountCommand(this);
+            ShutDown = new ShutDownCommand(this);
         }
 
         public void Operation(int i)
@@ -50,6 +56,15 @@ namespace MonitoringLifestyle.ViewModels
                     break;
                 case 2:
                     ChildUserControl = new contactUsUserControl();
+                    break;
+                case 3:
+                    ChildUserControl = new selectOptionUserControl(this);
+                    break;
+                case 4:
+                    ChildUserControl = new AccountUserControl();
+                    break;
+                case 5:
+                    System.Windows.Application.Current.Shutdown();
                     break;
             }
         }

@@ -12,6 +12,6 @@
     
     <StackPanel Name="stackPanelMain" Orientation="Vertical" >
         <local1:Dashboard x:Name="myDashBoard" HorizontalAlignment="Stretch" Height="100"  VerticalAlignment="Top" />
-        <UserControl x:Name="MainUserControl" Content="{Binding ChildUserControl}" Height="450" Margin="10"/>
+        <UserControl x:Name="MainUserControl" Content="{Binding ChildUserControl}" Height="400" Width="700" Margin="10"/>
     </StackPanel>
 </Window>

@@ -5,9 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MonitoringLifestyle"
              mc:Ignorable="d" 
-             d:DesignHeight="500" d:DesignWidth="1090">
+             d:DesignHeight="400" d:DesignWidth="700">
     <StackPanel Orientation="Horizontal">
-        <Grid Width="545" Background="White">
+        <Grid Width="350" Background="White">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -19,29 +19,29 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <StackPanel Grid.Row="0" Orientation="Horizontal" Width="545" HorizontalAlignment="Right">
-                <TextBlock Text="EXISTING " FontSize="36" FontFamily="Arial" FontWeight="Bold"/>
-                <TextBlock Text="USER" FontSize="36" FontFamily="Arial" FontWeight="Bold" Foreground="#FF9E9898"/>
+            <StackPanel Grid.Row="0" Orientation="Horizontal" Width="350" HorizontalAlignment="Right">
+                <TextBlock Text="EXISTING " FontSize="24" FontFamily="Arial" FontWeight="Bold"/>
+                <TextBlock Text="USER" FontSize="24" FontFamily="Arial" FontWeight="Bold" Foreground="#FF9E9898"/>
             </StackPanel>
-            <TextBlock Grid.Row="1" IsEnabled="False" FontSize="24" FontFamily="Arial" FontWeight="Bold" Text="Sign Into FoodBack"/>
+            <TextBlock Grid.Row="1" IsEnabled="False" FontSize="22" FontFamily="Arial" FontWeight="Bold" Text="Sign Into FoodBack"/>
             <TextBlock Grid.Row="2" Text="EMAIL ADDRESS OR USER NUMBER" FontSize="18" VerticalAlignment="Bottom"/>
-            <TextBox Grid.Row="3" HorizontalAlignment="Left" Width="500"/>
+            <TextBox Grid.Row="3" HorizontalAlignment="Left" Width="300"/>
             <TextBlock Grid.Row="4" Text="YOUR PASSWORD" VerticalAlignment="Bottom" FontSize="18"/>
-            <TextBox Grid.Row="5" HorizontalAlignment="Left" Width="500" />
-            <Button Grid.Row="7" Background="#FF7EAA00" Content="SIGN IN" Foreground="White" FontSize="24" Width="500" HorizontalAlignment="Left" FontFamily="Arial"/>
+            <TextBox Grid.Row="5" HorizontalAlignment="Left" Width="300" />
+            <Button Grid.Row="7" Background="#FF5A7900" Content="SIGN IN" Foreground="White" FontSize="22" Width="300" HorizontalAlignment="Left" FontFamily="Arial"/>
         </Grid>
-        <Grid Width="545"  Background="White">
+        <Grid Width="350"  Background="White">
             <Grid.RowDefinitions>
-                <RowDefinition Height="55"/>
-                <RowDefinition Height="55"/>
-                <RowDefinition Height="55"/>
+                <RowDefinition Height="46" />
+                <RowDefinition Height="46"/>
+                <RowDefinition Height="46" />
             </Grid.RowDefinitions>
             <StackPanel Grid.Row="0" Orientation="Horizontal">
-                <TextBlock Text="NEW" FontSize="36" FontFamily="Arial" FontWeight="Bold" />
-                <TextBlock Text=" USER" FontSize="36" FontFamily="Arial" FontWeight="Bold" Foreground="#FF9E9898" />
+                <TextBlock Text="NEW" FontSize="24" FontFamily="Arial" FontWeight="Bold" Margin="0,0,0,10" />
+                <TextBlock FontSize="36" FontFamily="Arial" FontWeight="Bold" Foreground="#FF9E9898" Margin="0,0,0,10" ><Run Text=" "/><Run FontSize="24" Text="USER"/></TextBlock>
             </StackPanel>
-            <TextBlock Grid.Row="1" Text="Create a FoodBack account today" FontSize="24" FontFamily="Arial" FontWeight="Bold"/>
-            <Button Grid.Row="2" Background="#FF7EAA00" Width="500" HorizontalAlignment="left" Foreground="White" Content="REGISTER NOW" FontSize="24" FontFamily="Arial"/>
+            <TextBlock FontSize="22" FontFamily="Arial" FontWeight="Bold" Margin="0,0,0,10" Grid.Row="1"><Run Text="Create "/><Run Text="a FoodBack account"/></TextBlock>
+            <Button Grid.Row="2" Background="#FF5A7900" Width="300" HorizontalAlignment="left" Foreground="White" Content="REGISTER NOW" FontSize="22" FontFamily="Arial"/>
         </Grid>
     </StackPanel>
 </UserControl>
