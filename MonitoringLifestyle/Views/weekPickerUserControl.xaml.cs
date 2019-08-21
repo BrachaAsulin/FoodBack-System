@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MonitoringLifestyle.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -21,17 +22,17 @@ namespace MonitoringLifestyle.Views
     /// </summary>
     public partial class weekPickerUserControl : UserControl//,INotifyPropertyChanged//i changed
     {
-       
+        public GoalsViewModel currentViewModel;
         private bool flagOnUpdate;
-
-      //  public event PropertyChangedEventHandler PropertyChanged;//i changed
-      //  public bool flag = false;
 
         public DateTime sunday { get; set; }
 
         public weekPickerUserControl()
         {
             InitializeComponent();
+            currentViewModel = new GoalsViewModel();
+            this.DataContext = currentViewModel;
+           
         }
         private void addSelectedDates()
         {
@@ -45,10 +46,15 @@ namespace MonitoringLifestyle.Views
             flagOnUpdate = false;
         }
         private void calendar_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
-        {
-            //flag = true;
+        { 
             if (calendar.SelectedDate != null && flagOnUpdate == false)
+            {
                 addSelectedDates();
+
+                currentViewModel.EnableGridGoal = true;
+            }
         }
+
+       
     }
 }

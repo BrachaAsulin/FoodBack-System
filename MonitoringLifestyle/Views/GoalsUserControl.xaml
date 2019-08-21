@@ -15,7 +15,7 @@
                 <CheckBox x:Name="markWeekCheckBox" Height="34" Width="150" IsChecked="False" Background="#FF3F9C44" Content="I marked a week" FontWeight="Bold" HorizontalAlignment="Left" Margin="10" VerticalAlignment="Top"/>
 
             </StackPanel>
-            <Grid ShowGridLines="True" Width="500" Background="#FF3F9C44" IsEnabled="{Binding ElementName=markWeekCheckBox, Path=IsChecked}">
+            <Grid ShowGridLines="True" Width="500" IsEnabled="{Binding EnableGridGoal}" Background="#FF3F9C44">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*" />
                     <RowDefinition Height="1.5*"/>

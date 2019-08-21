@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MonitoringLifestyle.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,11 +24,8 @@ namespace MonitoringLifestyle.Views
         public GoalsUserControl()
         {
             InitializeComponent();
+            this.DataContext = weekUC.DataContext;
         }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
+        
     }
 }
