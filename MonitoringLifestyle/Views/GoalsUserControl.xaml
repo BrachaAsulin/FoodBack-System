@@ -10,11 +10,13 @@
         <TextBlock TextAlignment="Center" Text="Setting Goals &amp; Starting a Healthy Eating" FontSize="48" FontFamily="Arial" Foreground="#FF5A7900" FontWeight="Bold" Background="White"/>
         <StackPanel Orientation="Horizontal">
             <Grid>
-                <Button Width="200" Content="select a week" Margin="0,52,0,330" />
-                <local:weekPickerUserControl HorizontalAlignment="Left" Height="160" Margin="10,128,0,0" VerticalAlignment="Top" Width="240"/>
+
+                <local:weekPickerUserControl x:Name="weekUC" HorizontalAlignment="Left" Height="160" Margin="10,128,0,0" FontWeight="Bold" VerticalAlignment="Top" Width="240"/>
+                <CheckBox x:Name="markWeekCheckBox" Height="34" Width="200" IsChecked="False" Background="#FF3F9C44" Content="I marked a week" FontWeight="Bold" HorizontalAlignment="Left" Margin="40,317,0,0" VerticalAlignment="Top"/>
+                <TextBlock Background="#FF3F9C44" HorizontalAlignment="Left" Margin="40,57,0,0" FontWeight="Bold" TextWrapping="Wrap" Text="        please mark a week" VerticalAlignment="Top" Height="38" Width="178" Foreground="#FFF0F0F0"/>
 
             </Grid>
-            <Grid ShowGridLines="True" Height="426" Width="950" Background="#FF3F9C44">
+            <Grid ShowGridLines="True" Height="426" Width="950" Background="#FF3F9C44" IsEnabled="{Binding ElementName=markWeekCheckBox, Path=IsChecked}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*" />
                     <RowDefinition Height="1.5*"/>
@@ -32,6 +34,9 @@
                     <ColumnDefinition Width="2*"/>
 
                 </Grid.ColumnDefinitions>
+
+
+
 
                 <TextBlock Grid.Row="0" Grid.Column="1" Text="Calories" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="Arial" Foreground="White" />
                 <TextBlock Grid.Row="0" Grid.Column="2" Text="Fats" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="Arial" Foreground="White"  />

@@ -26,7 +26,7 @@ namespace MonitoringLifestyle.ViewModels
 
         public UserControl ChildUserControl
         {
-            get { return (UserControl)GetValue(ChildUserControlProperty); }
+            get { return (UserControl)GetValue(ChildUserControlProperty); } 
             set { SetValue(ChildUserControlProperty, value); }
         }
 

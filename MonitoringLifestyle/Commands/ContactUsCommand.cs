@@ -10,7 +10,7 @@ namespace MonitoringLifestyle.Commands
 {
     class ContactUsCommand : ICommand
     {
-        public DashboardVM DashboardVM { get; }
+        public DashboardVM DashboardVM { get; set; }
         public event EventHandler CanExecuteChanged;
 
         public ContactUsCommand(DashboardVM dashboardVM)

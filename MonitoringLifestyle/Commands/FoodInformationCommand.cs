@@ -25,7 +25,7 @@ namespace MonitoringLifestyle.Commands
 
         public void Execute(object parameter)
         {
-
+            SelectOptionVM.selectOperation(4);
 
         }
     }

@@ -48,7 +48,16 @@ namespace MonitoringLifestyle.ViewModels
             {
                 case 1: DashboardVM.ChildUserControl = new GoalsUserControl();
                     break;
-                    
+                case 2:
+                    DashboardVM.ChildUserControl = new MyDailyDietUserControl1();
+                    break;
+                case 3:
+                    DashboardVM.ChildUserControl = new EvaluationUserControl1();
+                    break;
+                case 4:
+                    DashboardVM.ChildUserControl = new foodInformationUserControl();
+                    break;
+
             }
         }
 

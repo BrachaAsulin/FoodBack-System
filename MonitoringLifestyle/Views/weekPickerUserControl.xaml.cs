@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,9 +19,13 @@ namespace MonitoringLifestyle.Views
     /// <summary>
     /// Interaction logic for weekPickerUserControl.xaml
     /// </summary>
-    public partial class weekPickerUserControl : UserControl
+    public partial class weekPickerUserControl : UserControl//,INotifyPropertyChanged//i changed
     {
+       
         private bool flagOnUpdate;
+
+      //  public event PropertyChangedEventHandler PropertyChanged;//i changed
+      //  public bool flag = false;
 
         public DateTime sunday { get; set; }
 
@@ -41,6 +46,7 @@ namespace MonitoringLifestyle.Views
         }
         private void calendar_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
         {
+            flag = true;
             if (calendar.SelectedDate != null && flagOnUpdate == false)
                 addSelectedDates();
         }
