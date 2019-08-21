@@ -46,7 +46,7 @@ namespace MonitoringLifestyle.Views
         }
         private void calendar_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
         {
-            flag = true;
+            //flag = true;
             if (calendar.SelectedDate != null && flagOnUpdate == false)
                 addSelectedDates();
         }
