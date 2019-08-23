@@ -86,8 +86,12 @@
     <Compile Include="Commands\GoalsCommand.cs" />
     <Compile Include="Commands\HomeCommand.cs" />
     <Compile Include="Commands\ShutDownCommand.cs" />
+    <Compile Include="Commands\SignInCommand.cs" />
+    <Compile Include="Models\AccountModel.cs" />
+    <Compile Include="Models\ContactUsModel.cs" />
     <Compile Include="Models\SelectOptionsModel.cs" />
     <Compile Include="ViewModels\AboutUsViewModel.cs" />
+    <Compile Include="ViewModels\AccountViewModel.cs" />
     <Compile Include="ViewModels\ContactUsViewModel.cs" />
     <Compile Include="ViewModels\GoalsViewModel.cs" />
     <Compile Include="ViewModels\IVM.cs" />

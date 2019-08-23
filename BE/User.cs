@@ -27,12 +27,12 @@ namespace BE
         public ICollection< DailyGoalPerWeek> DailyGoals { get; set; }
 
         public string Id { get => id; set => id = value; }
-        protected string FirstName { get => firstName; set => firstName = value; }
-        protected string LastName { get => lastName; set => lastName = value; }
-        protected string EmailAddress { get => emailAddress; set => emailAddress = value; }
-        protected string Password { get => password; set => password = value; }
-        protected string BirthDate { get => birthDate; set => birthDate = value; }
-        protected string Height { get => height; set => height = value; }
-        protected string Weight { get => weight; set => weight = value; }
+        public string FirstName { get => firstName; set => firstName = value; }
+        public string LastName { get => lastName; set => lastName = value; }
+        public string EmailAddress { get => emailAddress; set => emailAddress = value; }
+        public string Password { get => password; set => password = value; }
+        public string BirthDate { get => birthDate; set => birthDate = value; }
+        public string Height { get => height; set => height = value; }
+        public string Weight { get => weight; set => weight = value; }
     }
 }
