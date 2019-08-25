@@ -8,7 +8,7 @@ using System.Windows.Input;
 
 namespace MonitoringLifestyle.Commands
 {
-    class EvaluationCommand:ICommand
+    public class EvaluationCommand:ICommand
     {
         public SelectOptionViewModel SelectOptionVM { get; set; }
 

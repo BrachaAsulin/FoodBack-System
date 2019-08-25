@@ -10,9 +10,9 @@
         <TextBlock TextAlignment="Center" Text="Setting Goals &amp; Starting a Healthy Eating" FontSize="24" FontFamily="Arial" Foreground="#FF5A7900" FontWeight="Bold" Background="White"/>
         <StackPanel Orientation="Horizontal" Height="372">
             <StackPanel  Width="200" Orientation="Vertical">
-                <TextBlock Background="#FF3F9C44" HorizontalAlignment="Left" FontWeight="Bold" TextWrapping="Wrap" Text="please mark a week" VerticalAlignment="Top" Height="38" Width="150" Foreground="#FFF0F0F0" Margin="10"/>
+                <TextBlock Background="#FF3F9C44" HorizontalAlignment="Left" FontWeight="Bold" TextWrapping="Wrap" Text="please mark a week and fill the table" VerticalAlignment="Top" Height="38" Width="150" Foreground="#FFF0F0F0" Margin="10"/>
                 <local:weekPickerUserControl x:Name="weekUC" Margin="10" HorizontalAlignment="Left" FontWeight="Bold" VerticalAlignment="Top" Width="150"/>
-                <CheckBox x:Name="markWeekCheckBox" Height="34" Width="150" IsChecked="False" Background="#FF3F9C44" Content="I marked a week" FontWeight="Bold" HorizontalAlignment="Left" Margin="10" VerticalAlignment="Top"/>
+                <Button x:Name="markWeekCheckBox" Height="34" Width="150" Background="#FF3F9C44" Command="{Binding UpdateGoals}" Content="UPDATE" FontWeight="Bold" HorizontalAlignment="Left" Margin="10" VerticalAlignment="Top"/>
 
             </StackPanel>
             <Grid ShowGridLines="True" Width="500" IsEnabled="{Binding EnableGridGoal}" Background="#FF3F9C44">
@@ -43,31 +43,31 @@
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="Dinner" FontSize="16" Background="White" FontFamily="Arial" FontWeight="Bold"/>
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="Snacks" FontSize="16" Background="White" FontFamily="Arial" FontWeight="Bold"/>
                 <TextBlock Grid.Row="5" Grid.Column="0" Text="Daily goal" FontSize="16" Background="White" FontFamily="Arial" FontWeight="Bold"/>
-                <TextBox Grid.Row="1" Grid.Column="1" Background="#FFF6F6F6"/>
-                <TextBox Grid.Row="1" Grid.Column="2"/>
-                <TextBox Grid.Row="1" Grid.Column="3"/>
-                <TextBox Grid.Row="1" Grid.Column="4"/>
-                <TextBox Grid.Row="1" Grid.Column="5"/>
-                <TextBox Grid.Row="2" Grid.Column="1"/>
-                <TextBox Grid.Row="2" Grid.Column="2"/>
-                <TextBox Grid.Row="2" Grid.Column="3"/>
-                <TextBox Grid.Row="2" Grid.Column="4"/>
-                <TextBox Grid.Row="2" Grid.Column="5"/>
-                <TextBox Grid.Row="3" Grid.Column="1"/>
-                <TextBox Grid.Row="3" Grid.Column="2"/>
-                <TextBox Grid.Row="3" Grid.Column="3"/>
-                <TextBox Grid.Row="3" Grid.Column="4"/>
-                <TextBox Grid.Row="3" Grid.Column="5"/>
-                <TextBox Grid.Row="4" Grid.Column="1"/>
-                <TextBox Grid.Row="4" Grid.Column="2"/>
-                <TextBox Grid.Row="4" Grid.Column="3"/>
-                <TextBox Grid.Row="4" Grid.Column="4"/>
-                <TextBox Grid.Row="4" Grid.Column="5"/>
-                <TextBlock Grid.Row="5" Grid.Column="1" Background="White"/>
-                <TextBlock Grid.Row="5" Grid.Column="2" Background="White"/>
-                <TextBlock Grid.Row="5" Grid.Column="3" Background="White"/>
-                <TextBlock Grid.Row="5" Grid.Column="4" Background="White"/>
-                <TextBlock Grid.Row="5" Grid.Column="5" Background="White"/>
+                <TextBox Grid.Row="1" Grid.Column="1" x:Name="breakfastCaloriesTextBox" Background="#FFF6F6F6" Text="{Binding BreakfastCalories}"/>
+                <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding BreakfastFats}"/>
+                <TextBox Grid.Row="1" Grid.Column="3" Text="{Binding BreakfastCarbs}"/>
+                <TextBox Grid.Row="1" Grid.Column="4" Text="{Binding BreakfastProteins}"/>
+                <TextBox Grid.Row="1" Grid.Column="5" Text="{Binding BreakfastSugar}"/>
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding LunchCalories}"/>
+                <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding LunchFats}"/>
+                <TextBox Grid.Row="2" Grid.Column="3" Text="{Binding LunchCarbs}"/>
+                <TextBox Grid.Row="2" Grid.Column="4" Text="{Binding LunchProteins}"/>
+                <TextBox Grid.Row="2" Grid.Column="5" Text="{Binding LunchSugar}"/>
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding DinnerCalories}"/>
+                <TextBox Grid.Row="3" Grid.Column="2" Text="{Binding DinnerFats}"/>
+                <TextBox Grid.Row="3" Grid.Column="3" Text="{Binding DinnerCarbs}"/>
+                <TextBox Grid.Row="3" Grid.Column="4" Text="{Binding DinnerProteins}"/>
+                <TextBox Grid.Row="3" Grid.Column="5" Text="{Binding DinnerSugar}"/>
+                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding SnacksCalories}"/>
+                <TextBox Grid.Row="4" Grid.Column="2" Text="{Binding SnacksFats}"/>
+                <TextBox Grid.Row="4" Grid.Column="3" Text="{Binding SnacksCarbs}"/>
+                <TextBox Grid.Row="4" Grid.Column="4" Text="{Binding SnacksProteins}"/>
+                <TextBox Grid.Row="4" Grid.Column="5" Text="{Binding SnacksSugar}"/>
+                <TextBlock x:Name="sumCaloriesTextBox" Grid.Row="5" Grid.Column="1" Background="White" Text="{Binding SumCalories}" Foreground="#FFFF4B00"/>
+                <TextBlock x:Name="sumFatsTextBox" Grid.Row="5" Grid.Column="2" Background="White" Text="{Binding SumFats}" Foreground="#FFFF4B00"/>
+                <TextBlock x:Name="sumCarbsTextBox" Grid.Row="5" Grid.Column="3" Background="White" Text="{Binding SumCarbs}" Foreground="#FFFF4B00"/>
+                <TextBlock x:Name="sumProteinsTextBox" Grid.Row="5" Grid.Column="4" Background="White" Text="{Binding SumProteins}" Foreground="#FFFF4B00"/>
+                <TextBlock x:Name="sumSugarTextBox" Grid.Row="5" Grid.Column="5" Background="White" Text="{Binding SumSugar}" Foreground="#FFFF4B00"/>
             </Grid>
         </StackPanel>
     </StackPanel>

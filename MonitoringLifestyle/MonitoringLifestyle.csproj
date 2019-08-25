@@ -81,14 +81,22 @@
     <Compile Include="Commands\AccountCommand.cs" />
     <Compile Include="Commands\ContactUsCommand.cs" />
     <Compile Include="Commands\DailyCommand.cs" />
+    <Compile Include="Commands\DairyInfoCommand.cs" />
     <Compile Include="Commands\EvaluationCommand.cs" />
     <Compile Include="Commands\FoodInformationCommand.cs" />
     <Compile Include="Commands\GoalsCommand.cs" />
     <Compile Include="Commands\HomeCommand.cs" />
+    <Compile Include="Commands\MeatInfoCommand.cs" />
+    <Compile Include="Commands\NutritionalValuesCalculatorCommand.cs" />
+    <Compile Include="Commands\SaltyInfoCommand.cs" />
     <Compile Include="Commands\ShutDownCommand.cs" />
+    <Compile Include="Commands\SweetsInfoCommand.cs" />
+    <Compile Include="Commands\UpdateGoalsCommand.cs" />
+    <Compile Include="Models\GoalsModel.cs" />
     <Compile Include="Models\SelectOptionsModel.cs" />
     <Compile Include="ViewModels\AboutUsViewModel.cs" />
     <Compile Include="ViewModels\ContactUsViewModel.cs" />
+    <Compile Include="ViewModels\FoodInformationViewModel.cs" />
     <Compile Include="ViewModels\GoalsViewModel.cs" />
     <Compile Include="ViewModels\IVM.cs" />
     <Compile Include="ViewModels\SelectOptionViewModel.cs" />
@@ -109,8 +117,20 @@
     <Compile Include="Views\EvaluationUserControl1.xaml.cs">
       <DependentUpon>EvaluationUserControl1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\foodInfoDairyUserControl.xaml.cs">
+      <DependentUpon>foodInfoDairyUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\foodInfoMeatUserControl.xaml.cs">
+      <DependentUpon>foodInfoMeatUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\foodInformationUserControl.xaml.cs">
       <DependentUpon>foodInformationUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\foodInfoSaltyUserControl.xaml.cs">
+      <DependentUpon>foodInfoSaltyUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\foodInfoSweetsUserControl.xaml.cs">
+      <DependentUpon>foodInfoSweetsUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MyDailyDietUserControl1.xaml.cs">
       <DependentUpon>MyDailyDietUserControl1.xaml</DependentUpon>
@@ -120,6 +140,9 @@
     </Compile>
     <Compile Include="Views\GoalsUserControl.xaml.cs">
       <DependentUpon>GoalsUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NutritionalValuesCalculatorUC.xaml.cs">
+      <DependentUpon>NutritionalValuesCalculatorUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\selectOptionUserControl.xaml.cs">
       <DependentUpon>selectOptionUserControl.xaml</DependentUpon>
@@ -147,6 +170,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\foodInfoDairyUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\foodInfoMeatUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\foodInformationUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -163,6 +194,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\foodInfoSaltyUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\foodInfoSweetsUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MyDailyDietUserControl1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -172,6 +211,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\GoalsUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NutritionalValuesCalculatorUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -207,6 +250,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Resources\burax.webp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -254,6 +298,42 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\goals.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\applepie.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\chocolate.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\chocolatechipscookies.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\chocolateyeastcake.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\dates.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icecream.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\jeliCandy.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\pretzels.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\chips.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\popcorn.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\bisli.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cracker.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

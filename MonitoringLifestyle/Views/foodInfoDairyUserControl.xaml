@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="MonitoringLifestyle.Views.foodInfoDairyUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MonitoringLifestyle.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="350" d:DesignWidth="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="100*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="265*"/>
+            <ColumnDefinition Width="265*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="         Dairy" FontSize="36" Grid.Column="0" FontFamily="Arial" FontWeight="Bold" Margin="10,0,0,29" HorizontalAlignment="Left" Width="182"/>
+        <TextBlock Text="foods" FontSize="36" FontFamily="Arial" FontWeight="Bold" Foreground="#FF9E9898" Margin="197,0,53,29" Grid.ColumnSpan="2"/>
+    </Grid>
+</UserControl>

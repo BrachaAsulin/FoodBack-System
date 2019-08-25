@@ -26,6 +26,7 @@ namespace MonitoringLifestyle.Views
         private bool flagOnUpdate;
 
         public DateTime sunday { get; set; }
+        private string sundayOfWeek { get; set; }
 
         public weekPickerUserControl()
         {
@@ -40,6 +41,8 @@ namespace MonitoringLifestyle.Views
             DateTime date = (DateTime)calendar.SelectedDate;
             calendar.SelectedDates.Clear();
             sunday = date.AddDays(0 - (int)date.DayOfWeek);//the sunday of the selected week
+            sundayOfWeek = sunday.Day + "/" + sunday.Month + "/" + sunday.Year;
+            this.currentViewModel.sundayWeek= sundayOfWeek;
             for (int i = (int)sunday.DayOfWeek; i < 7; i++)
                 calendar.SelectedDates.Add(sunday.AddDays(i));
 

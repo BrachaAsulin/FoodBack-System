@@ -1,0 +1,127 @@
+﻿<UserControl x:Class="MonitoringLifestyle.Views.foodInfoSweetsUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MonitoringLifestyle.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="350" d:DesignWidth="1272">
+    <UserControl.Resources>
+        <ControlTemplate x:Key="TextBoxBaseControlTemplate" TargetType="{x:Type TextBoxBase}">
+            <Border Background="{TemplateBinding Background}" 
+                x:Name="Bd" BorderBrush="Black"
+                BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="7">
+                <ScrollViewer x:Name="PART_ContentHost"/>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" TargetName="Bd"/>
+                    <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        <ControlTemplate x:Key="ButtonBaseControlTemplate" TargetType="{x:Type ButtonBase}">
+            <Border Background="{TemplateBinding Background}" 
+                x:Name="Bd" BorderBrush="Black"
+                BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="70" Margin="0,-22,0,0">
+                <StackPanel x:Name="PART_ContentHost"/>
+            </Border>
+        </ControlTemplate>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="100*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="265*"/>
+            <ColumnDefinition Width="265*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBox  Template="{StaticResource TextBoxBaseControlTemplate}" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Width="65" FontSize="16" Foreground="Black" Margin="0,0,236,0">
+            <TextBox.Background>
+                <ImageBrush ImageSource="/Resources/cake.jpg" Stretch="UniformToFill"/>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}"  Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Width="65" FontSize="16" Foreground="Black" Margin="0,0,236,0">
+            <TextBox.Background>
+                <ImageBrush ImageSource="/Resources/jeliCandy.jpg" Stretch="UniformToFill"/>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}"  Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" Width="65" FontSize="16" Foreground="Black" Margin="0,0,236,0">
+            <TextBox.Background>
+                <ImageBrush ImageSource="/Resources/dates.jpg" Stretch="UniformToFill"/>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}"  Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" Width="65" FontSize="16" Foreground="Black" Margin="0,0,236,0">
+            <TextBox.Background>
+                <ImageBrush ImageSource="/Resources/icecream.jpg" Stretch="UniformToFill"/>
+            </TextBox.Background>
+        </TextBox>
+
+
+        <TextBox  Template="{StaticResource TextBoxBaseControlTemplate}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" Width="65" FontSize="16" Foreground="Black" Margin="0,0,175,0">
+            <TextBox.Background>
+                <ImageBrush ImageSource="/Resources/chocolate.jpg" Stretch="UniformToFill"/>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox  Template="{StaticResource TextBoxBaseControlTemplate}" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" Width="65" FontSize="16" Foreground="Black" Margin="0,0,175,0">
+            <TextBox.Background>
+                <ImageBrush ImageSource="/Resources/chocolateyeastcake.jpg" Stretch="UniformToFill"/>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox  Template="{StaticResource TextBoxBaseControlTemplate}" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right" Width="65" FontSize="16" Foreground="Black" Margin="0,0,175,0">
+            <TextBox.Background>
+                <ImageBrush ImageSource="/Resources/chocolatechipscookies.jpg" Stretch="UniformToFill"/>
+            </TextBox.Background>
+        </TextBox>
+        <TextBox Template="{StaticResource TextBoxBaseControlTemplate}"  Grid.Row="4" Grid.Column="1" HorizontalAlignment="Right" Width="65" FontSize="16" Foreground="Black" Margin="0,0,175,0">
+            <TextBox.Background>
+                <ImageBrush ImageSource="/Resources/applepie.jpg" Stretch="UniformToFill"/>
+            </TextBox.Background>
+        </TextBox>
+
+        <TextBlock Text="       sweet" FontSize="36" Grid.Column="0" FontFamily="Arial" FontWeight="Bold" Margin="10,0,0,29" HorizontalAlignment="Left" Width="182"/>
+        <TextBlock Text="foods" FontSize="36" FontFamily="Arial" FontWeight="Bold" Foreground="#FF9E9898" Margin="197,0,192,29" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" FontSize="16" Margin="177,0,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Jelly candies" VerticalAlignment="Top" Width="101" Height="21" Foreground="#FF3F9C44"/>
+        <TextBlock HorizontalAlignment="Left" FontSize="16" Margin="177,0,0,0" Grid.Row="1" TextWrapping="Wrap" Text="cheese cake" VerticalAlignment="Top" Width="101" Height="21" Foreground="#FF3F9C44"/>
+        <TextBlock HorizontalAlignment="Left" FontSize="16" Margin="177,0,0,0" Grid.Row="3" TextWrapping="Wrap" Text="dates" VerticalAlignment="Top" Width="101" Height="21" Foreground="#FF3F9C44"/>
+        <TextBlock HorizontalAlignment="Left" FontSize="16" Margin="186,0,0,0" Grid.Row="3" TextWrapping="Wrap" Text="chocolate chip cookies" VerticalAlignment="Top" Width="160" Height="21" Foreground="#FF3F9C44" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" FontSize="16" Margin="186,0,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Jelly candies" VerticalAlignment="Top" Width="101" Height="21" Foreground="#FF3F9C44" RenderTransformOrigin="0.585,1.358" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" FontSize="16" Margin="186,0,0,49" Grid.Row="1" TextWrapping="Wrap" Text="milk chocolate" Width="117" Foreground="#FF3F9C44" Grid.Column="1" RenderTransformOrigin="0.101,0.525"/>
+        <TextBlock HorizontalAlignment="Left" FontSize="16" Margin="177,0,0,0" Grid.Row="4" TextWrapping="Wrap" Text="Strawberry ice cream" VerticalAlignment="Top" Width="149" Height="21" Foreground="#FF3F9C44"/>
+        <TextBlock HorizontalAlignment="Left" FontSize="16" Margin="186,0,0,0" Grid.Row="4" TextWrapping="Wrap" Text="apple pie" VerticalAlignment="Top" Width="101" Height="21" Foreground="#FF3F9C44" Grid.Column="1"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="190,21,0,31" Grid.Row="1" TextWrapping="Wrap" Text="519 calories, 7.5 proteins " Width="170"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="186,39,0,0" Grid.Row="1" TextWrapping="Wrap" Text="25.5 fats, 65 carbs , 20 Cholesterol" VerticalAlignment="Top" Width="170" Height="31"/>
+        <TextBlock HorizontalAlignment="Left" Margin="177,21,0,31" Grid.Row="4" TextWrapping="Wrap" Text="199 calories, 3.2 proteins " Width="170"/>
+        <TextBlock HorizontalAlignment="Left" Margin="177,39,0,0" Grid.Row="4" TextWrapping="Wrap" Text="8.4 fats, 27.6 carbs , 29 Cholesterol" VerticalAlignment="Top" Width="170" Height="31"/>
+        <TextBlock HorizontalAlignment="Left" Margin="177,21,0,31" Grid.Row="3" TextWrapping="Wrap" Text="102 calories, 1.3 proteins " Width="170"/>
+        <TextBlock HorizontalAlignment="Left" Margin="177,39,0,0" Grid.Row="3" TextWrapping="Wrap" Text="0.1 fats, 23.8 carbs , 0 Cholesterol" VerticalAlignment="Top" Width="170" Height="31"/>
+        <TextBlock HorizontalAlignment="Left" Margin="177,21,0,31" Grid.Row="2" TextWrapping="Wrap" Text="373 calories, 0 proteins " Width="170"/>
+        <TextBlock HorizontalAlignment="Left" Margin="177,39,0,0" Grid.Row="2" TextWrapping="Wrap" Text="0.5 fats, 90.9 carbs , 0 Cholesterol" VerticalAlignment="Top" Width="170" Height="31"/>
+        <TextBlock HorizontalAlignment="Left" Margin="177,21,0,31" Grid.Row="1" TextWrapping="Wrap" Text="629.1 calories, 12.2 proteins " Width="170"/>
+        <TextBlock HorizontalAlignment="Left" Margin="177,39,0,0" Grid.Row="1" TextWrapping="Wrap" Text="28.6 fats, 80.5 carbs , 101.1 Cholesterol" VerticalAlignment="Top" Width="170" Height="31"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="186,21,0,31" Grid.Row="4" TextWrapping="Wrap" Text="238 calories, 1.9 proteins " Width="170"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="186,39,0,0" Grid.Row="4" TextWrapping="Wrap" Text="11 fats, 65 carbs , 20 Cholesterol" VerticalAlignment="Top" Width="170" Height="31"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="186,21,0,31" Grid.Row="3" TextWrapping="Wrap" Text="475 calories, 5.4 proteins " Width="170"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="186,39,0,0" Grid.Row="3" TextWrapping="Wrap" Text="24 fats, 59.5 carbs , 50 Cholesterol" VerticalAlignment="Top" Width="170" Height="31"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="186,21,0,31" Grid.Row="2" TextWrapping="Wrap" Text="390 calories, 6.4 proteins " Width="170"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="186,39,0,0" Grid.Row="2" TextWrapping="Wrap" Text="14.4 fats, 585 carbs , 37.3 Cholesterol" VerticalAlignment="Top" Width="170" Height="31"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </Grid>
+</UserControl>

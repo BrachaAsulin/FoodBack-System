@@ -55,7 +55,7 @@ namespace MonitoringLifestyle.ViewModels
                     DashboardVM.ChildUserControl = new EvaluationUserControl1();
                     break;
                 case 4:
-                    DashboardVM.ChildUserControl = new foodInformationUserControl();
+                    DashboardVM.ChildUserControl = new foodInformationUserControl(DashboardVM);
                     break;
 
             }

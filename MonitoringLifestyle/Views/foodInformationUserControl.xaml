@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MonitoringLifestyle"
              mc:Ignorable="d" 
-             d:DesignHeight="350" d:DesignWidth="500">
+             d:DesignHeight="350" d:DesignWidth="500" Foreground="#FF364E6F">
     <UserControl.Resources>
         <ControlTemplate x:Key="TextBoxBaseControlTemplate" TargetType="{x:Type TextBoxBase}">
             <Border Background="{TemplateBinding Background}" 
@@ -28,12 +28,11 @@
             </Border>
         </ControlTemplate>
     </UserControl.Resources>
-    <Grid>
+    <Grid x:Name="foodInfoGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="70*"/>
-            <RowDefinition Height="115*"/>
-            <RowDefinition Height="20*"/>
-            <RowDefinition Height="115*"/>
+            <RowDefinition Height="70*"/>
+            <RowDefinition Height="150*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="265*"/>
@@ -42,27 +41,30 @@
         <TextBlock Text="         food" FontSize="36" Grid.Column="0" FontFamily="Arial" FontWeight="Bold" Margin="10,0,0,29" HorizontalAlignment="Left" Width="182"/>
         <TextBlock Text="information" FontSize="36" FontFamily="Arial" FontWeight="Bold" Foreground="#FF9E9898" Margin="197,0,53,29" Grid.ColumnSpan="2"/>
 
-        <Button  Template="{StaticResource ButtonBaseControlTemplate}" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Width="173" FontSize="16" Content="meat" Foreground="Black" Margin="0,2,39,10">
+        <Button Command="{Binding MeatInfo}" Template="{StaticResource ButtonBaseControlTemplate}" Grid.Row="2" HorizontalAlignment="Right" Width="124" FontSize="16" Content="meat" Foreground="Black" Margin="0,109,128,-2" Grid.ColumnSpan="2">
             <Button.Background>
-            <ImageBrush ImageSource="/Resources/meat.jpg" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="/Resources/meat.jpg" Stretch="UniformToFill"/>
 
-         </Button.Background>
+            </Button.Background>
         </Button>
-        <Button  Template="{StaticResource ButtonBaseControlTemplate}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" Width="173" FontSize="16"  Content="milk" Foreground="Black" Margin="0,2,39,10">
+        <Button Command="{Binding DairyInfo}" Template="{StaticResource ButtonBaseControlTemplate}" Grid.Row="2" HorizontalAlignment="Right" Width="123" FontSize="16"  Content="milk" Foreground="Black" Margin="0,109,0,1" Grid.Column="1">
             <Button.Background>
                 <ImageBrush ImageSource="/Resources/milk.jpg" Stretch="UniformToFill"/>
             </Button.Background>
         </Button>
-        <Button  Template="{StaticResource ButtonBaseControlTemplate}" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" Width="173" FontSize="16"  Content="dessert" Foreground="Black" Margin="0,2,39,10">
+        <Button   Command="{Binding SweetsInfo}" Template="{StaticResource ButtonBaseControlTemplate}" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Width="118" FontSize="16"  Content="" Foreground="Black" Margin="0,109,132,0">
             <Button.Background>
                 <ImageBrush ImageSource="/Resources/cake.jpg" Stretch="UniformToFill"/>
             </Button.Background>
         </Button>
-        <Button  Template="{StaticResource ButtonBaseControlTemplate}" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right" Width="173" FontSize="16"  Content="snacks" Foreground="Black" Margin="0,2,39,10">
+        <Button Command="{Binding SaltyInfo}" Template="{StaticResource ButtonBaseControlTemplate}" Grid.Row="2" HorizontalAlignment="Right" Width="120" FontSize="16"  Content="snacks" Foreground="Black" Margin="0,109,7,0">
             <Button.Background>
                 <ImageBrush ImageSource="/Resources/snacks.jpg" Stretch="UniformToFill"/>
             </Button.Background>
         </Button>
+        <TextBlock Background="#FF9E9898" HorizontalAlignment="Left" Grid.Row="2" TextWrapping="Wrap" Text="Common foods by categories" VerticalAlignment="Top" Height="51" Width="372" Foreground="#FFF0F0F0" FontSize="26" Grid.ColumnSpan="2"/>
+        <Button Command="{Binding Calculator}" Background="Black" Content="Nutritional Values Calculator" HorizontalAlignment="Left" Margin="142,0,0,0" Grid.Row="1" VerticalAlignment="Top" Width="358" Grid.ColumnSpan="2" Height="51" FontSize="26" Foreground="White"/>
+       
 
     </Grid>
 </UserControl>
