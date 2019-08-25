@@ -1,21 +1,24 @@
-﻿using System;
+﻿using BL;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace MonitoringLifestyle.Models
 {
-    class AccountModel:INotifyPropertyChanged,INotifyDataErrorInfo
+    class AccountModel : INotifyPropertyChanged, IDataErrorInfo
     {
-
-        public AccountModel(string emailAddress,string password)
+    public AccountModel(string emailAddress,string password)
         {
             this.EmailAddress = emailAddress;
             this.Password = password;
+
         }
+        public BL.Bl bb = new Bl();
         private string emailAddress;
         public string EmailAddress
         {
@@ -27,6 +30,7 @@ namespace MonitoringLifestyle.Models
             {
                 emailAddress = value;
                 OnPropertyChanged("EmailAddress");
+              
             }
         }
 
@@ -42,33 +46,58 @@ namespace MonitoringLifestyle.Models
             set
             {
                 password = value;
+                OnPropertyChanged("Password");
+       
+
             }
         }
+
+        public bool flag = false;
+
         #region IDatatErrorInfo Members
         public string Error
         {
             get;
             private set;
         }
-
-        public bool HasErrors => throw new  ;
-
+        
         public string this[string columnEmailAddress]
         {
             get
             {
-                if(columnEmailAddress == "EmailAddress")
+                if (columnEmailAddress == "EmailAddress")
                 {
-                    if(String.IsNullOrWhiteSpace(EmailAddress))
+                    if (String.IsNullOrWhiteSpace(EmailAddress))
                     {
                         Error = "Email Address can not be empty";
+                        flag = false;
                     }
                     else
                     {
                         Error = null;
+                        if (String.IsNullOrWhiteSpace(Password))
+                            flag = true;
                     }
+
                 }
+                if (columnEmailAddress == "Password")
+                {
+                    if (String.IsNullOrWhiteSpace(EmailAddress))
+                    {
+                        Error = "Password Address can not be empty";
+                        flag = false;
+                    }
+                    else
+                    {
+                        Error = null;
+                        if (String.IsNullOrWhiteSpace(EmailAddress))
+                            flag = true;
+                    }
+
+                }
+
                 return Error;
+
             }
         }
         #endregion
@@ -76,7 +105,6 @@ namespace MonitoringLifestyle.Models
         #region INotifyPropertyCanged Members
 
         public event PropertyChangedEventHandler PropertyChanged;
-        public event EventHandler<DataErrorsChangedEventArgs> ErrorsChanged;
 
         private void OnPropertyChanged(string propertyName)
         {
@@ -87,10 +115,7 @@ namespace MonitoringLifestyle.Models
             }
         }
 
-        public IEnumerable GetErrors(string propertyName)
-        {
-            throw new NotImplementedException();
-        }
+       
         #endregion
 
     }

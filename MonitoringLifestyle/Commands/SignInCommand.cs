@@ -10,7 +10,7 @@ namespace MonitoringLifestyle.Commands
 {
     class SignInCommand : ICommand
     {
-        public event EventHandler CanExecuteChanged;
+       
         public AccountViewModel accountViewModel { get; set; }
         public SignInCommand(AccountViewModel accountViewModel)
         {
@@ -18,7 +18,15 @@ namespace MonitoringLifestyle.Commands
         }
         public bool CanExecute(object parameter)
         {
+
             return String.IsNullOrWhiteSpace(accountViewModel.User.Error);
+            
+           
+        }
+        public event EventHandler CanExecuteChanged
+        {
+            add { CommandManager.RequerySuggested += value; }
+            remove { CommandManager.RequerySuggested -= value; }
         }
 
         public void Execute(object parameter)

@@ -6,6 +6,18 @@
              xmlns:local="clr-namespace:MonitoringLifestyle"
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="700">
+    <UserControl.Resources>
+        <Style TargetType="TextBox">
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="true">
+                    <Setter Property="ToolTip"
+
+                    Value="{Binding RelativeSource={x:Static RelativeSource.Self},
+                        Path=(Validation.Errors)[0].ErrorContent}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
     <StackPanel Orientation="Horizontal">
         <Grid Width="350" Background="White">
             <Grid.RowDefinitions>
@@ -27,7 +39,7 @@
             <TextBlock Grid.Row="2" Text="EMAIL ADDRESS OR USER NUMBER" FontSize="18" VerticalAlignment="Bottom"/>
             <TextBox Grid.Row="3" HorizontalAlignment="Left" Width="300" Text="{Binding User.EmailAddress, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
             <TextBlock Grid.Row="4" Text="YOUR PASSWORD" VerticalAlignment="Bottom" FontSize="18"/>
-            <TextBox Grid.Row="5" HorizontalAlignment="Left" Width="300" />
+            <TextBox Grid.Row="5" HorizontalAlignment="Left" Width="300" Text="{Binding User.Password, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
             <Button Grid.Row="7" Command="{Binding SignIn}" Background="#FF5A7900" Content="SIGN IN" Foreground="White" FontSize="22" Width="300" HorizontalAlignment="Left" FontFamily="Arial"/>
         </Grid>
         <Grid Width="350"  Background="White">
