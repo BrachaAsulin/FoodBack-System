@@ -90,11 +90,15 @@
     <Compile Include="Commands\NutritionalValuesCalculatorCommand.cs" />
     <Compile Include="Commands\SaltyInfoCommand.cs" />
     <Compile Include="Commands\ShutDownCommand.cs" />
+    <Compile Include="Commands\SignInCommand.cs" />
+    <Compile Include="Models\AccountModel.cs" />
+    <Compile Include="Models\ContactUsModel.cs" />
     <Compile Include="Commands\SweetsInfoCommand.cs" />
     <Compile Include="Commands\UpdateGoalsCommand.cs" />
     <Compile Include="Models\GoalsModel.cs" />
     <Compile Include="Models\SelectOptionsModel.cs" />
     <Compile Include="ViewModels\AboutUsViewModel.cs" />
+    <Compile Include="ViewModels\AccountViewModel.cs" />
     <Compile Include="ViewModels\ContactUsViewModel.cs" />
     <Compile Include="ViewModels\FoodInformationViewModel.cs" />
     <Compile Include="ViewModels\GoalsViewModel.cs" />
