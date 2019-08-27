@@ -16,6 +16,9 @@ namespace MonitoringLifestyle.Models
         {
             this.EmailAddress = emailAddress;
             this.Password = password;
+            this.validProperties = new Dictionary<string, bool>();
+            validProperties.Add("EmailAddress", false);
+            validProperties.Add("Password", false);
 
         }
         public BL.Bl bb = new Bl();
@@ -52,7 +55,35 @@ namespace MonitoringLifestyle.Models
             }
         }
 
-        public bool flag = false;
+        private bool allPropertiesValid = false;
+        public bool AllPropertiesValid
+        {
+            get { return allPropertiesValid; }
+            set
+            {
+                if (allPropertiesValid != value)
+                {
+                    allPropertiesValid = value;
+                    OnPropertyChanged("AllPropertiesValid");
+                }
+            }
+        }
+
+        private Dictionary<string, bool> validProperties;
+
+        private void ValidateProperties()
+        {
+            foreach (bool isValid in validProperties.Values)
+            {
+                if (isValid == false)
+                {
+                    this.AllPropertiesValid = false;
+                    return;
+                }
+            }
+            this.AllPropertiesValid = true;
+        }
+
 
         #region IDatatErrorInfo Members
         public string Error
@@ -70,13 +101,18 @@ namespace MonitoringLifestyle.Models
                     if (String.IsNullOrWhiteSpace(EmailAddress))
                     {
                         Error = "Email Address can not be empty";
-                        flag = false;
+                        
                     }
                     else
                     {
+                  
                         Error = null;
-                        if (String.IsNullOrWhiteSpace(Password))
-                            flag = true;
+                        validProperties["EmailAddress"] = true;
+                        ValidateProperties();
+
+
+
+
                     }
 
                 }
@@ -85,13 +121,16 @@ namespace MonitoringLifestyle.Models
                     if (String.IsNullOrWhiteSpace(EmailAddress))
                     {
                         Error = "Password Address can not be empty";
-                        flag = false;
+                      
                     }
                     else
                     {
-                        Error = null;
-                        if (String.IsNullOrWhiteSpace(EmailAddress))
-                            flag = true;
+                    
+                            Error = null;
+                        validProperties["Password"] = true;
+                        ValidateProperties();
+
+
                     }
 
                 }

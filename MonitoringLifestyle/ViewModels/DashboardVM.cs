@@ -61,7 +61,7 @@ namespace MonitoringLifestyle.ViewModels
                     ChildUserControl = new selectOptionUserControl(this);
                     break;
                 case 4:
-                    ChildUserControl = new AccountUserControl();
+                    ChildUserControl = new AccountUserControl(this);
                     break;
                 case 5:
                     System.Windows.Application.Current.Shutdown();

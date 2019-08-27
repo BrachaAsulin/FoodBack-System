@@ -21,10 +21,10 @@ namespace MonitoringLifestyle.Views
     /// </summary>
     public partial class AccountUserControl : UserControl
     {
-        public AccountUserControl()
+        public AccountUserControl(DashboardVM dashboardVM)
         {
             InitializeComponent();
-            this.DataContext = new AccountViewModel();
+            this.DataContext = new AccountViewModel(dashboardVM);
         }
     }
 }

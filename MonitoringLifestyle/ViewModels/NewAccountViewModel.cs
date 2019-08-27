@@ -9,29 +9,29 @@ using System.Windows.Input;
 
 namespace MonitoringLifestyle.ViewModels
 {
-    class ContactUsViewModel:IVM
+    class NewAccountViewModel:IVM
     {
-        public ICommand ContactUs { get; set; }
-        private ContactUsModel userToContact;
-        public ContactUsModel UserToContact
+        private NewAccountModel newAccount;
+        public NewAccountModel NewAccount
         {
             get
             {
-                return userToContact;
+                return newAccount;
             }
             set
             {
-                userToContact = value;
+                newAccount = value;
             }
+               
         }
-
-        public ContactUsViewModel()
+        public ICommand registerNow { get; set; }
+        public NewAccountViewModel()
         {
-            this.UserToContact = new ContactUsModel("","","","") ;
-            ContactUs = new ConfirmContactUsCommand(this);
+            newAccount = new NewAccountModel("","","","","","","");
+            registerNow = new NewAccountCommand(this);
         }
 
-        internal void ConfirmMessage()
+        internal void SaveNewUser()
         {
             throw new NotImplementedException();
         }

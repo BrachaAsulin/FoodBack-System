@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MonitoringLifestyle.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,8 @@ namespace MonitoringLifestyle.Views
         public NewAccountUserControl()
         {
             InitializeComponent();
+            this.DataContext = new NewAccountViewModel();
         }
+
     }
 }
