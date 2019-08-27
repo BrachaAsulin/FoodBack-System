@@ -1,6 +1,7 @@
 ﻿using BE;
 using MonitoringLifestyle.Commands;
 using MonitoringLifestyle.Models;
+using MonitoringLifestyle.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,18 +14,16 @@ namespace MonitoringLifestyle.ViewModels
 {
     class AccountViewModel:DependencyObject
     {
-        public AccountViewModel()
+        public AccountViewModel(DashboardVM dashboardViewModel)
         {
             SignIn = new SignInCommand(this);
             User = new AccountModel("", "");
-            //UserEmailAddress = "";
-           // UserPassword = "";
+            DashboardVM = dashboardViewModel;
+            Register = new RegisterCommand(this);
+       
         }
 
-
-        
-
-        
+        public DashboardVM DashboardVM { get; set; }
 
         private AccountModel user;
         
@@ -39,43 +38,8 @@ namespace MonitoringLifestyle.ViewModels
                 user = value;
             }
         }
-        /* private string userEmailAddress;
 
-         public string UserEmailAddress
-         {
-             get
-             {
-                 return User.EmailAddress;
-             }
-             set
-             {
-                 User.EmailAddress = value;
-                 this.SignIn.CanExecute(null);
-             }
-         }
-         private string userPassword;
-
-         public string UserPassword
-         {
-             get
-             {
-                 return User.Password;
-             }
-             set
-             {
-                 User.Password = value;
-                 this.SignIn.CanExecute(null);
-
-             }
-         }
-         public ICommand SignIn
-         {
-             get;
-             private set;
-         }*/
-
-
-
+        public ICommand Register { get; set; }
         public ICommand SignIn
         {
             get { return (ICommand)GetValue(SignInProperty); }
@@ -87,6 +51,10 @@ namespace MonitoringLifestyle.ViewModels
             DependencyProperty.Register("SignIn", typeof(ICommand), typeof(AccountViewModel));
 
 
+        internal void openRegister()
+        {
+            this.DashboardVM.ChildUserControl = new NewAccountUserControl();
+        }
 
         public void saveUser()
         {

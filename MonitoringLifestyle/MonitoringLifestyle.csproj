@@ -79,6 +79,7 @@
     </ApplicationDefinition>
     <Compile Include="Commands\AboutUsCommand.cs" />
     <Compile Include="Commands\AccountCommand.cs" />
+    <Compile Include="Commands\ConfirmContactUsCommand.cs" />
     <Compile Include="Commands\ContactUsCommand.cs" />
     <Compile Include="Commands\DailyCommand.cs" />
     <Compile Include="Commands\DairyInfoCommand.cs" />
@@ -87,15 +88,19 @@
     <Compile Include="Commands\GoalsCommand.cs" />
     <Compile Include="Commands\HomeCommand.cs" />
     <Compile Include="Commands\MeatInfoCommand.cs" />
+    <Compile Include="Commands\NewAccountCommand.cs" />
     <Compile Include="Commands\NutritionalValuesCalculatorCommand.cs" />
+    <Compile Include="Commands\RegisterCommand.cs" />
     <Compile Include="Commands\SaltyInfoCommand.cs" />
     <Compile Include="Commands\ShutDownCommand.cs" />
     <Compile Include="Commands\SignInCommand.cs" />
+    <Compile Include="Converters\boolToVisibilityConverter.cs" />
     <Compile Include="Models\AccountModel.cs" />
     <Compile Include="Models\ContactUsModel.cs" />
     <Compile Include="Commands\SweetsInfoCommand.cs" />
     <Compile Include="Commands\UpdateGoalsCommand.cs" />
     <Compile Include="Models\GoalsModel.cs" />
+    <Compile Include="Models\NewAccountModel.cs" />
     <Compile Include="Models\SelectOptionsModel.cs" />
     <Compile Include="ViewModels\AboutUsViewModel.cs" />
     <Compile Include="ViewModels\AccountViewModel.cs" />
@@ -103,6 +108,7 @@
     <Compile Include="ViewModels\FoodInformationViewModel.cs" />
     <Compile Include="ViewModels\GoalsViewModel.cs" />
     <Compile Include="ViewModels\IVM.cs" />
+    <Compile Include="ViewModels\NewAccountViewModel.cs" />
     <Compile Include="ViewModels\SelectOptionViewModel.cs" />
     <Compile Include="Views\aboutUsUserControl.xaml.cs">
       <DependentUpon>aboutUsUserControl.xaml</DependentUpon>
@@ -147,6 +153,9 @@
     </Compile>
     <Compile Include="Views\NutritionalValuesCalculatorUC.xaml.cs">
       <DependentUpon>NutritionalValuesCalculatorUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchFoodComboBox.xaml.cs">
+      <DependentUpon>SearchFoodComboBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\selectOptionUserControl.xaml.cs">
       <DependentUpon>selectOptionUserControl.xaml</DependentUpon>
@@ -221,6 +230,10 @@
     <Page Include="Views\NutritionalValuesCalculatorUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SearchFoodComboBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\selectOptionUserControl.xaml">
       <SubType>Designer</SubType>
@@ -394,6 +407,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\yogurtt.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\search.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

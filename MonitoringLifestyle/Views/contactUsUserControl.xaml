@@ -7,6 +7,18 @@
              xmlns:local="clr-namespace:MonitoringLifestyle"
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="550">
+    <UserControl.Resources>
+        <Style TargetType="TextBox">
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="true">
+                    <Setter Property="ToolTip"
+
+                    Value="{Binding RelativeSource={x:Static RelativeSource.Self},
+                        Path=(Validation.Errors)[0].ErrorContent}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
     <Grid Name="GridContact" Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="42"/>
@@ -22,22 +34,22 @@
         </Grid.ColumnDefinitions>
         <TextBlock Grid.Row="0" HorizontalAlignment="left" VerticalAlignment="Bottom" Text="Contact Us" FontSize="24" FontFamily="Arial" Foreground="#FF5A7900" Height="39" Width="127" FontWeight="Bold" Grid.Column="1" />
 
-        <materialDesign:PackIcon Grid.Column="0" Grid.Row="1" Kind="Person" Width="33" Height="25" Foreground="#FF5A7900" HorizontalAlignment="Center" Margin="10,0" Background="White" />
+        <materialDesign:PackIcon Grid.Column="0" Grid.Row="1" Kind="Person" Width="40" Height="35" Foreground="#FF5A7900" HorizontalAlignment="Center" Margin="10,0" Background="White" />
 
 
 
-        <Button Grid.Column="1"  BorderBrush="White" Grid.Row="5" Margin="420,0,0,0">
+        <Button Command="{Binding ContactUs}" IsEnabled="{Binding UserToContact.AllPropertiesValid}" Grid.Column="1"  BorderBrush="White" Grid.Row="5" Margin="420,0,0,0" Background="#FFE7E8EC">
             <materialDesign:PackIcon Kind="send" Width="46" Height="20" Foreground="#FF5A7900" />
         </Button>
 
-        <materialDesign:PackIcon Grid.Column="0" Grid.Row="4" Kind="ArrowRight" Width="33" Height="30" Foreground="#FF5A7900" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,20,10,19" />
+        <materialDesign:PackIcon Grid.Column="0" Grid.Row="4" Kind="ArrowRight" Width="40" Height="35" Foreground="#FF5A7900" HorizontalAlignment="Center" Margin="10,0" />
 
 
-        <materialDesign:PackIcon Grid.Column="0" Grid.Row="2" Kind="Telephone" Width="33" Height="Auto" Foreground="#FF5A7900" RenderTransformOrigin="0.5,0.5" Margin="10,0,0,10" VerticalAlignment="Stretch" />
-        <materialDesign:PackIcon Grid.Column="0" Grid.Row="3" Kind="Email" Width="33" Height="24" Foreground="#FF5A7900" Margin="10,0,0,0" />
-        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="35" Grid.Row="1" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="501" Foreground="#FFABADB3" FontSize="16" BorderBrush="#FFABADB3" Background="White" />
-        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="35" Grid.Row="2" TextWrapping="Wrap" Text="Phone number" VerticalAlignment="Top" Width="501" Foreground="#FFABADB3" FontSize="16"/>
-        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="34" Grid.Row="3" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Width="501" Foreground="#FFABADB3" FontSize="16"/>
-        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="69" Grid.Row="4" TextWrapping="Wrap" Text="Message" VerticalAlignment="Top" Width="501" Foreground="#FFABADB3" FontSize="16"/>
+        <materialDesign:PackIcon Grid.Column="0" Grid.Row="2" Kind="Telephone" Width="40" Height="35" Foreground="#FF5A7900" HorizontalAlignment="Center" Margin="10,0" />
+        <materialDesign:PackIcon Grid.Column="0" Grid.Row="3" Kind="Email" Width="40" Height="35" Foreground="#FF5A7900" Margin="10,0" HorizontalAlignment="Center" />
+        <TextBox Grid.Column="1"  HorizontalAlignment="Left" Height="35" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="501" Foreground="#FFABADB3" FontSize="16" Background="White" Style="{StaticResource WatermarkNameTextbox}" />
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="35" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="501" Foreground="#FFABADB3" FontSize="16" Style="{StaticResource WatermarkPhoneNumberTextbox}"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="34" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="501" Foreground="#FFABADB3" FontSize="16" Style="{StaticResource WatermarkEmailAddressTextbox}"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="69" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="501" Foreground="#FFABADB3" FontSize="16" Style="{StaticResource WatermarkMessageTextbox}"/>
     </Grid>
 </UserControl>

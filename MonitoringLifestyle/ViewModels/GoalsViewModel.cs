@@ -10,9 +10,6 @@ using System.Windows.Input;
 
 namespace MonitoringLifestyle.ViewModels
 {
-    
-
-
     public class GoalsViewModel:DependencyObject,IVM
     {
         public GoalsModel CurrentModel { get; set; }

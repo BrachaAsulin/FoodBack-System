@@ -5,8 +5,18 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MonitoringLifestyle"
              mc:Ignorable="d" 
-             d:DesignHeight="500" d:DesignWidth="1090">
+             d:DesignHeight="400" d:DesignWidth="700">
     <UserControl.Resources>
+        <Style TargetType="TextBox">
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="true">
+                    <Setter Property="ToolTip"
+
+                    Value="{Binding RelativeSource={x:Static RelativeSource.Self},
+                        Path=(Validation.Errors)[0].ErrorContent}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
         <ControlTemplate x:Key="TextBoxBaseControlTemplate" TargetType="{x:Type TextBoxBase}">
             <Border Background="{TemplateBinding Background}" 
                  x:Name="Bd" BorderBrush="Black"
@@ -40,34 +50,34 @@
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <TextBlock Text="First Name" FontSize="36" VerticalAlignment="Center" FontFamily="Arial" Foreground="Gray"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Width="800" Height="50" Margin="113,0,0,0" FontSize="36"/>
+            <TextBlock Text="First Name" Width="150" FontSize="24" VerticalAlignment="Center" FontFamily="Arial" Foreground="Gray"/>
+            <TextBox Text="{Binding NewAccount.FirstName, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Template="{StaticResource TextBoxBaseControlTemplate}" Width="500" Height="25" FontSize="20" Margin="10" FontFamily="Arial"/>
         </StackPanel>
         <StackPanel Grid.Row="1" Orientation="Horizontal">
-            <TextBlock Text="Last Name" FontSize="36" VerticalAlignment="Center" FontFamily="Arial" Foreground="Gray"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Width="800" Height="50" Margin="115,0,0,0" FontSize="36"/>
+            <TextBlock Text="Last Name" Width="150" FontSize="24" VerticalAlignment="Center" FontFamily="Arial" Foreground="Gray"/>
+            <TextBox Text="{Binding NewAccount.LastName, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Template="{StaticResource TextBoxBaseControlTemplate}" Width="500" Height="25" Margin="10" FontSize="20" FontFamily="Arial"/>
         </StackPanel>
         <StackPanel Grid.Row="2" Orientation="Horizontal">
-            <TextBlock Text="Email" FontSize="36" VerticalAlignment="Center" FontFamily="Arial" Foreground="Gray"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Width="800" Height="50" Margin="198,0,0,0" FontSize="36"/>
+            <TextBlock Text="Email" Width="150" FontSize="24" VerticalAlignment="Center" FontFamily="Arial" Foreground="Gray"/>
+            <TextBox Text="{Binding NewAccount.EmailAddress, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Template="{StaticResource TextBoxBaseControlTemplate}" Width="500" Height="25" Margin="10" FontSize="20" FontFamily="Arial"/>
         </StackPanel>
         <StackPanel Grid.Row="3" Orientation="Horizontal">
-            <TextBlock Text="Password" FontSize="36" VerticalAlignment="Center" FontFamily="Arial" Foreground="Gray"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Width="800" Height="50" Margin="130,0,0,0" FontSize="36"/>
+            <TextBlock Text="Password" Width="150" FontSize="24" VerticalAlignment="Center" FontFamily="Arial" Foreground="Gray"/>
+            <TextBox Text="{Binding NewAccount.Password, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Template="{StaticResource TextBoxBaseControlTemplate}" Width="500" Height="25" Margin="10" FontSize="20" FontFamily="Arial"/>
         </StackPanel>
         <StackPanel Grid.Row="4" Orientation="Horizontal">
-            <TextBlock Text="Date Of Birth" FontSize="36" VerticalAlignment="Center" FontFamily="Arial" Foreground="Gray"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Width="800" Height="50" Margin="80,0,0,0" Text="DD MM YY"  FontSize="36" Foreground="#FF939B8A" FontFamily="Arial"/>
+            <TextBlock Text="Date Of Birth" FontSize="24" VerticalAlignment="Center" FontFamily="Arial" Foreground="Gray" Width="150"/>
+            <TextBox Style="{StaticResource WatermarkTextbox}"   Margin="10" Width="500" Height="25"  FontSize="20" FontFamily="Arial"/>
         </StackPanel>
         <StackPanel Grid.Row="5" Orientation="Horizontal">
-            <TextBlock Text="Height" FontSize="36" VerticalAlignment="Center" FontFamily="Arial" Foreground="Gray"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Width="800" Height="50" Margin="183,0,0,0"  FontSize="36" Foreground="#FF939B8A" FontFamily="Arial"/>
+            <TextBlock Text="Height" Width="150" FontSize="24" VerticalAlignment="Center" FontFamily="Arial" Foreground="Gray"/>
+            <TextBox Text="{Binding NewAccount.Height, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Template="{StaticResource TextBoxBaseControlTemplate}" Width="500" Height="25" Margin="10"  FontSize="20" Foreground="#FF080808" FontFamily="Arial"/>
         </StackPanel>
         <StackPanel Grid.Row="6" Orientation="Horizontal">
-            <TextBlock Text="Weight" FontSize="36" VerticalAlignment="Center" FontFamily="Arial" Foreground="Gray"/>
-            <TextBox Template="{StaticResource TextBoxBaseControlTemplate}" Width="800" Height="50" Margin="178,0,0,0"  FontSize="36" Foreground="#FF939B8A" FontFamily="Arial"/>
+            <TextBlock Text="Weight" Width="150" FontSize="24" VerticalAlignment="Center" FontFamily="Arial" Foreground="Gray"/>
+            <TextBox Text="{Binding NewAccount.Weight, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Template="{StaticResource TextBoxBaseControlTemplate}" Width="500" Height="25" Margin="10"  FontSize="20" Foreground="#FF080808" FontFamily="Arial"/>
         </StackPanel>
-        <Button Grid.Row="7" HorizontalAlignment="Right" Width="400" Height="70" FontSize="20" Background="#FF5A7900" Content="GREAT, REGISTER MY ACCOUNT" Foreground="White">
+        <Button Command="{Binding registerNow}" IsEnabled="{Binding NewAccount.AllPropertiesValid}" Grid.Row="7" HorizontalAlignment="Right" Width="400" Height="50" FontSize="20" Background="#FF5A7900" Content="GREAT, REGISTER MY ACCOUNT" Foreground="White">
         </Button>
 
     </Grid>
