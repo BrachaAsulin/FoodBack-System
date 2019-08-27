@@ -1,4 +1,4 @@
-﻿using BL;
+﻿//using BL;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -18,7 +18,7 @@ namespace MonitoringLifestyle.Models
             this.Password = password;
 
         }
-        public BL.Bl bb = new Bl();
+       // public BL.Bl bb = new Bl();
         private string emailAddress;
         public string EmailAddress
         {

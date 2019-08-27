@@ -254,7 +254,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Resources\burax.webp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -338,6 +337,63 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\cracker.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\buraxes.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\peanuts.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\doritos.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\pizza.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\lazanya.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\pancake.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\bulgariancheese.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\slmwn.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\sweetpotatoquiche.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\frenchecrape.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\hamburger.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\sweetchickenbreast.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\turkeymeat.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\hotdog.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\chickenliver.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\shnitzel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\lampmeat.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\springchicken.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\yogurtt.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

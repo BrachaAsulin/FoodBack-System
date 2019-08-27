@@ -11,11 +11,13 @@ namespace MonitoringLifestyle.Models
     public class GoalsModel
     {
         public BE.DailyGoalPerWeek dailyGoal;
-        public BL.Bl b = new BL.Bl();
+        public BL.Bl b;
         
         public GoalsModel()
         {
-           // dailyGoal = new BE.DailyGoalPerWeek(); 
+            dailyGoal = new BE.DailyGoalPerWeek("","","","","","",null);
+            b = new BL.Bl();
+
         }
         public void UpdateGoalData(string aSundayOfWeek, string aCalories, string aFats, string aCarbs, string aProteins, string aSugar, string[,] aFullGoals)
         {

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace BL
 {
     public class Bl
-    {
+    { 
         public void AddUser(User newUser) { }
         public void RemoveUser(User userToRemove) { }
         public void UpdateUser(User userToUpdate) { }
