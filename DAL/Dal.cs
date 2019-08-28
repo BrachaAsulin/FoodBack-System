@@ -1,17 +1,61 @@
 ﻿using BE;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Xml;
 
 namespace DAL
 {
     public class Dal:DbContext
     {
-       
+  
+        public List<BE.Food> getListFoods(string searchFood)
+        {
+            WebRequest request = WebRequest.Create("https://api.nal.usda.gov/ndb/search/?format=xml&q="+ searchFood + "&max=25&offset=0&api_key=UUNpokCpdL8XQE6v7yf4rKqVj01tsQmJ6t2axPz2");
+            request.Method = "GET";
+            WebResponse response = request.GetResponse();
+            Stream dataStream = response.GetResponseStream();
+            StreamReader sReader = new StreamReader(dataStream);
+            string output = sReader.ReadToEnd();
+            //xml
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.LoadXml(output);
+            XmlNodeList itemList = xmlDoc.SelectNodes("/list/item");
+            List<Food> resultList = new List<Food>();
+            foreach(XmlNode xmlItem in itemList)
+            {
+                resultList.Add(new Food { Name = xmlItem["name"].InnerText });
+            }
+            return resultList;
+
+            /*        ObservableCollection<BE.Food> foods = new ObservableCollection<BE.Food>();
+                    foods.Add(new Food("aaa", "12", "111", "44", "55", "67"));
+                    foods.Add(new Food("bbb", "12", "111", "44", "55", "67"));
+                    foods.Add(new Food("ccc", "12", "111", "44", "55", "67"));
+
+
+
+                          var food = from f in FBContext.Foods
+                                     select f;
+                         foreach (Food f in food)
+                         {
+                             foods.Add(f);
+
+                         }
+                        // FBContext.SaveChanges(); 
+
+                    return foods;*/
+
+        }
+
+
+
         //Add functions
         public void AddUser(User user)
         {
@@ -159,5 +203,6 @@ namespace DAL
             }
 
         }
+
     }
 }

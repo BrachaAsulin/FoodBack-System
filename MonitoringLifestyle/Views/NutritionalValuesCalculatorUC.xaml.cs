@@ -23,6 +23,9 @@ namespace MonitoringLifestyle.Views
         public NutritionalValuesCalculatorUC()
         {
             InitializeComponent();
+            //
+            DataContext =new SearchFoodComboBox();
+            //
         }
     }
 }

@@ -13,6 +13,21 @@ namespace BE
         {
             this.Meals = new HashSet<Meal>();
         }
+        public Food(string aName,string aCalories, string aFats,string aCarbs,string aProteins,string aSugar)
+        {
+           // foodId = aFoodId;
+            name = aName;
+            calories = aCalories;
+            fats = aFats;
+            carbs = aCarbs;
+            proteins = aProteins;
+            sugar = aSugar;
+
+
+
+
+            this.Meals = new HashSet<Meal>();
+        }
         [Key]
         private string foodId;
         private string name;
@@ -30,5 +45,9 @@ namespace BE
         public string Proteins { get => proteins; set => proteins = value; }
         public string FoodId { get => foodId; set => foodId = value; }
         public string Sugar { get => sugar; set => sugar = value; }
+        public override String ToString()
+        {
+            return Name;
+        }
     }
 }
