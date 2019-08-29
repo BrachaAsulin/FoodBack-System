@@ -108,6 +108,7 @@
     <Compile Include="Commands\UpdateGoalsCommand.cs" />
     <Compile Include="Models\GoalsModel.cs" />
     <Compile Include="Models\NewAccountModel.cs" />
+    <Compile Include="Models\SearchFoodComboBoxModel.cs" />
     <Compile Include="Models\SelectOptionsModel.cs" />
     <Compile Include="ViewModels\AboutUsViewModel.cs" />
     <Compile Include="ViewModels\AccountViewModel.cs" />
@@ -116,6 +117,7 @@
     <Compile Include="ViewModels\GoalsViewModel.cs" />
     <Compile Include="ViewModels\IVM.cs" />
     <Compile Include="ViewModels\NewAccountViewModel.cs" />
+    <Compile Include="ViewModels\SearchFoodComboBoxViewModel.cs" />
     <Compile Include="ViewModels\SelectOptionViewModel.cs" />
     <Compile Include="Views\aboutUsUserControl.xaml.cs">
       <DependentUpon>aboutUsUserControl.xaml</DependentUpon>
@@ -149,6 +151,9 @@
     <Compile Include="Views\foodInfoSweetsUserControl.xaml.cs">
       <DependentUpon>foodInfoSweetsUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ListOfFoodsUserControl.xaml.cs">
+      <DependentUpon>ListOfFoodsUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MyDailyDietUserControl1.xaml.cs">
       <DependentUpon>MyDailyDietUserControl1.xaml</DependentUpon>
     </Compile>
@@ -166,6 +171,9 @@
     </Compile>
     <Compile Include="Views\selectOptionUserControl.xaml.cs">
       <DependentUpon>selectOptionUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StamUserControl.xaml.cs">
+      <DependentUpon>StamUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\weekPickerUserControl.xaml.cs">
       <DependentUpon>weekPickerUserControl.xaml</DependentUpon>
@@ -222,6 +230,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\ListOfFoodsUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MyDailyDietUserControl1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -243,6 +255,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\selectOptionUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StamUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using BE;
 using BL;
 using System.Collections.ObjectModel;
+using MonitoringLifestyle.ViewModels;
 
 namespace MonitoringLifestyle.Views
 {
@@ -23,7 +24,12 @@ namespace MonitoringLifestyle.Views
     /// </summary>
     public partial class SearchFoodComboBox : UserControl
     {
-       
+        public SearchFoodComboBox()
+        {
+            this.DataContext = new SearchFoodComboBoxViewModel();
+        }
+
+       /*
         public static readonly DependencyProperty SearchList = DependencyProperty.Register("SearchListProperty", typeof(ObservableCollection<Food>), typeof(SearchFoodComboBox));
         public ObservableCollection<Food> SearchListProperty
         {
@@ -71,8 +77,11 @@ namespace MonitoringLifestyle.Views
                 SearchListProperty = new ObservableCollection<Food>( bl.getListFoodItems(textToSearch));
               //  SearchListProperty = new ObservableCollection<Food> {new Food("pizza","12","13","33","332","22"), new Food("lazanya", "12", "13", "33", "332", "22") , new Food("hamburger", "12", "13", "33", "332", "22") };
                 IsOpenProperty = true;
+               
+
+                
             }
             //SelectedFoodItemProperty = new FoodItem() { Name = "Pizza", Key = "123" };
-        }
+        }*/
     }
 }

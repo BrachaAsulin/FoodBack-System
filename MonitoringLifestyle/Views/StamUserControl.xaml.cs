@@ -16,14 +16,15 @@ using System.Windows.Shapes;
 namespace MonitoringLifestyle.Views
 {
     /// <summary>
-    /// Interaction logic for NutritionalValuesCalculatorUC.xaml
+    /// Interaction logic for StamUserControl.xaml
     /// </summary>
-    public partial class NutritionalValuesCalculatorUC : UserControl
+    public partial class StamUserControl : UserControl
     {
-        public NutritionalValuesCalculatorUC()
+        public StamUserControl()
         {
             InitializeComponent();
-            calculatorGrid.DataContext = serachFoodQuery.DataContext;
         }
+
+       
     }
 }

@@ -15,7 +15,7 @@ namespace DAL
     public class Dal:DbContext
     {
   
-        public List<BE.Food> getListFoods(string searchFood)
+        public ObservableCollection<BE.Food> getListFoods(string searchFood)
         {
             WebRequest request = WebRequest.Create("https://api.nal.usda.gov/ndb/search/?format=xml&q="+ searchFood + "&max=25&offset=0&nutrients=208&api_key=UUNpokCpdL8XQE6v7yf4rKqVj01tsQmJ6t2axPz2");
             request.Method = "GET";
@@ -27,10 +27,10 @@ namespace DAL
             XmlDocument xmlDoc = new XmlDocument();
             xmlDoc.LoadXml(output);
             XmlNodeList itemList = xmlDoc.SelectNodes("/list/item");
-            List<Food> resultList = new List<Food>();
+            ObservableCollection<BE.Food> resultList = new ObservableCollection<BE.Food>();
             foreach(XmlNode xmlItem in itemList)
             {
-                resultList.Add(new Food { Name = xmlItem["name"].InnerText,Calories=xmlItem["Calories"].InnerText });
+                resultList.Add(new Food { Name = xmlItem["name"].InnerText});
             }
             return resultList;
 

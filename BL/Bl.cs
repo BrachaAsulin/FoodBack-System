@@ -32,7 +32,7 @@ namespace BL
         }
         public void RemoveDailyGoal(DailyGoalPerWeek dailyGoalToRemove) { }
         public void UpdateDailyGoal(DailyGoalPerWeek dailyGoalToUpdate) { }
-        public List<Food> getListFoodItems(String textToSearch)
+        public ObservableCollection<BE.Food> getListFoodItems(String textToSearch)
         {
             /* ObservableCollection<BE.Food> myFood = dal.getFood();
              ObservableCollection<BE.Food> myFood2 = new ObservableCollection<Food>();
