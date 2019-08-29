@@ -17,7 +17,7 @@ namespace DAL
   
         public List<BE.Food> getListFoods(string searchFood)
         {
-            WebRequest request = WebRequest.Create("https://api.nal.usda.gov/ndb/search/?format=xml&q="+ searchFood + "&max=25&offset=0&api_key=UUNpokCpdL8XQE6v7yf4rKqVj01tsQmJ6t2axPz2");
+            WebRequest request = WebRequest.Create("https://api.nal.usda.gov/ndb/search/?format=xml&q="+ searchFood + "&max=25&offset=0&nutrients=208&api_key=UUNpokCpdL8XQE6v7yf4rKqVj01tsQmJ6t2axPz2");
             request.Method = "GET";
             WebResponse response = request.GetResponse();
             Stream dataStream = response.GetResponseStream();
@@ -30,7 +30,7 @@ namespace DAL
             List<Food> resultList = new List<Food>();
             foreach(XmlNode xmlItem in itemList)
             {
-                resultList.Add(new Food { Name = xmlItem["name"].InnerText });
+                resultList.Add(new Food { Name = xmlItem["name"].InnerText,Calories=xmlItem["Calories"].InnerText });
             }
             return resultList;
 
