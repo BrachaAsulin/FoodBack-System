@@ -74,5 +74,12 @@ namespace MonitoringLifestyle.Views
             }
             //SelectedFoodItemProperty = new FoodItem() { Name = "Pizza", Key = "123" };
         }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+            SearchTextProperty = comboBoxFood.SelectedItem.ToString();
+            
+        }
     }
 }

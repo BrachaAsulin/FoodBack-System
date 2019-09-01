@@ -14,7 +14,7 @@
                     <ColumnDefinition Width="200*"/>
                 </Grid.ColumnDefinitions>
                 <Image Grid.Column="0" Source="../Resources/search.jpg"/>
-                <ComboBox Grid.Column="1" Background="Transparent" Margin="0,0,2,0"  ItemsSource="{Binding SearchListProperty, Mode=OneWay}" IsDropDownOpen="{Binding IsOpenProperty}" SelectedItem="{Binding SelectedFoodItemProperty,Mode=OneWayToSource }"></ComboBox>
+                <ComboBox x:Name="comboBoxFood" Grid.Column="1" Background="Transparent" Margin="0,0,2,0"  ItemsSource="{Binding SearchListProperty, Mode=OneWay}" IsDropDownOpen="{Binding IsOpenProperty}" SelectedItem="{Binding SelectedFoodItemProperty,Mode=OneWayToSource }" SelectionChanged="ComboBox_SelectionChanged"></ComboBox>
                 <TextBox Grid.Column="1" x:Name="SearchTextBox" Margin="0,0,2,0" Foreground="Gray" FontSize="16" Text="{Binding SearchTextProperty,Mode=OneWayToSource}" Background="#e8e8e8" BorderThickness="0" TextChanged="SearchTextBox_TextChanged"/>
             </Grid>
         </Border>

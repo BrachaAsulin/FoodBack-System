@@ -41,7 +41,7 @@
         <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="31,52,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="21" Foreground="#FF80101D"><Run Text="carbs"/><InlineUIContainer>
                 <Calendar Height="10" Width="1"/>
             </InlineUIContainer></TextBlock>
-        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="32,73,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="21" Foreground="#FF80101D"><Run Text="proteins"/><InlineUIContainer>
+        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="32,73,0,0" Grid.Row="5" TextWrapping="Wrap" Width="85" Foreground="#FF80101D" Height="21" VerticalAlignment="Top"><Run Text="proteins"/><InlineUIContainer>
                 <Calendar Height="10" Width="1"/>
             </InlineUIContainer></TextBlock>
         <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="31,96,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="21" Foreground="#FF80101D"><Run Text="colosterol"/><InlineUIContainer>
