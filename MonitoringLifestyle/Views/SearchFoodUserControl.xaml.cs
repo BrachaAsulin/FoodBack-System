@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MonitoringLifestyle.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,14 +17,14 @@ using System.Windows.Shapes;
 namespace MonitoringLifestyle.Views
 {
     /// <summary>
-    /// Interaction logic for NutritionalValuesCalculatorUC.xaml
+    /// Interaction logic for SearchFoodUserControl.xaml
     /// </summary>
-    public partial class NutritionalValuesCalculatorUC : UserControl
+    public partial class SearchFoodUserControl : UserControl
     {
-        public NutritionalValuesCalculatorUC()
+        public SearchFoodUserControl()
         {
             InitializeComponent();
-            calculatorGrid.DataContext = serachFoodQuery.DataContext;
+            this.DataContext = new SearchFoodComboBoxViewModel();
         }
     }
 }

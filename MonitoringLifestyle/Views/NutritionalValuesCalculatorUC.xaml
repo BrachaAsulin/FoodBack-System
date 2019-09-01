@@ -7,79 +7,60 @@
              xmlns:local1="clr-namespace:MonitoringLifestyle.Views"
              mc:Ignorable="d" 
              d:DesignHeight="350" d:DesignWidth="500">
-    <Grid>
+    <Grid x:Name="calculatorGrid" Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="100*"/>
-            <RowDefinition Height="50*"/>
-            <RowDefinition Height="50*"/>
-            <RowDefinition Height="100*"/>
-            <RowDefinition Height="100*"/>
-            <RowDefinition Height="200*"/>
+            <RowDefinition Height="58*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="87*"/>
+            <RowDefinition Height="58*"/>
+            <RowDefinition Height="117*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="265*"/>
-            <ColumnDefinition Width="265*"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
 
 
-        <TextBlock Text="Nutritional Values " FontSize="36" Grid.Column="0" FontFamily="Arial" FontWeight="Bold" Margin="0,0,0,10" HorizontalAlignment="Left" Width="308" Grid.ColumnSpan="2"/>
-        <TextBlock Text="Calculator" FontSize="36" FontFamily="Arial" FontWeight="Bold" Foreground="#FF9E9898" Margin="63,0,10,10" Grid.Column="1"/>
+        <TextBlock Text="Nutritional Values " FontSize="36" Grid.Column="0" FontFamily="Arial" FontWeight="Bold" Margin="0,0,0,10" HorizontalAlignment="Left" Width="308"/>
+        <TextBlock Text="Calculator" FontSize="36" FontFamily="Arial" FontWeight="Bold" Foreground="#FF9E9898" Margin="313,0,10,10"/>
         <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="32,0,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="193" Height="21" Foreground="#FF80101D"><Run Text="choose the desirable food:"/><InlineUIContainer>
                 <Calendar Height="10" Width="1"/>
             </InlineUIContainer></TextBlock>
 
-        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="32,10,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="193" Height="21" Foreground="#FF80101D"><Run Text="the results:"/><InlineUIContainer>
+        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="32,10,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="193" Height="21" Foreground="#FF80101D"><Run Text="the results:"/><InlineUIContainer>
                 <Calendar Height="10" Width="1"/>
             </InlineUIContainer></TextBlock>
-        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="31,0,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="21" Foreground="#FF80101D"><Run Text="calories"/><InlineUIContainer>
+        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="31,0,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="21" Foreground="#FF80101D"><Run Text="calories"/><InlineUIContainer>
                 <Calendar Height="10" Width="1"/>
             </InlineUIContainer></TextBlock>
-        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="31,26,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="21" Foreground="#FF80101D"><Run Text="fats"/><InlineUIContainer>
+        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="31,26,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="21" Foreground="#FF80101D"><Run Text="fats"/><InlineUIContainer>
                 <Calendar Height="10" Width="1"/>
             </InlineUIContainer></TextBlock>
-        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="31,52,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="21" Foreground="#FF80101D"><Run Text="carbs"/><InlineUIContainer>
+        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="31,52,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="21" Foreground="#FF80101D"><Run Text="carbs"/><InlineUIContainer>
                 <Calendar Height="10" Width="1"/>
             </InlineUIContainer></TextBlock>
-        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="32,73,0,0" Grid.Row="5" TextWrapping="Wrap" Width="85" Foreground="#FF80101D" Height="21" VerticalAlignment="Top"><Run Text="proteins"/><InlineUIContainer>
+        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="32,73,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="21" Foreground="#FF80101D"><Run Text="proteins"/><InlineUIContainer>
                 <Calendar Height="10" Width="1"/>
             </InlineUIContainer></TextBlock>
-        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="31,96,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="21" Foreground="#FF80101D"><Run Text="colosterol"/><InlineUIContainer>
+        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="31,96,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="21" Foreground="#FF80101D"><Run Text="colosterol"/><InlineUIContainer>
                 <Calendar Height="10" Width="1"/>
             </InlineUIContainer></TextBlock>
-        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="139,0,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="21" Foreground="#FF80101D"><Run Text="----"/><InlineUIContainer>
+        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="139,0,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="21" Foreground="#FF80101D"><Run Text="----"/><InlineUIContainer>
                 <Calendar Height="10" Width="1"/>
             </InlineUIContainer></TextBlock>
-        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="139,26,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="21" Foreground="#FF80101D"><Run Text="----"/><InlineUIContainer>
+        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="139,26,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="21" Foreground="#FF80101D"><Run Text="----"/><InlineUIContainer>
                 <Calendar Height="10" Width="1"/>
             </InlineUIContainer></TextBlock>
-        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="139,52,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="21" Foreground="#FF80101D"><Run Text="----"/><InlineUIContainer>
+        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="139,52,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="21" Foreground="#FF80101D"><Run Text="----"/><InlineUIContainer>
                 <Calendar Height="10" Width="1"/>
             </InlineUIContainer></TextBlock>
-        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="139,73,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="21" Foreground="#FF80101D"><Run Text="----"/><InlineUIContainer>
+        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="139,73,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="21" Foreground="#FF80101D"><Run Text="----"/><InlineUIContainer>
                 <Calendar Height="10" Width="1"/>
             </InlineUIContainer></TextBlock>
-        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="139,94,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="21" Foreground="#FF80101D"><Run Text="----"/><InlineUIContainer>
+        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="139,94,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="21" Foreground="#FF80101D"><Run Text="----"/><InlineUIContainer>
                 <Calendar Height="10" Width="1"/>
             </InlineUIContainer></TextBlock>
-        <local1:SearchFoodComboBox HorizontalAlignment="Left" Height="67" Margin="10,10,0,0" Grid.Row="2" Grid.RowSpan="2" VerticalAlignment="Top" Width="261" Grid.ColumnSpan="2"/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <local1:SearchFoodUserControl x:Name="serachFoodQuery" HorizontalAlignment="Left" Margin="31,34,0,0" Grid.Row="2" VerticalAlignment="Top" Height="43" Width="274"/>
 
     </Grid>
 </UserControl>

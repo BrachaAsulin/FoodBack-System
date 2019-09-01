@@ -30,22 +30,28 @@ namespace BL
 
 
         }
+
+        public Food GetNutrientsForFood(string foodId)
+        {
+            return dal.GetNutrientsForFood(foodId);
+        }
+
         public void RemoveDailyGoal(DailyGoalPerWeek dailyGoalToRemove) { }
         public void UpdateDailyGoal(DailyGoalPerWeek dailyGoalToUpdate) { }
-        public List<Food> getListFoodItems(String textToSearch)
+        public List<BE.Food> getListFoodItems(String textToSearch)
         {
-            /* ObservableCollection<BE.Food> myFood = dal.getFood();
-             ObservableCollection<BE.Food> myFood2 = new ObservableCollection<Food>();
-             foreach (Food f in myFood)
-             {
-                 if (f.Name.Contains(textToSearch))
-                     myFood2.Add(f);
-             }
-
-
-
-             return myFood2;*/
+          
             return dal.getListFoods(textToSearch);
+        }
+        public Food GetFoodById(string foodId)
+        {
+            List<Food> foodsList = dal.getFoodList();
+            foreach(Food food in foodsList)
+            {
+                if (food.FoodId.Equals(foodId))
+                    return food;
+            }
+            return null;
         }
     }
 
