@@ -14,8 +14,12 @@ namespace DAL
 {
     public class Dal:DbContext
     {
-  
-        public ObservableCollection<BE.Food> getListFoods(string searchFood)
+        /// <summary>
+        /// according to a specific string returs a list of food that it's names conatains the string 
+        /// </summary>
+        /// <param name="searchFood"></param>
+        /// <returns></returns>
+        public List<BE.Food> getListFoods(string searchFood)
         {
             WebRequest request = WebRequest.Create("https://api.nal.usda.gov/ndb/search/?format=xml&q="+ searchFood + "&max=25&offset=0&nutrients=208&api_key=UUNpokCpdL8XQE6v7yf4rKqVj01tsQmJ6t2axPz2");
             request.Method = "GET";
@@ -27,31 +31,89 @@ namespace DAL
             XmlDocument xmlDoc = new XmlDocument();
             xmlDoc.LoadXml(output);
             XmlNodeList itemList = xmlDoc.SelectNodes("/list/item");
-            ObservableCollection<BE.Food> resultList = new ObservableCollection<BE.Food>();
+            List<BE.Food> resultList = new List<BE.Food>();
             foreach(XmlNode xmlItem in itemList)
             {
                 resultList.Add(new Food { Name = xmlItem["name"].InnerText});
             }
             return resultList;
 
-            /*        ObservableCollection<BE.Food> foods = new ObservableCollection<BE.Food>();
-                    foods.Add(new Food("aaa", "12", "111", "44", "55", "67"));
-                    foods.Add(new Food("bbb", "12", "111", "44", "55", "67"));
-                    foods.Add(new Food("ccc", "12", "111", "44", "55", "67"));
+        }
+
+        public Food GetNutrientsForFood(string foodId)
+        {
+            WebRequest request = WebRequest.Create("https://api.nal.usda.gov/ndb/reports/?ndbno=" + foodId + "&type=b&format=xml&api_key=UUNpokCpdL8XQE6v7yf4rKqVj01tsQmJ6t2axPz2");
+            request.Method = "GET";
+            WebResponse response = request.GetResponse();
+            Stream dataStream = response.GetResponseStream();
+            StreamReader sReader = new StreamReader(dataStream);
+            string output = sReader.ReadToEnd();
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.LoadXml(output);
+            XmlNodeList itemList = xmlDoc.SelectNodes("/report/food/nutrients/nutrient");
+            Food food = new Food();
+            //float vitamins = 0;
+            string name = "";
+            string value = "";
+            for (int i = 0; i < itemList.Count; i++)
+            {
 
 
+                foreach (var item in (itemList[i]).Attributes)
+                {
+                    if ((((XmlAttribute)item).Name).Equals("name"))
+                    {
+                        name = (((XmlAttribute)item).Value);
 
-                          var food = from f in FBContext.Foods
-                                     select f;
-                         foreach (Food f in food)
-                         {
-                             foods.Add(f);
+                    }
+                    else if ((((XmlAttribute)item).Name).Equals("value"))
+                    {
+                        value = (((XmlAttribute)item).Value);
+                    }
+                    else if ((((XmlAttribute)item).Name).Equals("group") && (((XmlAttribute)item).Value).Equals("Vitamins"))
+                    {
+                        name = "Vitamins";
+                    }
+                }
+                switch (name)
+                {
+                    case "Energy":
+                        food.Calories = value;
+                        break;
+                    // case "Water":
+                    // foodDetails.Water = float.Parse(value);
+                    //  break;
+                    ///case "Sodium, Na":
+                    // foodDetails.Sodium = float.Parse(value);
+                    //  break;
+                    case "Protein":
+                        food.Proteins = value;
+                        break;
+                    case "Total lipid (fat)":
+                        food.Fats = value;
+                        break;
+                    //case "Fiber, total dietary":
+                    // foodDetails.Fiber = float.Parse(value);
+                    //  break;
+                    // case "Carbohydrate, by difference":
+                    //   foodDetails.Carbohydrate = float.Parse(value);
+                    //     break;
+                    case "Sugars, total":
+                        food.Sugar = value;
+                        break;
+                    // case "Vitamins":
+                    // vitamins += float.Parse(value);
+                    // break;
+                    default:
+                        break;
+                }
+            }
+            return food;
+        }
 
-                         }
-                        // FBContext.SaveChanges(); 
-
-                    return foods;*/
-
+        public List<Food> getFoodList()
+        {
+            return null;
         }
 
 

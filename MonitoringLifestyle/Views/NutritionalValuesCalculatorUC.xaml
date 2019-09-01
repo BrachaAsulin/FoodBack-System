@@ -60,6 +60,7 @@
         <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="139,94,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="21" Foreground="#FF80101D"><Run Text="----"/><InlineUIContainer>
                 <Calendar Height="10" Width="1"/>
             </InlineUIContainer></TextBlock>
-        <local1:SearchFoodComboBox x:Name="serachFoodQuery" IsEnabled="True" HorizontalAlignment="Left" Margin="82,10,0,0" Grid.Row="2" VerticalAlignment="Top" Foreground="Black" Background="White"/>
+        <local1:SearchFoodUserControl x:Name="serachFoodQuery" HorizontalAlignment="Left" Margin="31,34,0,0" Grid.Row="2" VerticalAlignment="Top" Height="43" Width="274"/>
+
     </Grid>
 </UserControl>

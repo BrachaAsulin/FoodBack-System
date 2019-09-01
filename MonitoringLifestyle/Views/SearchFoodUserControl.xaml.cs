@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MonitoringLifestyle.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,15 +17,14 @@ using System.Windows.Shapes;
 namespace MonitoringLifestyle.Views
 {
     /// <summary>
-    /// Interaction logic for StamUserControl.xaml
+    /// Interaction logic for SearchFoodUserControl.xaml
     /// </summary>
-    public partial class StamUserControl : UserControl
+    public partial class SearchFoodUserControl : UserControl
     {
-        public StamUserControl()
+        public SearchFoodUserControl()
         {
             InitializeComponent();
+            this.DataContext = new SearchFoodComboBoxViewModel();
         }
-
-       
     }
 }

@@ -86,6 +86,7 @@
     </ApplicationDefinition>
     <Compile Include="Commands\AboutUsCommand.cs" />
     <Compile Include="Commands\AccountCommand.cs" />
+    <Compile Include="Commands\AddFoodCommand.cs" />
     <Compile Include="Commands\ConfirmContactUsCommand.cs" />
     <Compile Include="Commands\ContactUsCommand.cs" />
     <Compile Include="Commands\DailyCommand.cs" />
@@ -116,6 +117,7 @@
     <Compile Include="ViewModels\FoodInformationViewModel.cs" />
     <Compile Include="ViewModels\GoalsViewModel.cs" />
     <Compile Include="ViewModels\IVM.cs" />
+    <Compile Include="ViewModels\ListOfFoodsViewModel.cs" />
     <Compile Include="ViewModels\NewAccountViewModel.cs" />
     <Compile Include="ViewModels\SearchFoodComboBoxViewModel.cs" />
     <Compile Include="ViewModels\SelectOptionViewModel.cs" />
@@ -166,14 +168,11 @@
     <Compile Include="Views\NutritionalValuesCalculatorUC.xaml.cs">
       <DependentUpon>NutritionalValuesCalculatorUC.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\SearchFoodComboBox.xaml.cs">
-      <DependentUpon>SearchFoodComboBox.xaml</DependentUpon>
+    <Compile Include="Views\SearchFoodUserControl.xaml.cs">
+      <DependentUpon>SearchFoodUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\selectOptionUserControl.xaml.cs">
       <DependentUpon>selectOptionUserControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\StamUserControl.xaml.cs">
-      <DependentUpon>StamUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\weekPickerUserControl.xaml.cs">
       <DependentUpon>weekPickerUserControl.xaml</DependentUpon>
@@ -250,15 +249,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\SearchFoodComboBox.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="Views\SearchFoodUserControl.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\selectOptionUserControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\StamUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
