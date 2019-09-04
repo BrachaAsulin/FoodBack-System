@@ -14,8 +14,7 @@ namespace BE
             this.UserMeals = new HashSet<Meal>();
             this.DailyGoals = new HashSet<DailyGoalPerWeek>();
         }
-        [Key]
-        private string id;
+        
         private string firstName;
         private string lastName;
         private string emailAddress;
@@ -23,16 +22,37 @@ namespace BE
         private string birthDate;
         private string height;
         private string weight;
+        public User(string aFirstName,string aLastName,string aEmailAddress,string aPassword,string aBirthDate,string aHeight, string aWeight)
+        {
+            firstName = aFirstName;
+            lastName = aLastName;
+            emailAddress = aEmailAddress;
+            password = aPassword;
+            birthDate = aBirthDate;
+            height = aHeight;
+            weight = aWeight;
+            this.UserMeals = new HashSet<Meal>();
+            this.DailyGoals = new HashSet<DailyGoalPerWeek>();
+        }
         public ICollection<Meal> UserMeals { get; set; }
         public ICollection< DailyGoalPerWeek> DailyGoals { get; set; }
 
-        public string Id { get => id; set => id = value; }
+        //public string Id { get => id; set => id = value; }
         public string FirstName { get => firstName; set => firstName = value; }
         public string LastName { get => lastName; set => lastName = value; }
+        [Key]
         public string EmailAddress { get => emailAddress; set => emailAddress = value; }
         public string Password { get => password; set => password = value; }
         public string BirthDate { get => birthDate; set => birthDate = value; }
         public string Height { get => height; set => height = value; }
         public string Weight { get => weight; set => weight = value; }
+
+
+        public override string ToString()
+        {
+            string s = "firstName:" + FirstName + " " + "lastName:" + LastName + " " + "emailAddress:" + emailAddress + " " + "Password:" + Password + " " + "BirthDate:" + BirthDate + " " + "height:" + height + " " + "weight:" + weight;
+            return s;
+        }
+
     }
 }

@@ -9,7 +9,7 @@ namespace BE
 {
     public class DailyGoalPerWeek
     {
-        [Key]
+       // [Key]
         private int dailyId;
         private string sundayOfWeek;//the first date of the week
         private string calories;
@@ -45,7 +45,12 @@ namespace BE
         public string Proteins { get => proteins; set => proteins = value; }
         public string Sugar { get => sugar; set => sugar = value; }
         public string SundayOfWeek { get => sundayOfWeek; set => sundayOfWeek = value; }
+        [Key]
         public int DailyId { get => dailyId; set => dailyId = value; }
         public string[,] FullGoals { get => fullGoals; set => fullGoals = value; }
+
+
+
+
     }
 }

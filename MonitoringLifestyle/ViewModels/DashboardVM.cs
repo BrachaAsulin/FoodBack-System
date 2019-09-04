@@ -10,11 +10,13 @@ using MonitoringLifestyle.ViewModels;
 using MonitoringLifestyle.Commands;
 using MonitoringLifestyle.Views;
 using System.Windows.Controls;
+using BE;
 
 namespace MonitoringLifestyle.ViewModels
 {
     public class DashboardVM:DependencyObject,IVM
     {
+        public User currentUser=null;
         public DashboardModel CurrentModel { get; set; }
         public ICommand AboutUs { get; set; }
         public ICommand ContactUs { get; set; }
@@ -35,11 +37,14 @@ namespace MonitoringLifestyle.ViewModels
             DependencyProperty.Register("ChildUserControl", typeof(UserControl), typeof(DashboardVM));
 
 
- 
+         
+
+
+
         public DashboardVM()
         {
             CurrentModel = new DashboardModel();
-            ChildUserControl = new selectOptionUserControl(this);
+            ChildUserControl = new selectOptionUserControl(this,currentUser);
             AboutUs = new AboutUsCommand(this);
             ContactUs = new ContactUsCommand(this);
             Home = new HomeCommand(this);
@@ -51,15 +56,19 @@ namespace MonitoringLifestyle.ViewModels
         {
             switch(i)
             {
-                case 1:
-                    ChildUserControl = new aboutUsUserControl();
+                case 1: ChildUserControl = new aboutUsUserControl();
                     break;
-                case 2:
-                    ChildUserControl = new contactUsUserControl();
+                case 2: ChildUserControl = new contactUsUserControl();
                     break;
-                case 3:
-                    ChildUserControl = new selectOptionUserControl(this);
+                case 3: if (currentUser != null)
+                        ChildUserControl = new selectOptionUserControl(this, currentUser);
+                    else
+                    {
+                        MessageBox.Show("You have to sign in first or create a new account");
+                        ChildUserControl = new AccountUserControl(this);
+                    }
                     break;
+                   
                 case 4:
                     ChildUserControl = new AccountUserControl(this);
                     break;

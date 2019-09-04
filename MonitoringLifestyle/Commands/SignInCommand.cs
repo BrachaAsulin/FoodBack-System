@@ -18,10 +18,7 @@ namespace MonitoringLifestyle.Commands
         }
         public bool CanExecute(object parameter)
         {
-
-            return String.IsNullOrWhiteSpace(accountViewModel.User.Error);
-            
-           
+            return String.IsNullOrWhiteSpace(accountViewModel.User.Error); 
         }
         public event EventHandler CanExecuteChanged
         {
@@ -31,7 +28,7 @@ namespace MonitoringLifestyle.Commands
 
         public void Execute(object parameter)
         {
-            accountViewModel.saveUser();
+            accountViewModel.saveUser();//save the user in our system
         }
     }
 }

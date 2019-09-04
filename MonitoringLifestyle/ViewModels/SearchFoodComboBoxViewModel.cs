@@ -8,19 +8,84 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using BE;
+using System.Windows.Input;
+using MonitoringLifestyle.Commands;
 
 namespace MonitoringLifestyle.ViewModels
 {
     class SearchFoodComboBoxViewModel : DependencyObject, INotifyPropertyChanged
     {
+
+
+
+
+        public string calories
+        {
+            get { return (string)GetValue(caloriesProperty); }
+            set { SetValue(caloriesProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for ChildViewModel.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty caloriesProperty =
+            DependencyProperty.Register("calories", typeof(string), typeof(SearchFoodComboBoxViewModel));
+
+
+
+        public string fats
+        {
+            get { return (string)GetValue(fatsProperty); }
+            set { SetValue(fatsProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for ChildViewModel.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty fatsProperty =
+            DependencyProperty.Register("fats", typeof(string), typeof(SearchFoodComboBoxViewModel));
+
+
+        public string carbs
+        {
+            get { return (string)GetValue(carbsProperty); }
+            set { SetValue(carbsProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for ChildViewModel.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty carbsProperty =
+            DependencyProperty.Register("carbs", typeof(string), typeof(SearchFoodComboBoxViewModel));
+
+        public string proteins
+        {
+            get { return (string)GetValue(proteinsProperty); }
+            set { SetValue(proteinsProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for ChildViewModel.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty proteinsProperty =
+            DependencyProperty.Register("proteins", typeof(string), typeof(SearchFoodComboBoxViewModel));
+
+
+        public string sugar
+        {
+            get { return (string)GetValue(sugarProperty); }
+            set { SetValue(sugarProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for ChildViewModel.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty sugarProperty =
+            DependencyProperty.Register("sugar", typeof(string), typeof(SearchFoodComboBoxViewModel));
+
+
+
+
+        public ICommand NutrionalValues { get; set; }
         //constructor 
         public SearchFoodComboBoxViewModel()
         {
+            NutrionalValues = new NutrionalValuesCommand(this);
             SelectedFood = new BE.Food();
             Foods = new ObservableCollection<string>();
             currentModel = new SearchFoodComboBoxModel();
         }
-        //the food that the user selected
+        //the food that the user selected 
         public BE.Food SelectedFood { get; set; }
 
         public SearchFoodComboBoxModel currentModel { get; set; }
@@ -127,7 +192,17 @@ namespace MonitoringLifestyle.ViewModels
         }
         #endregion
 
-      
+ 
+        
+        public void setNutritionalValues()
+        {
+            calories = SelectedFood.Calories;
+            fats = SelectedFood.Fats;
+            carbs = SelectedFood.Fats;
+            proteins = SelectedFood.Proteins;
+            sugar = SelectedFood.Sugar;
+
+        }
 
 
     }

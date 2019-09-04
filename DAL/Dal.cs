@@ -34,7 +34,7 @@ namespace DAL
             List<BE.Food> resultList = new List<BE.Food>();
             foreach(XmlNode xmlItem in itemList)
             {
-                resultList.Add(new Food { Name = xmlItem["name"].InnerText});
+                resultList.Add(new Food { Name = xmlItem["name"].InnerText,FoodId=xmlItem["ndbno"].InnerText});
             }
             return resultList;
 
@@ -108,7 +108,7 @@ namespace DAL
                         break;
                 }
             }
-            return food;
+             return food;
         }
 
         public List<Food> getFoodList()
@@ -176,7 +176,7 @@ namespace DAL
         {
             using (FoodBackContext FBContext = new FoodBackContext())
             {
-                var userToReplace = FBContext.Users.FirstOrDefault(u => u.Id == userToUpdate.Id);
+                var userToReplace = FBContext.Users.FirstOrDefault(u => u.EmailAddress == userToUpdate.EmailAddress);
                 FBContext.Users.Remove(userToReplace);
                 FBContext.Users.Add(userToUpdate);
                 FBContext.SaveChanges();
@@ -217,7 +217,7 @@ namespace DAL
         {
             using (FoodBackContext FBContext = new FoodBackContext())
             {
-                var userTodelete = FBContext.Users.FirstOrDefault(u => u.Id == userToRemove.Id);
+                var userTodelete = FBContext.Users.FirstOrDefault(u => u.EmailAddress == userToRemove.EmailAddress);
                 FBContext.Users.Remove(userTodelete);
                 FBContext.SaveChanges();
             }
@@ -266,5 +266,17 @@ namespace DAL
 
         }
 
+        public User findUserByEmail(string email)
+        {
+            using (FoodBackContext FBContext = new FoodBackContext())
+            {
+                User user = FBContext.Users.FirstOrDefault(u => u.EmailAddress.Equals(email));
+                return user;
+            }
+        }
+
     }
+
+
+
 }

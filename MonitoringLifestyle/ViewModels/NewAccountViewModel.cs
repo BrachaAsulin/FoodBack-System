@@ -1,16 +1,19 @@
 ﻿using MonitoringLifestyle.Commands;
 using MonitoringLifestyle.Models;
+using MonitoringLifestyle.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace MonitoringLifestyle.ViewModels
 {
     class NewAccountViewModel:IVM
     {
+        public DashboardVM DashboardVM { get; set; }
         private NewAccountModel newAccount;
         public NewAccountModel NewAccount
         {
@@ -25,15 +28,19 @@ namespace MonitoringLifestyle.ViewModels
                
         }
         public ICommand registerNow { get; set; }
-        public NewAccountViewModel()
+        public NewAccountViewModel(DashboardVM aDashboardVM)
         {
+            DashboardVM = aDashboardVM;
             newAccount = new NewAccountModel("","","","","","","");
             registerNow = new NewAccountCommand(this);
         }
 
         internal void SaveNewUser()
         {
-            throw new NotImplementedException();
+            // throw new NotImplementedException();
+            NewAccount.SaveNewUser();
+            DashboardVM.ChildUserControl = new AccountUserControl(DashboardVM);
+            MessageBox.Show("you have to sign in");
         }
     }
 }

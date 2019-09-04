@@ -1,4 +1,5 @@
-﻿using MonitoringLifestyle.Commands;
+﻿using BE;
+using MonitoringLifestyle.Commands;
 using MonitoringLifestyle.Views;
 using System;
 using System.Collections.Generic;
@@ -13,13 +14,13 @@ namespace MonitoringLifestyle.ViewModels
 {
     public class SelectOptionViewModel: DependencyObject,IVM
     {
-        public DashboardVM DashboardVM { get; set; }
+        public DashboardVM DashboardVM { get; set;}
         public ICommand Goals { get; set; }
         public ICommand Daily { get; set; }
         public ICommand FoodInfo { get; set; }
         public ICommand Evaluation { get; set; }
 
-
+        public User currentUser { get; set; }
 
         public UserControl MyProperty
         {
@@ -33,29 +34,58 @@ namespace MonitoringLifestyle.ViewModels
 
 
 
-        public SelectOptionViewModel(DashboardVM dashboardVM)
+        public SelectOptionViewModel(DashboardVM dashboardVM,User aCurrentUser)
         {
             Goals = new GoalsCommand(this);
             Daily = new DailyCommand(this);
             FoodInfo = new FoodInformationCommand(this);
             Evaluation = new EvaluationCommand(this);
             DashboardVM = dashboardVM;
-
+            currentUser = aCurrentUser;
         }
         public void selectOperation(int i)
         {
             switch(i)
             {
-                case 1: DashboardVM.ChildUserControl = new GoalsUserControl();
+                case 1:
+                    if (currentUser != null)
+                    {
+
+                        DashboardVM.ChildUserControl = new GoalsUserControl(currentUser );
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("You have to sign in first or create a new account");
+                        DashboardVM.ChildUserControl = new AccountUserControl(DashboardVM);
+                    }
                     break;
                 case 2:
-                    DashboardVM.ChildUserControl = new MyDailyDietUserControl1();
+                    if (currentUser != null)
+                        DashboardVM.ChildUserControl = new MyDailyDietUserControl1();
+                    else
+                    {
+                        MessageBox.Show("You have to sign in first or create a new account");
+                        DashboardVM.ChildUserControl = new AccountUserControl(DashboardVM);
+                    }
                     break;
                 case 3:
-                    DashboardVM.ChildUserControl = new EvaluationUserControl1();
+                    if (currentUser != null)
+                        DashboardVM.ChildUserControl = new EvaluationUserControl1();
+                    else
+                    {
+                        MessageBox.Show("You have to sign in first or create a new account");
+                        DashboardVM.ChildUserControl = new AccountUserControl(DashboardVM);
+                    }
                     break;
                 case 4:
-                    DashboardVM.ChildUserControl = new foodInformationUserControl(DashboardVM);
+                    if (currentUser != null)
+                        DashboardVM.ChildUserControl = new foodInformationUserControl(DashboardVM);
+                    else
+                    {
+                        MessageBox.Show("You have to sign in first or create a new account");
+                        DashboardVM.ChildUserControl = new AccountUserControl(DashboardVM);
+                    }
                     break;
 
             }

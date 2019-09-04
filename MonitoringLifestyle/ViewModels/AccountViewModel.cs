@@ -53,11 +53,21 @@ namespace MonitoringLifestyle.ViewModels
 
         internal void openRegister()
         {
-            this.DashboardVM.ChildUserControl = new NewAccountUserControl();
+            this.DashboardVM.ChildUserControl = new NewAccountUserControl(DashboardVM);
+
         }
 
-        public void saveUser()
+        public void saveUser()// take the email and the password and check the input 
         {
+            User u=user.saveUser();
+            if (u != null)
+            {
+                DashboardVM.currentUser = u;
+                DashboardVM.ChildUserControl = new selectOptionUserControl(DashboardVM,u);
+            }
+
+            else
+                MessageBox.Show("not exist!!!");
 
         }
     }

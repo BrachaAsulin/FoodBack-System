@@ -27,9 +27,7 @@
                 <Calendar Height="10" Width="1"/>
             </InlineUIContainer></TextBlock>
 
-        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="32,10,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="193" Height="21" Foreground="#FF80101D"><Run Text="the results:"/><InlineUIContainer>
-                <Calendar Height="10" Width="1"/>
-            </InlineUIContainer></TextBlock>
+
         <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="31,0,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="21" Foreground="#FF80101D"><Run Text="calories"/><InlineUIContainer>
                 <Calendar Height="10" Width="1"/>
             </InlineUIContainer></TextBlock>
@@ -42,25 +40,22 @@
         <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="32,73,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="21" Foreground="#FF80101D"><Run Text="proteins"/><InlineUIContainer>
                 <Calendar Height="10" Width="1"/>
             </InlineUIContainer></TextBlock>
-        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="31,96,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="21" Foreground="#FF80101D"><Run Text="colosterol"/><InlineUIContainer>
+        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="31,96,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="21" Foreground="#FF80101D"><Run Text="sugar"/><InlineUIContainer>
                 <Calendar Height="10" Width="1"/>
             </InlineUIContainer></TextBlock>
-        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="139,0,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="21" Foreground="#FF80101D"><Run Text="----"/><InlineUIContainer>
-                <Calendar Height="10" Width="1"/>
-            </InlineUIContainer></TextBlock>
-        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="139,26,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="21" Foreground="#FF80101D"><Run Text="----"/><InlineUIContainer>
-                <Calendar Height="10" Width="1"/>
-            </InlineUIContainer></TextBlock>
-        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="139,52,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="21" Foreground="#FF80101D"><Run Text="----"/><InlineUIContainer>
-                <Calendar Height="10" Width="1"/>
-            </InlineUIContainer></TextBlock>
-        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="139,73,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="21" Foreground="#FF80101D"><Run Text="----"/><InlineUIContainer>
-                <Calendar Height="10" Width="1"/>
-            </InlineUIContainer></TextBlock>
-        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="139,94,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="21" Foreground="#FF80101D"><Run Text="----"/><InlineUIContainer>
-                <Calendar Height="10" Width="1"/>
-            </InlineUIContainer></TextBlock>
-        <local1:SearchFoodUserControl x:Name="serachFoodQuery" HorizontalAlignment="Left" Margin="31,34,0,0" Grid.Row="2" VerticalAlignment="Top" Height="43" Width="274"/>
+
+
+
+
+
+        <local1:SearchFoodUserControl x:Name="serachFoodQuery" HorizontalAlignment="Left" Margin="31,34,0,0" Grid.Row="2" VerticalAlignment="Top" Height="43" Width="446"/>
+        <TextBox x:Name="caloriesTextbox" HorizontalAlignment="Left" Height="23" Margin="214,0,0,0" Grid.Row="4" TextWrapping="Wrap" Text="{Binding calories}" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="sugarTextbox" HorizontalAlignment="Left" Height="23" Margin="214,92,0,0" Grid.Row="4" TextWrapping="Wrap" Text="{Binding sugar}" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="proteinsTextbox" HorizontalAlignment="Left" Height="23" Margin="214,69,0,0" Grid.Row="4" TextWrapping="Wrap" Text="{Binding proteins}" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="carbsTextbox" HorizontalAlignment="Left" Height="23" Margin="214,46,0,0" Grid.Row="4" TextWrapping="Wrap" Text="{Binding carbs}" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="fatsTextbox" HorizontalAlignment="Left" Height="23" Margin="214,23,0,0" Grid.Row="4" TextWrapping="Wrap" Text="{Binding fats}" VerticalAlignment="Top" Width="120"/>
+        <Button Command="{Binding NutrionalValues}" Content="click to see the result" HorizontalAlignment="Left" Margin="131,10,0,0" Grid.Row="3" VerticalAlignment="Top" FontSize="20" Width="203" Height="38"/>
+
 
     </Grid>
 </UserControl>

@@ -24,7 +24,7 @@ namespace MonitoringLifestyle.Commands
         }
 
         public bool CanExecute(object parameter)
-        {
+        { 
             return String.IsNullOrWhiteSpace(currentViewModel.NewAccount.Error);
         }
 

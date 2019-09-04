@@ -15,8 +15,11 @@ namespace BL
         {
             dal = new DAL.Dal();
         }
-
-        public void AddUser(User newUser) { }
+        public User saveUser(string emailAddress)
+        {
+            return dal.findUserByEmail(emailAddress);
+        }
+        public void AddUser(User newUser) { dal.AddUser(newUser); }
         public void RemoveUser(User userToRemove) { }
         public void UpdateUser(User userToUpdate) { }
         public void AddFood(Food newFood) { }
@@ -25,10 +28,9 @@ namespace BL
         public void AddMeal(Meal newMeal) { }
         public void RemoveMeal(Meal mealToRemove) { }
         public void UpdateMeal(Meal mealToUpdate) { }
-        public void AddDailyGoal(DailyGoalPerWeek newDailyGoal)
+        public void AddDailyGoalsPerWeek(DailyGoalPerWeek newDailyGoal, User currentUser)
         {
-
-
+            dal.AddDailyGoalsPerWeek(newDailyGoal, currentUser);
         }
 
         public Food GetNutrientsForFood(string foodId)
@@ -40,8 +42,7 @@ namespace BL
         public void UpdateDailyGoal(DailyGoalPerWeek dailyGoalToUpdate) { }
         public List<BE.Food> getListFoodItems(String textToSearch)
         {
-          
-            return dal.getListFoods(textToSearch);
+           return dal.getListFoods(textToSearch);
         }
         public Food GetFoodById(string foodId)
         {

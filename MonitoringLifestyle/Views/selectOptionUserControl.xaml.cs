@@ -1,4 +1,5 @@
-﻿using MonitoringLifestyle.ViewModels;
+﻿using BE;
+using MonitoringLifestyle.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,10 +22,12 @@ namespace MonitoringLifestyle.Views
     /// </summary>
     public partial class selectOptionUserControl : UserControl
     {
-        public selectOptionUserControl(DashboardVM dashboardVM)
+        public User currentUser;
+        public selectOptionUserControl(DashboardVM dashboardVM,User aCurrentUser)
         {
             InitializeComponent();
-            selectOptionGrid.DataContext = new SelectOptionViewModel(dashboardVM);
+            currentUser = aCurrentUser;
+            selectOptionGrid.DataContext = new SelectOptionViewModel(dashboardVM,currentUser);
             
         }
     }
