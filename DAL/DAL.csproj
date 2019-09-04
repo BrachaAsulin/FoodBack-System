@@ -49,6 +49,15 @@
   <ItemGroup>
     <Compile Include="Dal.cs" />
     <Compile Include="FoodBackContext.cs" />
+    <Compile Include="Migrations\201909021259514_InitialCreate.cs" />
+    <Compile Include="Migrations\201909021259514_InitialCreate.Designer.cs">
+      <DependentUpon>201909021259514_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909021322247_[201909021259514_InitialCreate].cs" />
+    <Compile Include="Migrations\201909021322247_[201909021259514_InitialCreate].Designer.cs">
+      <DependentUpon>201909021322247_[201909021259514_InitialCreate].cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -63,6 +72,14 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201909021259514_InitialCreate.resx">
+      <DependentUpon>201909021259514_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909021322247_[201909021259514_InitialCreate].resx">
+      <DependentUpon>201909021322247_[201909021259514_InitialCreate].cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

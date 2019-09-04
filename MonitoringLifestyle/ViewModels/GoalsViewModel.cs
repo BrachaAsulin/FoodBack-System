@@ -1,4 +1,5 @@
-﻿using MonitoringLifestyle.Commands;
+﻿using BE;
+using MonitoringLifestyle.Commands;
 using MonitoringLifestyle.Models;
 using System;
 using System.Collections.Generic;
@@ -12,9 +13,11 @@ namespace MonitoringLifestyle.ViewModels
 {
     public class GoalsViewModel:DependencyObject,IVM
     {
+        
+       // public DashboardVM dashboardVM;
         public GoalsModel CurrentModel { get; set; }
         public ICommand UpdateGoals { get; set; }
-
+         public User currentUser;
         public string sundayWeek { get; set; }
 
         public void updateGoalsDetails()
@@ -39,18 +42,20 @@ namespace MonitoringLifestyle.ViewModels
 
 
 
-
-             CurrentModel.UpdateGoalData(sundayWeek, SumCalories,SumFats, SumCarbs, SumProteins, SumSugar,arr);
+            
+             CurrentModel.UpdateGoalData(sundayWeek, SumCalories,SumFats, SumCarbs, SumProteins, SumSugar,arr, currentUser);
 
 
         }
 
-        public GoalsViewModel()
+        public GoalsViewModel(User aCurrentUser)
         {
+          
             EnableGridGoal = false;
+            currentUser = aCurrentUser;
             CurrentModel = new GoalsModel();
             UpdateGoals = new UpdateGoalsCommand(this);
-
+           
         }
 
 

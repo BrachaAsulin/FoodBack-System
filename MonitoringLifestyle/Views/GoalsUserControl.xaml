@@ -12,7 +12,7 @@
             <StackPanel  Width="200" Orientation="Vertical">
                 <TextBlock Background="#FF3F9C44" HorizontalAlignment="Left" FontWeight="Bold" TextWrapping="Wrap" Text="please mark a week and fill the table" VerticalAlignment="Top" Height="38" Width="150" Foreground="#FFF0F0F0" Margin="10"/>
                 <local:weekPickerUserControl x:Name="weekUC" Margin="10" HorizontalAlignment="Left" FontWeight="Bold" VerticalAlignment="Top" Width="150"/>
-                <Button x:Name="markWeekCheckBox" Height="34" Width="150" Background="#FF3F9C44" Command="{Binding UpdateGoals}" Content="UPDATE" FontWeight="Bold" HorizontalAlignment="Left" Margin="10" VerticalAlignment="Top"/>
+                <Button Height="34" Width="150" Background="#FF3F9C44" Command="{Binding UpdateGoals}" Content="UPDATE" FontWeight="Bold" HorizontalAlignment="Left" Margin="10" VerticalAlignment="Top"/>
 
             </StackPanel>
             <Grid ShowGridLines="True" Width="500" IsEnabled="{Binding EnableGridGoal}" Background="#FF3F9C44">

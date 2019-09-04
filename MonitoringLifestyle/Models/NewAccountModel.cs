@@ -1,15 +1,17 @@
-﻿using System;
+﻿using BE;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace MonitoringLifestyle.Models
 {
     class NewAccountModel : INotifyPropertyChanged, IDataErrorInfo
     {
-
+        public BL.Bl bl;
         private string firstName;
         private string lastName;
         private string emailAddress;
@@ -29,6 +31,7 @@ namespace MonitoringLifestyle.Models
 
         public NewAccountModel(string newFirstName, string newLastName, string newEmailAddress, string newPassword, string newDateOfBirth, string newHeight, string newWeight)
         {
+            bl = new BL.Bl();
             FirstName = newFirstName;
             LastName = newLastName;
             EmailAddress = newEmailAddress;
@@ -75,7 +78,22 @@ namespace MonitoringLifestyle.Models
             }
             this.AllPropertiesValid = true;
         }
+         public void SaveNewUser()
+        {
+            User u = new User(FirstName, LastName, EmailAddress, Password, DateOfBirth, Height, Weight);
 
+          //  
+            if (allPropertiesValid)
+            {
+    
+                bl.AddUser(u);
+                MessageBox.Show(u.ToString() + " " + "registered successfully");
+
+            }
+            else
+                MessageBox.Show("error!!!");
+
+        }
 
         #region IDataErrorInfo Members
         public string this[string columnName]

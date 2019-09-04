@@ -1,4 +1,5 @@
-﻿using MonitoringLifestyle.ViewModels;
+﻿using BE;
+using MonitoringLifestyle.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,11 +22,17 @@ namespace MonitoringLifestyle.Views
     /// </summary>
     public partial class GoalsUserControl : UserControl
     {
-        public GoalsUserControl()
+         public User currentUser;
+        public GoalsViewModel currentViewModel { get; set; }
+        public GoalsUserControl(User currentUser)
         {
             InitializeComponent();
-            this.DataContext = weekUC.DataContext;
+            currentViewModel = new GoalsViewModel(currentUser);
+            //this.DataContext = weekUC.DataContext;
+            this.DataContext = currentViewModel;
+            weekUC.DataContext = currentViewModel;
+            
         }
-        
+
     }
 }

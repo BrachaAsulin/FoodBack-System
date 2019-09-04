@@ -1,4 +1,5 @@
-﻿using MonitoringLifestyle.ViewModels;
+﻿using BE;
+using MonitoringLifestyle.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,19 +23,20 @@ namespace MonitoringLifestyle.Views
     /// </summary>
     public partial class weekPickerUserControl : UserControl//,INotifyPropertyChanged//i changed
     {
-        public GoalsViewModel currentViewModel;
+        //public GoalsViewModel currentViewModel;
         private bool flagOnUpdate;
-
+       // public DashboardVM dashboardVM;
         public DateTime sunday { get; set; }
         private string sundayOfWeek { get; set; }
 
         public weekPickerUserControl()
         {
             InitializeComponent();
-            currentViewModel = new GoalsViewModel();
-            this.DataContext = currentViewModel;
+           // currentViewModel = new GoalsViewModel();
+           // this.DataContext = currentViewModel;
            
         }
+
         private void addSelectedDates()
         {
             flagOnUpdate = true;
@@ -42,7 +44,8 @@ namespace MonitoringLifestyle.Views
             calendar.SelectedDates.Clear();
             sunday = date.AddDays(0 - (int)date.DayOfWeek);//the sunday of the selected week
             sundayOfWeek = sunday.Day + "/" + sunday.Month + "/" + sunday.Year;
-            this.currentViewModel.sundayWeek= sundayOfWeek;
+            ((GoalsViewModel)this.DataContext).sundayWeek = sundayOfWeek;
+           // this.currentViewModel.sundayWeek= sundayOfWeek;
             for (int i = (int)sunday.DayOfWeek; i < 7; i++)
                 calendar.SelectedDates.Add(sunday.AddDays(i));
 
@@ -53,8 +56,8 @@ namespace MonitoringLifestyle.Views
             if (calendar.SelectedDate != null && flagOnUpdate == false)
             {
                 addSelectedDates();
-
-                currentViewModel.EnableGridGoal = true;
+                ((GoalsViewModel)this.DataContext).EnableGridGoal = true;
+                //currentViewModel.EnableGridGoal = true;
             }
         }
 

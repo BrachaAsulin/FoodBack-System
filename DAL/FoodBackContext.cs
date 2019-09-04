@@ -46,6 +46,15 @@ namespace DAL
                  um.MapRightKey("UserRefId");
                  um.ToTable("DailyGoalUser");
              });
+           modelBuilder.Entity<User>()
+            .HasMany<DailyGoalPerWeek>(u => u.DailyGoals)
+            .WithMany(d => d.Users)
+            .Map(um =>
+            {
+                um.MapLeftKey("UserRefId");
+                um.MapRightKey("DailyGoalRefId");
+                um.ToTable("DailyGoalUser");
+            });
 
         }
     }

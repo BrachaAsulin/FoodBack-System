@@ -6,5 +6,5 @@
              xmlns:local="clr-namespace:MonitoringLifestyle"
              mc:Ignorable="d" 
              d:DesignHeight="163" d:DesignWidth="180">
-    <Calendar x:Name="calendar" SelectedDatesChanged="calendar_SelectedDatesChanged" SelectionMode="MultipleRange" />
+    <Calendar x:Name="calendar" SelectedDatesChanged="calendar_SelectedDatesChanged" SelectionMode="MultipleRange"/>
 </UserControl>

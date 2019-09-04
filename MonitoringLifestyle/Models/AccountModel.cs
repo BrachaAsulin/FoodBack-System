@@ -1,4 +1,5 @@
 ﻿//using BL;
+using BE;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,22 +7,24 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace MonitoringLifestyle.Models
 {
     class AccountModel : INotifyPropertyChanged, IDataErrorInfo
     {
-    public AccountModel(string emailAddress,string password)
+        public BL.Bl bl;
+        public AccountModel(string emailAddress,string password)
         {
             this.EmailAddress = emailAddress;
             this.Password = password;
             this.validProperties = new Dictionary<string, bool>();
             validProperties.Add("EmailAddress", false);
             validProperties.Add("Password", false);
-
+            bl = new BL.Bl();
         }
-       // public BL.Bl bb = new Bl();
+      
         private string emailAddress;
         public string EmailAddress
         {
@@ -156,6 +159,23 @@ namespace MonitoringLifestyle.Models
 
        
         #endregion
+
+
+
+
+        public User saveUser()
+        {
+            MessageBox.Show("your details:"+" "+(bl.saveUser(emailAddress)).ToString());
+            return bl.saveUser(emailAddress);
+            
+        }
+
+
+
+
+
+
+
 
     }
 }
