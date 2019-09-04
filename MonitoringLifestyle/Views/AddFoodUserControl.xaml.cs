@@ -1,7 +1,5 @@
-﻿using MonitoringLifestyle.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,21 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-
-namespace MonitoringLifestyle
+namespace MonitoringLifestyle.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for AddFoodPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AddFoodUserControl:UserControl
     {
-        public MainWindow()
+        public AddFoodUserControl()
         {
             InitializeComponent();
-            GridMain.DataContext = myDashBoard.DashboardGrid.DataContext;
-            
         }
-
-       
     }
 }

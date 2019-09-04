@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MonitoringLifestyle.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,12 @@ namespace MonitoringLifestyle.Views
     /// </summary>
     public partial class MyDailyDietUserControl1 : UserControl
     {
+        public MyDailyDietViewModel currentViewModel{get;set;}
         public MyDailyDietUserControl1()
         {
             InitializeComponent();
+            currentViewModel= new MyDailyDietViewModel();
+            this.DataContext = currentViewModel;
         }
     }
 }

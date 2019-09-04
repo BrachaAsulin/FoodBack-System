@@ -7,7 +7,7 @@
              xmlns:local="clr-namespace:MonitoringLifestyle"
              mc:Ignorable="d" 
              d:DesignHeight="250" d:DesignWidth="550">
-    <Grid x:Name="selectOptionGrid">
+    <Grid x:Name="selectOptionGrid" HorizontalAlignment="Stretch">
         
         <Grid.RowDefinitions>
             <RowDefinition Height="115*"/>

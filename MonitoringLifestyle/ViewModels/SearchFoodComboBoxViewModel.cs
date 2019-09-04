@@ -11,12 +11,12 @@ using BE;
 
 namespace MonitoringLifestyle.ViewModels
 {
-    class SearchFoodComboBoxViewModel : DependencyObject, INotifyPropertyChanged
+    public class SearchFoodComboBoxViewModel : DependencyObject, INotifyPropertyChanged
     {
         //constructor 
         public SearchFoodComboBoxViewModel()
         {
-            SelectedFood = new BE.Food();
+            SelectedFood = null;
             Foods = new ObservableCollection<string>();
             currentModel = new SearchFoodComboBoxModel();
         }

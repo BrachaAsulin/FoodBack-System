@@ -34,12 +34,13 @@ namespace DAL
             List<BE.Food> resultList = new List<BE.Food>();
             foreach(XmlNode xmlItem in itemList)
             {
-                resultList.Add(new Food { Name = xmlItem["name"].InnerText});
+                resultList.Add(new Food { Name = xmlItem["name"].InnerText,FoodId=xmlItem["ndbno"].InnerText});
             }
             return resultList;
 
         }
 
+      
         public Food GetNutrientsForFood(string foodId)
         {
             WebRequest request = WebRequest.Create("https://api.nal.usda.gov/ndb/reports/?ndbno=" + foodId + "&type=b&format=xml&api_key=UUNpokCpdL8XQE6v7yf4rKqVj01tsQmJ6t2axPz2");
@@ -52,6 +53,7 @@ namespace DAL
             xmlDoc.LoadXml(output);
             XmlNodeList itemList = xmlDoc.SelectNodes("/report/food/nutrients/nutrient");
             Food food = new Food();
+            food.FoodId = foodId;
             //float vitamins = 0;
             string name = "";
             string value = "";
@@ -80,9 +82,9 @@ namespace DAL
                     case "Energy":
                         food.Calories = value;
                         break;
-                    // case "Water":
-                    // foodDetails.Water = float.Parse(value);
-                    //  break;
+                    //case "Water":
+                    // food.Water =value;
+                      //break;
                     ///case "Sodium, Na":
                     // foodDetails.Sodium = float.Parse(value);
                     //  break;
@@ -92,9 +94,9 @@ namespace DAL
                     case "Total lipid (fat)":
                         food.Fats = value;
                         break;
-                    //case "Fiber, total dietary":
-                    // foodDetails.Fiber = float.Parse(value);
-                    //  break;
+                    case "Fiber, total dietary":
+                     food.Fiber = value;
+                      break;
                     // case "Carbohydrate, by difference":
                     //   foodDetails.Carbohydrate = float.Parse(value);
                     //     break;
@@ -111,10 +113,7 @@ namespace DAL
             return food;
         }
 
-        public List<Food> getFoodList()
-        {
-            return null;
-        }
+        
 
 
 

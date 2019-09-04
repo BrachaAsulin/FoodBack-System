@@ -6,7 +6,16 @@
              xmlns:local="clr-namespace:MonitoringLifestyle"
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="1090" >
-    <Grid>
+    <Grid Background="#FF97A3BB">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid>
             
+        </Grid>
+        <Grid>
+            
+        </Grid>
     </Grid>
 </UserControl>

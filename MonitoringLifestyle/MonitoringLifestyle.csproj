@@ -61,11 +61,30 @@
     <Reference Include="MaterialDesignThemes.Wpf, Version=2.6.0.325, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignThemes.2.6.0\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SharePoint.Client, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SharePoint.Client.14.0.4762.1000\lib\Microsoft.SharePoint.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Runtime, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SharePoint.Client.14.0.4762.1000\lib\Microsoft.SharePoint.Client.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=3.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.3.5.8\lib\35\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Controls.DataVisualization.Toolkit, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Controls.DataVisualization.Toolkit.4.0.0.0\lib\net40-Client\System.Windows.Controls.DataVisualization.Toolkit.dll</HintPath>
+    </Reference>
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Windows.Forms.DataVisualization.Design" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Expression.Blend.Sdk.1.0.2\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -74,6 +93,27 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Toolkit.Charting, Version=1.0.5755.26422, Culture=neutral, PublicKeyToken=c475b86b0b5dd5cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Toolkit.Charting.1.0.5755.26422\lib\net40\Toolkit.Charting.dll</HintPath>
+    </Reference>
+    <Reference Include="Toolkit.CodeBase, Version=1.0.5755.26406, Culture=neutral, PublicKeyToken=85a1d6861c984571, processorArchitecture=MSIL">
+      <HintPath>..\packages\Toolkit.CodeBase.1.0.5755.26406\lib\net35\Toolkit.CodeBase.dll</HintPath>
+    </Reference>
+    <Reference Include="Toolkit.CommonResources, Version=1.0.5752.28158, Culture=neutral, PublicKeyToken=2899914042019c40, processorArchitecture=MSIL">
+      <HintPath>..\packages\Toolkit.CommonResources.1.0.5752.28158\lib\net35\Toolkit.CommonResources.dll</HintPath>
+    </Reference>
+    <Reference Include="Toolkit.Data, Version=1.0.5755.26407, Culture=neutral, PublicKeyToken=629543f4dbd6bd87, processorArchitecture=MSIL">
+      <HintPath>..\packages\Toolkit.Data.1.0.5755.26407\lib\net35\Toolkit.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Toolkit.Drawing, Version=1.0.5755.26408, Culture=neutral, PublicKeyToken=5ff3c7cbdef8f713, processorArchitecture=MSIL">
+      <HintPath>..\packages\Toolkit.Drawing.1.0.5755.26408\lib\net35\Toolkit.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Toolkit.Runtime, Version=1.0.5755.26410, Culture=neutral, PublicKeyToken=f6792c8416fb80c0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Toolkit.Runtime.1.0.5755.26410\lib\net35\Toolkit.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Toolkit.Scripting, Version=1.0.5755.26411, Culture=neutral, PublicKeyToken=6616acb562ce6d44, processorArchitecture=MSIL">
+      <HintPath>..\packages\Toolkit.Scripting.1.0.5755.26411\lib\net35\Toolkit.Scripting.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
@@ -108,6 +148,7 @@
     <Compile Include="Commands\SweetsInfoCommand.cs" />
     <Compile Include="Commands\UpdateGoalsCommand.cs" />
     <Compile Include="Models\GoalsModel.cs" />
+    <Compile Include="Models\MyDailyDietModel.cs" />
     <Compile Include="Models\NewAccountModel.cs" />
     <Compile Include="Models\SearchFoodComboBoxModel.cs" />
     <Compile Include="Models\SelectOptionsModel.cs" />
@@ -118,6 +159,7 @@
     <Compile Include="ViewModels\GoalsViewModel.cs" />
     <Compile Include="ViewModels\IVM.cs" />
     <Compile Include="ViewModels\ListOfFoodsViewModel.cs" />
+    <Compile Include="ViewModels\MyDailyDietViewModel.cs" />
     <Compile Include="ViewModels\NewAccountViewModel.cs" />
     <Compile Include="ViewModels\SearchFoodComboBoxViewModel.cs" />
     <Compile Include="ViewModels\SelectOptionViewModel.cs" />
@@ -126,6 +168,12 @@
     </Compile>
     <Compile Include="Views\AccountUserControl.xaml.cs">
       <DependentUpon>AccountUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddFoodUserControl.xaml.cs">
+      <DependentUpon>AddFoodUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AutoComplete.xaml.cs">
+      <DependentUpon>AutoComplete.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\contactUsUserControl.xaml.cs">
       <DependentUpon>contactUsUserControl.xaml</DependentUpon>
@@ -177,11 +225,27 @@
     <Compile Include="Views\weekPickerUserControl.xaml.cs">
       <DependentUpon>weekPickerUserControl.xaml</DependentUpon>
     </Compile>
+    <Page Include="Styles\AutoComplete.Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\ComboBox.Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\aboutUsUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AccountUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddFoodUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AutoComplete.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -428,6 +492,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\search.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LookupGlass.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

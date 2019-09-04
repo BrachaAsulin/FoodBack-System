@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MonitoringLifestyle.Models
 {
-    class SearchFoodComboBoxModel
+    public class SearchFoodComboBoxModel
     {
         BL.Bl BlObject;
         BE.Food CurrentFood;

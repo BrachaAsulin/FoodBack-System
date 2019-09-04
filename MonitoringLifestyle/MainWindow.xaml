@@ -8,10 +8,14 @@
         xmlns:local1="clr-namespace:MonitoringLifestyle.Views"
         xmlns:local2="clr-namespace:MonitoringLifestyle.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" WindowState="Maximized" Height="631" Width="1272" >
-    
-    <StackPanel Name="stackPanelMain" Orientation="Vertical" >
-        <local1:Dashboard x:Name="myDashBoard" HorizontalAlignment="Stretch" Height="100"  VerticalAlignment="Top" />
-        <UserControl x:Name="MainUserControl" Content="{Binding ChildUserControl}" Height="400" Width="700" Margin="10"/>
-    </StackPanel>
+        Title="MainWindow" WindowState="Maximized"  >
+
+    <Grid Name="GridMain"  >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="6*"/>
+        </Grid.RowDefinitions>
+        <local1:Dashboard x:Name="myDashBoard" Margin="0,5,0,5" Grid.Row="0" HorizontalAlignment="Stretch"  VerticalAlignment="Top" />
+        <UserControl x:Name="MainUserControl" Grid.Row="1" Content="{Binding ChildUserControl}" Margin="0,5,0,5"/>
+    </Grid>
 </Window>

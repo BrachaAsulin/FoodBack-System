@@ -45,13 +45,7 @@ namespace BL
         }
         public Food GetFoodById(string foodId)
         {
-            List<Food> foodsList = dal.getFoodList();
-            foreach(Food food in foodsList)
-            {
-                if (food.FoodId.Equals(foodId))
-                    return food;
-            }
-            return null;
+            return dal.GetNutrientsForFood(foodId);
         }
     }
 
