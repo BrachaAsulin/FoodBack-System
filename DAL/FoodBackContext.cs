@@ -37,7 +37,16 @@ namespace DAL
                   um.MapRightKey("MealRefId");
                   um.ToTable("UserMeal");
               });
-            modelBuilder.Entity<DailyGoalPerWeek>()
+            modelBuilder.Entity<User>()
+           .HasMany<DailyGoalPerWeek>(u => u.DailyGoals)
+           .WithMany(d => d.Users)
+           .Map(um =>
+           {
+               um.MapLeftKey("UserRefId");
+               um.MapRightKey("DailyGoalRefId");
+               um.ToTable("DailyGoalUser");
+           });
+          /* modelBuilder.Entity<DailyGoalPerWeek>()
              .HasMany<User>(d => d.Users)
              .WithMany(u => u.DailyGoals)
              .Map(um =>
@@ -46,16 +55,7 @@ namespace DAL
                  um.MapRightKey("UserRefId");
                  um.ToTable("DailyGoalUser");
              });
-           modelBuilder.Entity<User>()
-            .HasMany<DailyGoalPerWeek>(u => u.DailyGoals)
-            .WithMany(d => d.Users)
-            .Map(um =>
-            {
-                um.MapLeftKey("UserRefId");
-                um.MapRightKey("DailyGoalRefId");
-                um.ToTable("DailyGoalUser");
-            });
-
+           */
         }
     }
 }

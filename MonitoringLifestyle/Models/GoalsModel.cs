@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Windows;
 using BL;
 using BE;
+using System.Data.Entity;
+using System.Runtime.Remoting.Contexts;
 
 namespace MonitoringLifestyle.Models
 {
@@ -27,10 +29,14 @@ namespace MonitoringLifestyle.Models
             ////////////////////////////////////////// problema
             MessageBox.Show("current user" + u.ToString());
             MessageBox.Show("this week begins at " + aSundayOfWeek + " " + "good luck!");
+           
+
+
             bl.AddDailyGoalsPerWeek(dailyGoal,u);
-            
+            MessageBox.Show(dailyGoal.ToString());
+
             //
-            
+
             //
 
 

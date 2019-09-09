@@ -9,8 +9,7 @@ namespace DAL.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
-            ContextKey = "DAL.FoodBackContext";
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(DAL.FoodBackContext context)

@@ -132,15 +132,17 @@ namespace DAL
         {
             using (FoodBackContext FBContext = new FoodBackContext())
             {
-                dailyGoalsPerWeek.Users.Add(currentUser);
+                FBContext.DailyGoalsPerWeek.Add(dailyGoalsPerWeek);
+                //dailyGoalsPerWeek.Users.Add(currentUser); 
                 //checking if there is already goals for the accepted week
                 var existsGoal= currentUser.DailyGoals.FirstOrDefault(d => d.SundayOfWeek.Equals(dailyGoalsPerWeek.SundayOfWeek)); 
                 if(existsGoal!=null)
                 {
                     currentUser.DailyGoals.Remove(existsGoal);
                 }
+                //   FBContext.DailyGoalsPerWeek.Add(dailyGoalsPerWeek);
+                dailyGoalsPerWeek.Users.Add(currentUser);
                 currentUser.DailyGoals.Add(dailyGoalsPerWeek);
-                FBContext.DailyGoalsPerWeek.Add(dailyGoalsPerWeek);
                 FBContext.SaveChanges();
 
             }

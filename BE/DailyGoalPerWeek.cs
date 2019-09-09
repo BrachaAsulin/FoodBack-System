@@ -50,7 +50,10 @@ namespace BE
         public string[,] FullGoals { get => fullGoals; set => fullGoals = value; }
 
 
-
+        public override string ToString()
+        {
+            return "the daily goal details are:   "+"calories:  "+calories+"    fats:   "+"     carbs:   "+carbs+"     proteins:  "+proteins+"     sugar:"+sugar+"     sundayOfWeek:    "+sundayOfWeek;
+        }
 
     }
 }
