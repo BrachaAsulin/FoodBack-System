@@ -1,8 +1,10 @@
-﻿using MonitoringLifestyle.Commands;
+﻿using BE;
+using MonitoringLifestyle.Commands;
 using MonitoringLifestyle.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,13 +16,18 @@ namespace MonitoringLifestyle.ViewModels
 {
     public class MyDailyDietViewModel : DependencyObject
     {
-
-        public MyDailyDietViewModel()
+        User CurrentUser;
+        public MyDailyDietViewModel(User currentUser)
         {
+            CurrentUser = currentUser;
             currentModel = new MyDailyDietModel();
             AddingFood = new AddFoodCommand(this);
-            BreakfastFoods = new ObservableCollection<BE.Food>();
             Date = DateTime.Today;
+            BreakfastFoods = currentModel.GetMealPerUser("Breakfast",CurrentUser,date);
+            LunchFoods = new ObservableCollection<BE.Food>();
+            DinnerFoods = new ObservableCollection<BE.Food>();
+            SnacksFoods = new ObservableCollection<BE.Food>();
+
         }
         public ICommand AddingFood { get; set; }
 
@@ -30,8 +37,8 @@ namespace MonitoringLifestyle.ViewModels
 
         public MyDailyDietModel currentModel { get; set; }
 
-        private string foodIdSelected;
-        public string FoodIdSelected
+        private int foodIdSelected;
+        public int FoodIdSelected
         {
             get { return foodIdSelected; }
             set
@@ -90,6 +97,8 @@ namespace MonitoringLifestyle.ViewModels
         // Using a DependencyProperty as the backing store for BreakfastFoods.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty SnacksFoodsProperty =
             DependencyProperty.Register("SnacksFoods", typeof(ObservableCollection<BE.Food>), typeof(MyDailyDietViewModel));
+
+
         /// <summary>
         /// occurs when the user stops typing after a delayed timespan
         /// </summary>
@@ -112,7 +121,7 @@ namespace MonitoringLifestyle.ViewModels
             Button button = sender as Button;
             string type = button.Tag.ToString();
             BE.Food f = button.DataContext as BE.Food;
-            string id = f.FoodId;
+            string id = f.FoodID.ToString();
             switch(type)
             {
                 case "Breakfast":
@@ -137,7 +146,7 @@ namespace MonitoringLifestyle.ViewModels
         {
             foreach(BE.Food food in ListFoods)
             {
-                if (food.FoodId.Equals(id))
+                if (food.FoodID.ToString().Equals(id))
                 {
                     ListFoods.Remove(food);
                     return;
@@ -149,17 +158,19 @@ namespace MonitoringLifestyle.ViewModels
         internal void AddFood(string v)
         {
 
-            if (this.FoodIdSelected == null)
+            if (this.FoodIdSelected == 0)
             {
                 MessageBox.Show("You have to choose a food from search engine above");
                 return;
             }
-            food = this.currentModel.GetFoodById(FoodIdSelected);
-            food.Name = GetNameById(FoodIdSelected);
+            food = this.currentModel.GetFoodById(FoodIdSelected.ToString());
+            food.FoodID = FoodIdSelected;
+            food.Name = GetNameById(FoodIdSelected.ToString());
             switch (v)
             {
                 case "Breakfast":
                     BreakfastFoods.Add(food);
+                    currentModel.AddFoodForMealPerUser("Breakfast", CurrentUser, food,date);
                     break;
                 case "Lunch":
                     LunchFoods.Add(food);
@@ -178,11 +189,22 @@ namespace MonitoringLifestyle.ViewModels
         {
             foreach (BE.Food food in Foods)
             {
-                if (food.FoodId.Equals(foodIdSelected))
+                if (food.FoodID.ToString().Equals(foodIdSelected))
                     return food.Name;
             }
             return null;
         }
+/*
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged(string v)
+        {
+            var handler = PropertyChanged;
+            if(handler!=null)
+            {
+                handler(this, new PropertyChangedEventArgs(v));
+            }
+        }
+        */
 
     }
 }

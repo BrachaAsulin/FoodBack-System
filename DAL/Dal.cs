@@ -12,8 +12,133 @@ using System.Xml;
 
 namespace DAL
 {
-    public class Dal:DbContext
+    public class Dal
     {
+        /// <summary>
+        /// Add function for User entity 
+        /// </summary>
+        /// <param name="user"></param>
+        public void AddUser(BE.User user)
+        {
+            using (FoodBackDBEntities FBContext = new FoodBackDBEntities())
+            {
+                FBContext.Users.Add(user);
+                FBContext.SaveChanges();
+            }
+
+        }
+        /// <summary>
+        /// This function returs a user according to his ID - his email address
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
+        public User findUserByEmail(string email)
+        {
+            using (FoodBackDBEntities FBContext = new FoodBackDBEntities())
+            {
+                User user = FBContext.Users.FirstOrDefault(u => u.EmailAddress.Equals(email));
+                return user;
+            }
+        }
+        /// <summary>
+        /// This function add to an User a daily goals for specific week
+        /// </summary>
+        /// <param name="dailyGoalsPerWeek"></param>
+        /// <param name="currentUser"></param>
+        public void AddDailyGoalsPerWeek(BE.DailyGoalPerWeek dailyGoalsPerWeek, User currentUser)
+        {
+            using (FoodBackDBEntities FBContext = new FoodBackDBEntities())
+            {
+                var user = FBContext.Users.Single(u => u.EmailAddress.Equals(currentUser.EmailAddress));
+                DailyGoalPerWeek dailyInThisWeek=null;
+                foreach(DailyGoalPerWeek d in user.DailyGoalPerWeeks)
+                {
+                    if(d.SundayOfWeek==dailyGoalsPerWeek.SundayOfWeek)
+                    {
+                        dailyInThisWeek = d;
+                        break;
+                    }
+                }
+                if(dailyInThisWeek!=null)
+                {
+                    user.DailyGoalPerWeeks.Remove(dailyInThisWeek);
+                }
+                user.DailyGoalPerWeeks.Add(dailyGoalsPerWeek);
+                dailyGoalsPerWeek.Users.Add(user);
+                FBContext.SaveChanges();
+            }
+
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="meal"></param>
+        /// <param name="currentUser"></param>
+        /// <param name="food"></param>
+        public void AddFoodForMealPerUser(string meal, User currentUser, Food food,DateTime date)
+        {
+            using (FoodBackDBEntities FBContext = new FoodBackDBEntities())
+            {
+                var user = FBContext.Users.Single(u => u.EmailAddress.Equals(currentUser.EmailAddress));
+                foreach(Meal m in user.Meals)
+                {
+                    if(m.MealDate.Equals(date)&& m.Type.Equals(meal))
+                    {
+                        m.Foods.Add(food);
+                        food.Meals.Add(m);
+                        FBContext.SaveChanges();
+                        return;
+                    }
+                }
+                Meal m1 = new BE.Meal { Type = meal, MealDate = date };
+                m1.Foods.Add(food);
+                AddMeal(m1, user);
+                
+
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="meal"></param>
+        /// <param name="currentUser"></param>
+        public void AddMeal(BE.Meal meal, BE.User currentUser)
+        {
+            using (FoodBackDBEntities FBContext = new FoodBackDBEntities())
+            {
+                FBContext.Meals.Add(meal);
+                var user = FBContext.Users.Single(u => u.EmailAddress.Equals(currentUser.EmailAddress));
+                user.Meals.Add(meal);
+                meal.Users.Add(user);
+                FBContext.SaveChanges();
+            }
+
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="v"></param>
+        /// <param name="currentUser"></param>
+        /// <param name="date"></param>
+        public ObservableCollection<Food> GetMealPerUser(string v, User currentUser, DateTime date)
+        {
+            using (FoodBackDBEntities FBContext = new FoodBackDBEntities())
+            {
+                var user = FBContext.Users.Single(u => u.EmailAddress.Equals(currentUser.EmailAddress));
+                foreach(Meal m in user.Meals)
+                {
+                    if(m.MealDate.Equals(date)&&m.Type.Equals(v))
+                    {
+                        return new ObservableCollection<Food>(m.Foods);
+                    }
+                }
+                return new ObservableCollection<Food>();
+            }
+        }
+
         /// <summary>
         /// according to a specific string returs a list of food that it's names conatains the string 
         /// </summary>
@@ -34,7 +159,7 @@ namespace DAL
             List<BE.Food> resultList = new List<BE.Food>();
             foreach(XmlNode xmlItem in itemList)
             {
-                resultList.Add(new Food { Name = xmlItem["name"].InnerText,FoodId=xmlItem["ndbno"].InnerText});
+                resultList.Add(new Food { Name = xmlItem["name"].InnerText, FoodID =Int32.Parse(xmlItem["ndbno"].InnerText)});
             }
             return resultList;
 
@@ -53,7 +178,7 @@ namespace DAL
             xmlDoc.LoadXml(output);
             XmlNodeList itemList = xmlDoc.SelectNodes("/report/food/nutrients/nutrient");
             Food food = new Food();
-            food.FoodId = foodId;
+            food.FoodID = Int32.Parse(foodId);
             //float vitamins = 0;
             string name = "";
             string value = "";
@@ -117,51 +242,11 @@ namespace DAL
 
 
 
-        //Add functions
-        public void AddUser(User user)
-        {
-            using (FoodBackContext FBContext = new FoodBackContext())
-            {
-                FBContext.Users.Add(user);
-                FBContext.SaveChanges();
-            }
-         
-        }
-        public void AddDailyGoalsPerWeek(DailyGoalPerWeek dailyGoalsPerWeek,User currentUser)
-        {
-            using (FoodBackContext FBContext = new FoodBackContext())
-            {
-                dailyGoalsPerWeek.Users.Add(currentUser);
-                //checking if there is already goals for the accepted week
-                var existsGoal= currentUser.DailyGoals.FirstOrDefault(d => d.SundayOfWeek.Equals(dailyGoalsPerWeek.SundayOfWeek)); 
-                if(existsGoal!=null)
-                {
-                    currentUser.DailyGoals.Remove(existsGoal);
-                }
-                currentUser.DailyGoals.Add(dailyGoalsPerWeek);
-                FBContext.DailyGoalsPerWeek.Add(dailyGoalsPerWeek);
-                FBContext.SaveChanges();
-
-            }
-            
-        }
-        /**
-         * this function called in the first that the user add a food to a meal
-         * */
-        public void AddMeal(Meal meal,User currentUser)
-        {
-            using (FoodBackContext FBContext = new FoodBackContext())
-            {
-                FBContext.Meals.Add(meal);
-                currentUser.UserMeals.Add(meal);
-                FBContext.SaveChanges();
-            }
-
-        }
+   
         //
         public void AddFood(Food food,Meal currentMeal)
         {
-            using (FoodBackContext FBContext = new FoodBackContext())
+            using (FoodBackDBEntities FBContext = new FoodBackDBEntities())
             {
                 FBContext.Foods.Add(food);
                 currentMeal.Foods.Add(food);
@@ -173,7 +258,7 @@ namespace DAL
 
         public void UpdateUser(User userToUpdate)
         {
-            using (FoodBackContext FBContext = new FoodBackContext())
+            using (FoodBackDBEntities FBContext = new FoodBackDBEntities())
             {
                 var userToReplace = FBContext.Users.FirstOrDefault(u => u.EmailAddress == userToUpdate.EmailAddress);
                 FBContext.Users.Remove(userToReplace);
@@ -185,16 +270,16 @@ namespace DAL
 
         public void UpdateMeal(Meal mealToUpdate)
         {
-            using (FoodBackContext FBContext = new FoodBackContext())
+            using (FoodBackDBEntities FBContext = new FoodBackDBEntities())
             {
             }
         }
 
         public void UpdateFood(Food foodToUpdate)
         {
-            using (FoodBackContext FBContext = new FoodBackContext())
+            using (FoodBackDBEntities FBContext = new FoodBackDBEntities())
             {
-                var foodToReplace = FBContext.Foods.FirstOrDefault(f => f.FoodId == foodToUpdate.FoodId);
+                var foodToReplace = FBContext.Foods.FirstOrDefault(f => f.FoodID == foodToUpdate.FoodID);
                 FBContext.Foods.Remove(foodToReplace);
                 FBContext.Foods.Add(foodToUpdate);
                 FBContext.SaveChanges();
@@ -203,18 +288,18 @@ namespace DAL
 
         public void UpdateDailyGoalPerWeek(DailyGoalPerWeek dailyGoalToUpdate)
         {
-            using (FoodBackContext FBContext = new FoodBackContext())
+            using (FoodBackDBEntities FBContext = new FoodBackDBEntities())
             {
-                var dailyGoalToReplace = FBContext.DailyGoalsPerWeek.FirstOrDefault(d => d.DailyId == dailyGoalToUpdate.DailyId);
-                FBContext.DailyGoalsPerWeek.Remove(dailyGoalToReplace);
-                FBContext.DailyGoalsPerWeek.Add(dailyGoalToUpdate);
+                var dailyGoalToReplace = FBContext.DailyGoalPerWeeks.FirstOrDefault(d => d.DailyId == dailyGoalToUpdate.DailyId);
+                FBContext.DailyGoalPerWeeks.Remove(dailyGoalToReplace);
+                FBContext.DailyGoalPerWeeks.Add(dailyGoalToUpdate);
                 FBContext.SaveChanges();
             }
         }
 
         public void RemoveUser(User userToRemove)
         {
-            using (FoodBackContext FBContext = new FoodBackContext())
+            using (FoodBackDBEntities FBContext = new FoodBackDBEntities())
             {
                 var userTodelete = FBContext.Users.FirstOrDefault(u => u.EmailAddress == userToRemove.EmailAddress);
                 FBContext.Users.Remove(userTodelete);
@@ -224,14 +309,14 @@ namespace DAL
 
         public void RemoveMeal(Meal mealToRemove)
         {
-            using (FoodBackContext FBContext = new FoodBackContext())
+            using (FoodBackDBEntities FBContext = new FoodBackDBEntities())
             {
                 var usersWithThisMeal = from user in FBContext.Users
-                                        where user.UserMeals.FirstOrDefault(m => m.MealId == mealToRemove.MealId) != null
+                                        where user.Meals.FirstOrDefault(m => m.Type == mealToRemove.Type && m.MealDate.Equals(mealToRemove.MealDate)) != null
                                         select user;
-                foreach(User user in usersWithThisMeal)
+                foreach(BE.User user in usersWithThisMeal)
                 {
-                    user.UserMeals.Remove(mealToRemove);
+                    user.Meals.Remove(mealToRemove);
                 }
                 FBContext.Meals.Remove(mealToRemove);
                 FBContext.SaveChanges();
@@ -240,12 +325,12 @@ namespace DAL
         //remove a food from a specific meal
         public void RemoveFood(Food foodToRemove,Meal meal)
         {
-            using (FoodBackContext FBContext = new FoodBackContext())
+            using (FoodBackDBEntities FBContext = new FoodBackDBEntities())
             {
-                var food = FBContext.Foods.FirstOrDefault(f=>f.FoodId==foodToRemove.FoodId);
+                var food = FBContext.Foods.FirstOrDefault(f=>f.FoodID == foodToRemove.FoodID);
                 meal.Foods.Remove(food);
                 var meals = from meal1 in FBContext.Meals
-                                        where meal1.Foods.FirstOrDefault(f => f.FoodId == foodToRemove.FoodId) != null
+                                        where meal1.Foods.FirstOrDefault(f => f.FoodID == foodToRemove.FoodID) != null
                                         select meal1;
                 if(meals==null)//if this food does not exist in any meal
                 {
@@ -257,22 +342,15 @@ namespace DAL
 
         public void RemoveDailyGoal(DailyGoalPerWeek dailyGoalToRemove,User currentUser)
         {
-            using (FoodBackContext FBContext = new FoodBackContext())
+            using (FoodBackDBEntities FBContext = new FoodBackDBEntities())
             {
-                currentUser.DailyGoals.Remove(dailyGoalToRemove);
+                currentUser.DailyGoalPerWeeks.Remove(dailyGoalToRemove);
                 FBContext.SaveChanges();
             }
 
         }
 
-        public User findUserByEmail(string email)
-        {
-            using (FoodBackContext FBContext = new FoodBackContext())
-            {
-                User user = FBContext.Users.FirstOrDefault(u => u.EmailAddress.Equals(email));
-                return user;
-            }
-        }
+       
 
     }
 

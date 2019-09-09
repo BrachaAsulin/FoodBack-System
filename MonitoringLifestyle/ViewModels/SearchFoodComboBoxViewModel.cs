@@ -173,7 +173,7 @@ namespace MonitoringLifestyle.ViewModels
             foreach (BE.Food food in ResultList)
             {
                 if (selectedFoodName.Equals(food.Name))
-                    return food.FoodId;
+                    return food.FoodID.ToString();
 
             }
             return null;

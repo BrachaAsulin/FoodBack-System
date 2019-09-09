@@ -13,7 +13,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Image VerticalAlignment="Top" Source="/Resources/logo.png" Grid.Column="0" />
+            <Image VerticalAlignment="Top" Source="/Resources/logo.png" Grid.Column="0" Margin="0,0,130,0" />
 
         </Grid>
     <Grid Name="DashboardGrid" Height="30" Width="790"  HorizontalAlignment="Right" VerticalAlignment="Top">

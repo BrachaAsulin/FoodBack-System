@@ -25,7 +25,19 @@ namespace BL
         public void AddFood(Food newFood) { }
         public void RemoveFood(Food foodToRemove) { }
         public void UpdateFood(Food foodToUpdate) { }
+
+        public void AddFoodForMealPerUser(string meal, User currentUser, Food food,DateTime date)
+        {
+            dal.AddFoodForMealPerUser(meal, currentUser, food,date);
+        }
+
         public void AddMeal(Meal newMeal) { }
+
+        public ObservableCollection<Food> GetMealPerUser(string v, User currentUser, DateTime date)
+        {
+            return dal.GetMealPerUser(v, currentUser, date);
+        }
+
         public void RemoveMeal(Meal mealToRemove) { }
         public void UpdateMeal(Meal mealToUpdate) { }
         public void AddDailyGoalsPerWeek(DailyGoalPerWeek newDailyGoal, User currentUser)

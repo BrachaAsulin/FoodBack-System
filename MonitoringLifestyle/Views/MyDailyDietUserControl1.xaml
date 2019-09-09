@@ -52,7 +52,7 @@
                 <ResourceDictionary Source="/MonitoringLifestyle;component/Styles/AutoComplete.Styles.xaml" />
             </StackPanel.Resources>
             <TextBlock Margin="10"  FontSize="36" Text="What did you eat today?" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Arial" FontWeight="Bold" Foreground="#FF5A7900"/>
-            <local1:AutoComplete x:Name="autoFoods" SelectedValuePath="FoodId" DisplayMemberPath="Name" 
+            <local1:AutoComplete x:Name="autoFoods" SelectedValuePath="FoodID" DisplayMemberPath="Name" 
                           Margin="10" Delay="500" Style="{StaticResource AutoCompleteComboBox}" Width="520" SelectedValue="{Binding FoodIdSelected}" >
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="PatternChanged">
