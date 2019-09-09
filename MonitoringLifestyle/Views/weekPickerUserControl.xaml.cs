@@ -43,8 +43,8 @@ namespace MonitoringLifestyle.Views
             DateTime date = (DateTime)calendar.SelectedDate;
             calendar.SelectedDates.Clear();
             sunday = date.AddDays(0 - (int)date.DayOfWeek);//the sunday of the selected week
-            sundayOfWeek = sunday.Day + "/" + sunday.Month + "/" + sunday.Year;
-            ((GoalsViewModel)this.DataContext).sundayWeek = sundayOfWeek;
+            //sundayOfWeek = sunday.Day + "/" + sunday.Month + "/" + sunday.Year;
+            ((GoalsViewModel)this.DataContext).sundayWeek = sunday;
            // this.currentViewModel.sundayWeek= sundayOfWeek;
             for (int i = (int)sunday.DayOfWeek; i < 7; i++)
                 calendar.SelectedDates.Add(sunday.AddDays(i));

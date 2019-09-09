@@ -1,6 +1,4 @@
-﻿using BE;
-using MonitoringLifestyle.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,16 +16,13 @@ using System.Windows.Shapes;
 namespace MonitoringLifestyle.Views
 {
     /// <summary>
-    /// Interaction logic for MyDailyDietUserControl1.xaml
+    /// Interaction logic for AddFoodPage.xaml
     /// </summary>
-    public partial class MyDailyDietUserControl1 : UserControl
+    public partial class AddFoodUserControl:UserControl
     {
-        public MyDailyDietViewModel currentViewModel{get;set;}
-        public MyDailyDietUserControl1(User currentUser)
+        public AddFoodUserControl()
         {
             InitializeComponent();
-            currentViewModel= new MyDailyDietViewModel(currentUser);
-            this.DataContext = currentViewModel;
         }
     }
 }

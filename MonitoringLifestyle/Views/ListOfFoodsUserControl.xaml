@@ -8,13 +8,16 @@
              mc:Ignorable="d" 
              d:DesignHeight="100" d:DesignWidth="1090">
     <Grid>
-       
+
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="5*"/>
         </Grid.ColumnDefinitions>
-        <Button Grid.Row="1" FontFamily="Arial" Content="Add Food" FontSize="16" FontWeight="Bold" />
-        <ListBox x:Name="FoodsListBox" Grid.Row="1" Grid.Column="1"/>
+        <Button Grid.Row="1" Grid.Column="1" Command="{Binding AddFoodButtton}" FontFamily="Arial" Content="Add Food" FontSize="16" FontWeight="Bold" />
+        <ListBox x:Name="FoodsListBox" Grid.Row="1" Grid.Column="2"/>
+        <local:SearchFoodUserControl Grid.Column="0" VerticalAlignment="Top" Height="100"/>
+
 
     </Grid>
 </UserControl>

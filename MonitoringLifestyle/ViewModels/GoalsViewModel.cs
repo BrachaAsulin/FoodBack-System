@@ -18,34 +18,27 @@ namespace MonitoringLifestyle.ViewModels
         public GoalsModel CurrentModel { get; set; }
         public ICommand UpdateGoals { get; set; }
          public User currentUser;
-        public string sundayWeek { get; set; }
+        public DateTime sundayWeek { get; set; }
 
         public void updateGoalsDetails()
         {
-          string[,] arr = new string[4, 5] { { BreakfastCalories, BreakfastFats, BreakfastCarbs, BreakfastProteins, BreakfastSugar },
-                                            {LunchCalories,LunchFats,LunchCarbs,LunchProteins,LunchSugar },
-                                            {DinnerCalories,DinnerFats,DinnerCarbs,DinnerProteins,DinnerSugar },
-                                            { SnacksCalories,SnacksFats,SnacksCarbs,SnacksProteins,SnacksSugar} };
+          string[,] arr = new string[4, 5] { { BreakfastCalories, BreakfastFats, BreakfastFibers, BreakfastProteins, BreakfastSugar },
+                                            {LunchCalories,LunchFats,LunchFibers,LunchProteins,LunchSugar },
+                                            {DinnerCalories,DinnerFats,DinnerFibers,DinnerProteins,DinnerSugar },
+                                            { SnacksCalories,SnacksFats,SnacksFibers,SnacksProteins,SnacksSugar} };
             int aSumCalories = int.Parse(BreakfastCalories) +int.Parse(LunchCalories)+int.Parse(DinnerCalories)+int.Parse(SnacksCalories);
             int aSumFats = int.Parse(BreakfastFats) + int.Parse(LunchFats) + int.Parse(DinnerFats) + int.Parse(SnacksFats);
-            int aSumCarbs = int.Parse(BreakfastCarbs) + int.Parse(LunchCarbs) + int.Parse(DinnerCarbs) + int.Parse(SnacksCarbs);
+            int aSumFibers = int.Parse(BreakfastFibers) + int.Parse(LunchFibers) + int.Parse(DinnerFibers) + int.Parse(SnacksFibers);
             int aSumProteins = int.Parse(BreakfastProteins) + int.Parse(LunchProteins) + int.Parse(DinnerProteins) + int.Parse(SnacksProteins);
             int aSumSugar = int.Parse(BreakfastSugar) + int.Parse(LunchSugar) + int.Parse(DinnerSugar) + int.Parse(SnacksSugar);
             
             //put the sum of the nutritional values in the last row in the table
             SumCalories = aSumCalories.ToString();
             SumFats = aSumFats.ToString();
-            SumCarbs = aSumCarbs.ToString();
+            SumFibers = aSumFibers.ToString();
             SumProteins = aSumProteins.ToString();
-            SumSugar = aSumSugar.ToString();
-
-
-
-
-            
-             CurrentModel.UpdateGoalData(sundayWeek, SumCalories,SumFats, SumCarbs, SumProteins, SumSugar,arr, currentUser);
-
-
+            SumSugar = aSumSugar.ToString();    
+            CurrentModel.UpdateGoalData(sundayWeek, SumCalories,SumFats, SumFibers, SumProteins, SumSugar,arr, currentUser);
         }
 
         public GoalsViewModel(User aCurrentUser)
@@ -96,15 +89,15 @@ namespace MonitoringLifestyle.ViewModels
         public static readonly DependencyProperty BreakfastFatsProperty =
             DependencyProperty.Register("BreakfastFats", typeof(string), typeof(GoalsViewModel));
 
-        public string BreakfastCarbs
+        public string BreakfastFibers
         {
-            get { return (string)GetValue(BreakfastCarbsProperty); }
-            set { SetValue(BreakfastCarbsProperty, value); }
+            get { return (string)GetValue(BreakfastFibersProperty); }
+            set { SetValue(BreakfastFibersProperty, value); }
         }
 
         // Using a DependencyProperty as the backing store for MyProperty.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty BreakfastCarbsProperty =
-            DependencyProperty.Register("BreakfastCarbs", typeof(string), typeof(GoalsViewModel));
+        public static readonly DependencyProperty BreakfastFibersProperty =
+            DependencyProperty.Register("BreakfastFibers", typeof(string), typeof(GoalsViewModel));
         public string BreakfastProteins
         {
             get { return (string)GetValue(BreakfastProteinsProperty); }
@@ -151,15 +144,15 @@ namespace MonitoringLifestyle.ViewModels
         public static readonly DependencyProperty LunchFatsProperty =
             DependencyProperty.Register("LunchFats", typeof(string), typeof(GoalsViewModel));
 
-        public string LunchCarbs
+        public string LunchFibers
         {
-            get { return (string)GetValue(LunchCarbsProperty); }
-            set { SetValue(LunchCarbsProperty, value); }
+            get { return (string)GetValue(LunchFibersProperty); }
+            set { SetValue(LunchFibersProperty, value); }
         }
 
         // Using a DependencyProperty as the backing store for MyProperty.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty LunchCarbsProperty =
-            DependencyProperty.Register("LunchCarbs", typeof(string), typeof(GoalsViewModel));
+        public static readonly DependencyProperty LunchFibersProperty =
+            DependencyProperty.Register("LunchFibers", typeof(string), typeof(GoalsViewModel));
         public string LunchProteins
         {
             get { return (string)GetValue(LunchProteinsProperty); }
@@ -207,15 +200,15 @@ namespace MonitoringLifestyle.ViewModels
         public static readonly DependencyProperty DinnerFatsProperty =
             DependencyProperty.Register("DinnerFats", typeof(string), typeof(GoalsViewModel));
 
-        public string DinnerCarbs
+        public string DinnerFibers
         {
-            get { return (string)GetValue(DinnerCarbsProperty); }
-            set { SetValue(DinnerCarbsProperty, value); }
+            get { return (string)GetValue(DinnerFibersProperty); }
+            set { SetValue(DinnerFibersProperty, value); }
         }
 
         // Using a DependencyProperty as the backing store for MyProperty.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty DinnerCarbsProperty =
-            DependencyProperty.Register("DinnerCarbs", typeof(string), typeof(GoalsViewModel));
+        public static readonly DependencyProperty DinnerFibersProperty =
+            DependencyProperty.Register("DinnerFibers", typeof(string), typeof(GoalsViewModel));
         public string DinnerProteins
         {
             get { return (string)GetValue(DinnerProteinsProperty); }
@@ -263,15 +256,15 @@ namespace MonitoringLifestyle.ViewModels
         public static readonly DependencyProperty SnacksFatsProperty =
             DependencyProperty.Register("SnacksFats", typeof(string), typeof(GoalsViewModel));
 
-        public string SnacksCarbs
+        public string SnacksFibers
         {
-            get { return (string)GetValue(SnacksCarbsProperty); }
-            set { SetValue(SnacksCarbsProperty, value); }
+            get { return (string)GetValue(SnacksFibersProperty); }
+            set { SetValue(SnacksFibersProperty, value); }
         }
 
         // Using a DependencyProperty as the backing store for MyProperty.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty SnacksCarbsProperty =
-            DependencyProperty.Register("SnacksCarbs", typeof(string), typeof(GoalsViewModel));
+        public static readonly DependencyProperty SnacksFibersProperty =
+            DependencyProperty.Register("SnacksFibers", typeof(string), typeof(GoalsViewModel));
         public string SnacksProteins
         {
             get { return (string)GetValue(SnacksProteinsProperty); }
@@ -312,15 +305,15 @@ namespace MonitoringLifestyle.ViewModels
         // Using a DependencyProperty as the backing store for MyProperty.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty SumFatsProperty =
             DependencyProperty.Register("SumFats", typeof(string), typeof(GoalsViewModel));
-        public string SumCarbs
+        public string SumFibers
         {
-            get { return (string)GetValue(SumCarbsProperty); }
-            set { SetValue(SumCarbsProperty, value); }
+            get { return (string)GetValue(SumFibersProperty); }
+            set { SetValue(SumFibersProperty, value); }
         }
 
         // Using a DependencyProperty as the backing store for MyProperty.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty SumCarbsProperty =
-            DependencyProperty.Register("SumCarbs", typeof(string), typeof(GoalsViewModel));
+        public static readonly DependencyProperty SumFibersProperty =
+            DependencyProperty.Register("SumFibers", typeof(string), typeof(GoalsViewModel));
 
 
         public string SumProteins

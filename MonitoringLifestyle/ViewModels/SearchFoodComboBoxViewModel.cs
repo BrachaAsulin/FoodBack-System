@@ -13,7 +13,7 @@ using MonitoringLifestyle.Commands;
 
 namespace MonitoringLifestyle.ViewModels
 {
-    class SearchFoodComboBoxViewModel : DependencyObject, INotifyPropertyChanged
+    public class SearchFoodComboBoxViewModel : DependencyObject, INotifyPropertyChanged
     {
 
 
@@ -82,6 +82,7 @@ namespace MonitoringLifestyle.ViewModels
         {
             NutrionalValues = new NutrionalValuesCommand(this);
             SelectedFood = new BE.Food();
+            SelectedFood = null;
             Foods = new ObservableCollection<string>();
             currentModel = new SearchFoodComboBoxModel();
         }
@@ -172,7 +173,7 @@ namespace MonitoringLifestyle.ViewModels
             foreach (BE.Food food in ResultList)
             {
                 if (selectedFoodName.Equals(food.Name))
-                    return food.FoodId;
+                    return food.FoodID.ToString();
 
             }
             return null;

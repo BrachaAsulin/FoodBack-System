@@ -37,7 +37,7 @@ namespace MonitoringLifestyle.ViewModels
 
         internal void SaveNewUser()
         {
-            // throw new NotImplementedException();
+            
             NewAccount.SaveNewUser();
             DashboardVM.ChildUserControl = new AccountUserControl(DashboardVM);
             MessageBox.Show("you have to sign in");

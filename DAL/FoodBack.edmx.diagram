@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3bcee985675349c8b3859a9cfe1fa588" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="FoodBackDBModel.DailyGoalPerWeek" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoodBackDBModel.Food" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoodBackDBModel.Meal" Width="1.625" PointX="4.625" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoodBackDBModel.User" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
+        <AssociationConnector Association="FoodBackDBModel.DailyGoalPerWeekUser" />
+        <AssociationConnector Association="FoodBackDBModel.FoodMeal" />
+        <AssociationConnector Association="FoodBackDBModel.MealUser" />
+        <EntityTypeShape EntityType="FoodBackDBModel.C__MigrationHistory" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="FoodBackDBModel.DailyGoalPerWeek1" Width="1.5" PointX="5.625" PointY="9" />
+        <EntityTypeShape EntityType="FoodBackDBModel.Food1" Width="1.5" PointX="3.375" PointY="5" />
+        <EntityTypeShape EntityType="FoodBackDBModel.Meal1" Width="1.5" PointX="5.625" PointY="5.375" />
+        <EntityTypeShape EntityType="FoodBackDBModel.User1" Width="1.5" PointX="7.875" PointY="5" />
+        <AssociationConnector Association="FoodBackDBModel.FoodMeals" />
+        <AssociationConnector Association="FoodBackDBModel.MealUsers" />
+        <AssociationConnector Association="FoodBackDBModel.UserDailyGoalPerWeeks" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

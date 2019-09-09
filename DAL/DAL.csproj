@@ -11,6 +11,7 @@
     <AssemblyName>DAL</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -39,6 +40,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,38 +51,48 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dal.cs" />
-    <Compile Include="FoodBackContext.cs" />
-    <Compile Include="Migrations\201909021259514_InitialCreate.cs" />
-    <Compile Include="Migrations\201909021259514_InitialCreate.Designer.cs">
-      <DependentUpon>201909021259514_InitialCreate.cs</DependentUpon>
+    <Compile Include="FoodBack.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FoodBack.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201909021322247_[201909021259514_InitialCreate].cs" />
-    <Compile Include="Migrations\201909021322247_[201909021259514_InitialCreate].Designer.cs">
-      <DependentUpon>201909021322247_[201909021259514_InitialCreate].cs</DependentUpon>
+    <Compile Include="FoodBack.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FoodBack.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BE\BE.csproj">
-      <Project>{5a3ab8aa-4f76-493e-8f5b-eb7f09278936}</Project>
-      <Name>BE</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
+    <EntityDeploy Include="FoodBack.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FoodBack.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="FoodBack.edmx.diagram">
+      <DependentUpon>FoodBack.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201909021259514_InitialCreate.resx">
-      <DependentUpon>201909021259514_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909021322247_[201909021259514_InitialCreate].resx">
-      <DependentUpon>201909021322247_[201909021259514_InitialCreate].cs</DependentUpon>
-    </EmbeddedResource>
+    <Content Include="FoodBack.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FoodBack.edmx</DependentUpon>
+      <LastGenOutput>FoodBack.Context.cs</LastGenOutput>
+      <CustomToolNamespace>BE</CustomToolNamespace>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BE\BE.csproj">
+      <Project>{5a3ab8aa-4f76-493e-8f5b-eb7f09278936}</Project>
+      <Name>BE</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

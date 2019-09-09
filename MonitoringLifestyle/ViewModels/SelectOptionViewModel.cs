@@ -62,7 +62,7 @@ namespace MonitoringLifestyle.ViewModels
                     break;
                 case 2:
                     if (currentUser != null)
-                        DashboardVM.ChildUserControl = new MyDailyDietUserControl1();
+                        DashboardVM.ChildUserControl = new MyDailyDietUserControl1(currentUser);
                     else
                     {
                         MessageBox.Show("You have to sign in first or create a new account");

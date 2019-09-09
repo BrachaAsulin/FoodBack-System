@@ -7,7 +7,7 @@
              xmlns:local="clr-namespace:MonitoringLifestyle"
              mc:Ignorable="d" 
              d:DesignHeight="250" d:DesignWidth="550">
-    <Grid x:Name="selectOptionGrid">
+    <Grid x:Name="selectOptionGrid" >
         
         <Grid.RowDefinitions>
             <RowDefinition Height="115*"/>
@@ -19,52 +19,36 @@
             <ColumnDefinition Width="20*"/>
             <ColumnDefinition Width="265*"/>
         </Grid.ColumnDefinitions>
-        <Button Command="{Binding Goals}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="265" Grid.Row="0" Grid.Column="0" Height="115" Foreground="#FF21BD9F"  RenderTransformOrigin="0.513,0.531" FontWeight="Bold">
+        <Button Command="{Binding Goals}" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Row="0" Grid.Column="0" Height="115" Foreground="#FF21BD9F"  RenderTransformOrigin="0.513,0.531" FontWeight="Bold">
             <Grid Height="115" Width="265">
-
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="14*"/>
-                    <RowDefinition Height="9*"/>
-                </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" HorizontalAlignment="center" VerticalAlignment="Bottom" Text="Goals" FontSize="24" FontFamily="Calisto MT" Foreground="#FF546E00" Height="27" Width="65" FontWeight="Bold" TextDecorations="{x:Null}"/>
+                <TextBlock  Grid.Row="0" HorizontalAlignment="center" VerticalAlignment="Center" Text="Goals" FontSize="24" FontFamily="Calisto MT" Foreground="#FF546E00" Height="27" Width="65" FontWeight="Bold" TextDecorations="{x:Null}"/>
                 <Grid.Background>
                     <ImageBrush ImageSource="../Resources/goals.jpg" Stretch="UniformToFill"/>
                 </Grid.Background>
             </Grid>
 
         </Button>
-        <Button Command="{Binding Daily}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="265" Grid.Row="0" Grid.Column="2" Height="115">
+        <Button Command="{Binding Daily}" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="0" Grid.Column="2" Height="115">
             <Grid Height="115" Width="265">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="14*"/>
-                    <RowDefinition Height="9*"/>
-                </Grid.RowDefinitions>
-                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="0" Text="My daily diet" FontSize="24" Foreground="#FF546E00" FontFamily="Calisto MT" Height="31" Width="144" RenderTransformOrigin="0.649,0.429" FontWeight="Bold"/>
+
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="My daily diet" FontSize="24" Foreground="#FF546E00" FontFamily="Calisto MT" Height="31" Width="144" RenderTransformOrigin="0.649,0.429" FontWeight="Bold"/>
                 
                 <Grid.Background>
                     <ImageBrush ImageSource="../Resources/daily.jpg" Stretch="UniformToFill"/>
                 </Grid.Background>
             </Grid>
         </Button>
-        <Button Command="{Binding Evaluation}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="265" Grid.Row="2" Grid.Column="0" Height="115" Foreground="#FF21BD9F" Background="#FFEEF7F5">
+        <Button Command="{Binding Evaluation}" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Grid.Column="0" Height="115" Foreground="#FF21BD9F" Background="#FFEEF7F5">
             <Grid Height="115" Width="265">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="14*"/>
-                    <RowDefinition Height="9*"/>
-                </Grid.RowDefinitions>
-                <TextBlock HorizontalAlignment="center" VerticalAlignment="Bottom" Grid.Row="0" Text="Evaluation" FontSize="24" Foreground="#FF546E00" FontFamily="Calisto MT" FontWeight="Bold" />
+                <TextBlock HorizontalAlignment="center" VerticalAlignment="Center" Text="Evaluation" FontSize="24" Foreground="#FF546E00" FontFamily="Calisto MT" FontWeight="Bold" />
                 <Grid.Background>
                     <ImageBrush ImageSource="../Resources/evaluation2.jpg" Stretch="UniformToFill"/>
                 </Grid.Background>
             </Grid>
         </Button>
-        <Button Command="{Binding FoodInfo}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="265" Grid.Row="2" Grid.Column="2" Height="115">
+        <Button Command="{Binding FoodInfo}" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Grid.Column="2" Height="115">
             <Grid Height="115" Width="265">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="14*"/>
-                    <RowDefinition Height="9*"/>
-                </Grid.RowDefinitions>
-                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="0" Text="Food information" FontSize="24" Foreground="#FF546E00" FontFamily="Calisto MT" FontWeight="Bold"/>
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Food information" FontSize="24" Foreground="#FF546E00" FontFamily="Calisto MT" FontWeight="Bold"/>
                 <Grid.Background>
                     <ImageBrush ImageSource="../Resources/queries.png"/>
                 </Grid.Background>

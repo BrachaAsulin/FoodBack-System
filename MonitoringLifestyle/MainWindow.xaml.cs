@@ -26,7 +26,7 @@ namespace MonitoringLifestyle
         public MainWindow()
         {
             InitializeComponent();
-            stackPanelMain.DataContext = myDashBoard.DashboardGrid.DataContext;
+            GridMain.DataContext = myDashBoard.DashboardGrid.DataContext;
             
         }
 

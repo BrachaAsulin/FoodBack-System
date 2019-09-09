@@ -8,25 +8,45 @@ using System.Windows.Input;
 
 namespace MonitoringLifestyle.Commands
 {
-    class AddFoodCommand : ICommand
+    public class AddFoodCommand : ICommand
     {
-        public ListOfFoodsViewModel currentViewModel { get; set; }
-        public AddFoodCommand(ListOfFoodsViewModel currentViewModel)
+        public MyDailyDietViewModel currentViewModel { get; set; }
+        public AddFoodCommand(MyDailyDietViewModel currentViewModel)
         {
             this.currentViewModel = currentViewModel;
 
         }
 
-        public event EventHandler CanExecuteChanged;
+        public event EventHandler CanExecuteChanged
+        {
+            add { CommandManager.RequerySuggested += value; }
+            remove { CommandManager.RequerySuggested -= value; }
+        }
 
         public bool CanExecute(object parameter)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
         public void Execute(object parameter)
         {
-            throw new NotImplementedException();
+            string meal = parameter.ToString();
+            switch(meal)
+            {
+                case "Breakfast":
+                    this.currentViewModel.AddFood("Breakfast");
+                    break;
+                case "Lunch":
+                    this.currentViewModel.AddFood("Lunch");
+                    break;
+                case "Dinner":
+                    this.currentViewModel.AddFood("Dinner");
+                    break;
+                case "Snacks":
+                    this.currentViewModel.AddFood("Snacks");
+                    break;
+               
+            }
         }
     }
 }

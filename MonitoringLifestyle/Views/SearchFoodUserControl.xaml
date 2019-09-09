@@ -15,7 +15,7 @@
             <ColumnDefinition Width="9*"/>
         </Grid.ColumnDefinitions>
         <materialDesign:PackIcon Grid.Column="0" Kind="Search" VerticalAlignment="Stretch" HorizontalAlignment="Center"  Height="48" Width="27" />
-        <ComboBox x:Name="combo" Grid.Column="1" IsDropDownOpen="{Binding IsOpen}" ItemsSource="{Binding Foods}" SelectedValue="{Binding SelectedFoodName}" Text="{Binding FoodToSearch}" IsEditable="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <ComboBox x:Name="combo" Grid.Column="1" IsDropDownOpen="{Binding IsOpen}" ItemsSource="{Binding Foods}" SelectedValue="{Binding SelectedFoodName}" Text="{Binding FoodToSearch}" IsEditable="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  />
             </Grid>
         </Border>
     </Grid>
