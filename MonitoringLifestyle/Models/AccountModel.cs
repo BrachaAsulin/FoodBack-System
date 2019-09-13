@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
@@ -94,7 +95,24 @@ namespace MonitoringLifestyle.Models
             get;
             private set;
         }
-        
+
+        public static bool EmailIsValid(string email)
+        {
+            string expression = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+
+            if (Regex.IsMatch(email, expression))
+            {
+                if (Regex.Replace(email, expression, string.Empty).Length == 0)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+
+
+
         public string this[string columnEmailAddress]
         {
             get
@@ -106,16 +124,17 @@ namespace MonitoringLifestyle.Models
                         Error = "Email Address can not be empty";
                         
                     }
+                    else if(!EmailIsValid(EmailAddress))
+                    {
+                       
+                            Error = "Email Address is not in correct form";
+                    }
                     else
                     {
                   
                         Error = null;
                         validProperties["EmailAddress"] = true;
                         ValidateProperties();
-
-
-
-
                     }
 
                 }
@@ -129,7 +148,7 @@ namespace MonitoringLifestyle.Models
                     else
                     {
                     
-                            Error = null;
+                        Error = null;
                         validProperties["Password"] = true;
                         ValidateProperties();
 
@@ -165,17 +184,19 @@ namespace MonitoringLifestyle.Models
 
         public User saveUser()
         {
-            MessageBox.Show("your details:"+" "+(bl.saveUser(emailAddress)).ToString());
-            return bl.saveUser(emailAddress);
+
+            if (bl.emailCorrectToPassword(    emailAddress, password))
+            {
+                MessageBox.Show("your details:" + " " + (bl.saveUser(emailAddress)).ToString());
+                return bl.saveUser(emailAddress);
+            }
+            else
+            {
+               // MessageBox.Show("user is not exist");
+                return null;
+            }
             
         }
-
-
-
-
-
-
-
 
     }
 }

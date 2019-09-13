@@ -60,6 +60,11 @@ namespace BL
         {
             return dal.GetNutrientsForFood(foodId);
         }
+
+        public bool emailCorrectToPassword(string emailAddress, string password)
+        {
+            return dal.emailCorrectToPassword(emailAddress, password);
+        }
     }
 
 }
