@@ -72,6 +72,15 @@ namespace DAL
 
         }
 
+        public bool emailCorrectToPassword(string emailAddress, string password)
+        {
+            User u = findUserByEmail(emailAddress);
+            if ((u.Password).Equals(password))
+                return true;
+            else
+                return false;
+        }
+
         /// <summary>
         /// Function that gets a user, type of meal and food to add to user's meal in a specific date and type of meal
         /// </summary>

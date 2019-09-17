@@ -26,5 +26,7 @@ namespace MonitoringLifestyle.Views
             InitializeComponent();
             this.DataContext = new AccountViewModel(dashboardVM);
         }
+
+      
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -144,25 +145,42 @@ namespace MonitoringLifestyle.Models
                 return Error;
             }
         }
+        private bool IsDigitsOnly(string str)
+        {
+            foreach (char c in str)
+            {
+                if (c < '0' || c > '9')
+                    return false;
+            }
 
+            return true;
+        }
         private string ValidateWeight()
         {
             if (String.IsNullOrWhiteSpace(Weight))
                 return "Weight can not be empty";
-            return null;
+            else if (!IsDigitsOnly(Weight))
+                return "Weight must contains digits only";
+            else
+                return null;
         }
 
         private string ValidateHeight()
         {
             if (String.IsNullOrWhiteSpace(Height))
                 return "Height can not be empty";
-            return null;
+            else if (!IsDigitsOnly(Height))
+                return "Height must contains digits only";
+            else
+                return null;
         }
 
         private string ValidateDateOfBirth()
         {
             if (String.IsNullOrWhiteSpace(DateOfBirth))
                 return "Date of birth can not be empty";
+
+            else
             return null;
         }
 
@@ -177,21 +195,30 @@ namespace MonitoringLifestyle.Models
         {
             if (String.IsNullOrWhiteSpace(EmailAddress))
                 return "EmailAddress can not be empty";
-            return null;
+            else if (!AccountModel.EmailIsValid(EmailAddress))
+                return "Email Address is not in correct form";
+            else
+                return null;
         }
 
         private string ValidateLastName()
         {
             if (String.IsNullOrWhiteSpace(LastName))
                 return "LastName can not be empty";
-            return null;
+            else if (!Regex.IsMatch(LastName, @"^[a-zA-Z]+$"))
+                return "LastName can contain only letters";
+            else
+                return null;
         }
 
         private string ValidateFirstName()
         {
             if (String.IsNullOrWhiteSpace(FirstName))
                 return "FirstName can not be empty";
-            return null;
+            else if (!Regex.IsMatch(FirstName, @"^[a-zA-Z]+$"))
+                return "FirstName can contain only letters";
+            else
+                return null;
         }
 
         public string Error

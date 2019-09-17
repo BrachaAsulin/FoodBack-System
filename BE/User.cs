@@ -47,5 +47,9 @@ namespace BE
             this.Height = Height;
             this.Weight = Weight;
         }
+        public override string ToString()
+        {
+            return "    name: " + FirstName + "   " + LastName + "   EmailAddress: " + EmailAddress + "     " + "Password: " + Password + "    DateOfBirth: " + BirthDate + "    Height: " + Height + "    Weight: " + Weight;
+        }
     }
 }
