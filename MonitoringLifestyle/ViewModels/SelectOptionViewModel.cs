@@ -71,7 +71,7 @@ namespace MonitoringLifestyle.ViewModels
                     break;
                 case 3:
                     if (currentUser != null)
-                        DashboardVM.ChildUserControl = new EvaluationUserControl1();
+                        DashboardVM.ChildUserControl = new EvaluationUserControl1(currentUser);
                     else
                     {
                         MessageBox.Show("You have to sign in first or create a new account");

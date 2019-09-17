@@ -5,6 +5,14 @@
              xmlns:converters="clr-namespace:MonitoringLifestyle.Converters"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.green.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.indigo.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
         <converters:boolToVisibilityConverter x:Key="InputToVisibility"/>
         <Style x:Key="WatermarkTextbox" TargetType="{x:Type TextBox}">
             <Setter Property="BorderBrush" Value="Black"/>
@@ -147,5 +155,6 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

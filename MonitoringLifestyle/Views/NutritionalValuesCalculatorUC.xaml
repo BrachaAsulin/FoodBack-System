@@ -6,55 +6,35 @@
              xmlns:local="clr-namespace:MonitoringLifestyle.Views"
              xmlns:local1="clr-namespace:MonitoringLifestyle.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="350" d:DesignWidth="500">
+             d:DesignHeight="500" d:DesignWidth="1090">
     <Grid x:Name="calculatorGrid" Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="58*"/>
-            <RowDefinition Height="30*"/>
-            <RowDefinition Height="87*"/>
-            <RowDefinition Height="58*"/>
-            <RowDefinition Height="117*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
+        <TextBlock Text="Nutritional Values Calculator " FontSize="36" FontFamily="Arial" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#FF5A7900" />
 
-
-
-        <TextBlock Text="Nutritional Values " FontSize="36" Grid.Column="0" FontFamily="Arial" FontWeight="Bold" Margin="0,0,0,10" HorizontalAlignment="Left" Width="308"/>
-        <TextBlock Text="Calculator" FontSize="36" FontFamily="Arial" FontWeight="Bold" Foreground="#FF9E9898" Margin="313,0,10,10"/>
-        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="32,0,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="193" Height="21" Foreground="#FF80101D"><Run Text="choose the desirable food:"/><InlineUIContainer>
-                <Calendar Height="10" Width="1"/>
-            </InlineUIContainer></TextBlock>
-
-
-        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="31,0,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="21" Foreground="#FF80101D"><Run Text="calories"/><InlineUIContainer>
-                <Calendar Height="10" Width="1"/>
-            </InlineUIContainer></TextBlock>
-        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="31,26,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="21" Foreground="#FF80101D"><Run Text="fats"/><InlineUIContainer>
-                <Calendar Height="10" Width="1"/>
-            </InlineUIContainer></TextBlock>
-        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="31,52,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="21" Foreground="#FF80101D"><Run Text="carbs"/><InlineUIContainer>
-                <Calendar Height="10" Width="1"/>
-            </InlineUIContainer></TextBlock>
-        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="32,73,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="21" Foreground="#FF80101D"><Run Text="proteins"/><InlineUIContainer>
-                <Calendar Height="10" Width="1"/>
-            </InlineUIContainer></TextBlock>
-        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="31,96,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="21" Foreground="#FF80101D"><Run Text="sugar"/><InlineUIContainer>
-                <Calendar Height="10" Width="1"/>
-            </InlineUIContainer></TextBlock>
-
-
-
-
-
-        <local1:SearchFoodUserControl x:Name="serachFoodQuery" HorizontalAlignment="Left" Margin="31,34,0,0" Grid.Row="2" VerticalAlignment="Top" Height="43" Width="446"/>
-        <TextBox x:Name="caloriesTextbox" HorizontalAlignment="Left" Height="23" Margin="214,0,0,0" Grid.Row="4" TextWrapping="Wrap" Text="{Binding calories}" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="sugarTextbox" HorizontalAlignment="Left" Height="23" Margin="214,92,0,0" Grid.Row="4" TextWrapping="Wrap" Text="{Binding sugar}" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="proteinsTextbox" HorizontalAlignment="Left" Height="23" Margin="214,69,0,0" Grid.Row="4" TextWrapping="Wrap" Text="{Binding proteins}" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="carbsTextbox" HorizontalAlignment="Left" Height="23" Margin="214,46,0,0" Grid.Row="4" TextWrapping="Wrap" Text="{Binding carbs}" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="fatsTextbox" HorizontalAlignment="Left" Height="23" Margin="214,23,0,0" Grid.Row="4" TextWrapping="Wrap" Text="{Binding fats}" VerticalAlignment="Top" Width="120"/>
-        <Button Command="{Binding NutrionalValues}" Content="click to see the result" HorizontalAlignment="Left" Margin="131,10,0,0" Grid.Row="3" VerticalAlignment="Top" FontSize="20" Width="203" Height="38"/>
+        <TextBlock Text="SELECT A DESIRABLE FOOD" HorizontalAlignment="Center" FontSize="24" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Bottom" FontFamily="Arial" Foreground="#FFD62A9F"/>
+        <TextBlock FontSize="22"  HorizontalAlignment="Left" Margin="415,0,0,0"  Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top"  Foreground="#FFD62A9F" FontWeight="Bold" FontFamily="Arial">Calories</TextBlock>
+        <TextBlock FontSize="22"  HorizontalAlignment="Left" Margin="415,0,0,0"  Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top"  Foreground="#FFD62A9F" FontWeight="Bold" FontFamily="Arial">Fats</TextBlock>
+        <TextBlock FontSize="22"  HorizontalAlignment="Left" Margin="415,0,0,0"  Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Top"  Foreground="#FFD62A9F" FontFamily="Arial" FontWeight="Bold">Fibers</TextBlock>
+        <TextBlock FontSize="22"  HorizontalAlignment="Left" Margin="415,0,0,0"  Grid.Row="7" TextWrapping="Wrap" VerticalAlignment="Top"  Foreground="#FFD62A9F" FontFamily="Arial" FontWeight="Bold">Proteins</TextBlock>
+        <TextBlock FontSize="22"  HorizontalAlignment="Left"  Margin="415,0,0,0" Grid.Row="8" TextWrapping="Wrap" VerticalAlignment="Top"  Foreground="#FFD62A9F" FontWeight="Bold" FontFamily="Arial"> Sugars</TextBlock>
+        <local1:SearchFoodUserControl x:Name="serachFoodQuery" HorizontalAlignment="Center" Margin="0,10,0,0"  Grid.Row="2" VerticalAlignment="Top" Height="43" Width="446"/>
+        <TextBox x:Name="caloriesTextbox" HorizontalAlignment="Center" Height="23" Margin="120,0,0,0" Grid.Row="4" TextWrapping="Wrap" Text="{Binding calories}" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="sugarTextbox" HorizontalAlignment="Center" Height="23" Margin="120,0,0,0" Grid.Row="8" TextWrapping="Wrap" Text="{Binding sugar}" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="proteinsTextbox" HorizontalAlignment="Center" Height="23" Margin="120,0,0,0" Grid.Row="7" TextWrapping="Wrap" Text="{Binding proteins}" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="carbsTextbox" HorizontalAlignment="Center" Height="23" Margin="120,0,0,0" Grid.Row="6" TextWrapping="Wrap" Text="{Binding carbs}" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="fatsTextbox" HorizontalAlignment="Center" Height="23" Margin="120,0,0,0" Grid.Row="5" TextWrapping="Wrap" Text="{Binding fats}" VerticalAlignment="Top" Width="120"/>
+        <Button Command="{Binding NutrionalValues}" Content="click to see the result" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Top" FontSize="20" Width="250" Height="38"/>
 
 
     </Grid>

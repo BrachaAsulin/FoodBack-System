@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MonitoringLifestyle.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,10 @@ namespace MonitoringLifestyle.Views
     /// </summary>
     public partial class EvaluationUserControl1 : UserControl
     {
-        public EvaluationUserControl1()
+        public EvaluationUserControl1(BE.User currentUser)
         {
             InitializeComponent();
+            this.DataContext = new EvaluationViewModel(currentUser);
         }
     }
 }

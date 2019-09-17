@@ -44,8 +44,16 @@ namespace MonitoringLifestyle.Views
             calendar.SelectedDates.Clear();
             sunday = date.AddDays(0 - (int)date.DayOfWeek);//the sunday of the selected week
             //sundayOfWeek = sunday.Day + "/" + sunday.Month + "/" + sunday.Year;
-            ((GoalsViewModel)this.DataContext).sundayWeek = sunday;
-           // this.currentViewModel.sundayWeek= sundayOfWeek;
+            if(this.DataContext is GoalsViewModel)
+                ((GoalsViewModel)this.DataContext).sundayWeek = sunday;
+            if(this.DataContext is EvaluationViewModel)
+            {
+                ((EvaluationViewModel)this.DataContext).SundayWeek = sunday;
+                ((EvaluationViewModel)this.DataContext).ButtonChecked = false;
+
+
+            }
+            // this.currentViewModel.sundayWeek= sundayOfWeek;
             for (int i = (int)sunday.DayOfWeek; i < 7; i++)
                 calendar.SelectedDates.Add(sunday.AddDays(i));
 
@@ -56,8 +64,9 @@ namespace MonitoringLifestyle.Views
             if (calendar.SelectedDate != null && flagOnUpdate == false)
             {
                 addSelectedDates();
-                ((GoalsViewModel)this.DataContext).EnableGridGoal = true;
-                //currentViewModel.EnableGridGoal = true;
+                if(this.DataContext is GoalsViewModel)
+                    ((GoalsViewModel)this.DataContext).EnableGridGoal = true;
+              
             }
         }
 

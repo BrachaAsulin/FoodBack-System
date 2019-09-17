@@ -4,8 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MonitoringLifestyle"
+             xmlns:local1="clr-namespace:MonitoringLifestyle.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="400" d:DesignWidth="700">
+             d:DesignHeight="400" d:DesignWidth="1090">
     <UserControl.Resources>
         <Style TargetType="TextBox">
             <Style.Triggers>
@@ -18,6 +19,19 @@
             </Style.Triggers>
         </Style>
         <ControlTemplate x:Key="TextBoxBaseControlTemplate" TargetType="{x:Type TextBoxBase}">
+            <Border Background="{TemplateBinding Background}" 
+                 x:Name="Bd" BorderBrush="Black"
+                BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="7">
+                <ScrollViewer x:Name="PART_ContentHost"/>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" TargetName="Bd"/>
+                    <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        <ControlTemplate x:Key="PasswordBoxControlTemplate" TargetType="{x:Type PasswordBox}">
             <Border Background="{TemplateBinding Background}" 
                  x:Name="Bd" BorderBrush="Black"
                 BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="7">
@@ -50,34 +64,34 @@
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <TextBlock Text="First Name" Width="150" FontSize="24" VerticalAlignment="Center" FontFamily="Arial" Foreground="Gray"/>
+            <TextBlock Text="First Name" Width="150" FontSize="24" VerticalAlignment="Center" FontFamily="Arial" Foreground="Gray" Margin="20,0,0,0"/>
             <TextBox Text="{Binding NewAccount.FirstName, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Template="{StaticResource TextBoxBaseControlTemplate}" Width="500" Height="25" FontSize="20" Margin="10" FontFamily="Arial"/>
         </StackPanel>
         <StackPanel Grid.Row="1" Orientation="Horizontal">
-            <TextBlock Text="Last Name" Width="150" FontSize="24" VerticalAlignment="Center" FontFamily="Arial" Foreground="Gray"/>
+            <TextBlock Text="Last Name" Width="150" FontSize="24" VerticalAlignment="Center" FontFamily="Arial" Foreground="Gray" Margin="20,0,0,0"/>
             <TextBox Text="{Binding NewAccount.LastName, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Template="{StaticResource TextBoxBaseControlTemplate}" Width="500" Height="25" Margin="10" FontSize="20" FontFamily="Arial"/>
         </StackPanel>
         <StackPanel Grid.Row="2" Orientation="Horizontal">
-            <TextBlock Text="Email" Width="150" FontSize="24" VerticalAlignment="Center" FontFamily="Arial" Foreground="Gray"/>
+            <TextBlock Text="Email" Width="150" FontSize="24" VerticalAlignment="Center" FontFamily="Arial" Foreground="Gray" Margin="20,0,0,0"/>
             <TextBox Text="{Binding NewAccount.EmailAddress, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Template="{StaticResource TextBoxBaseControlTemplate}" Width="500" Height="25" Margin="10" FontSize="20" FontFamily="Arial"/>
         </StackPanel>
         <StackPanel Grid.Row="3" Orientation="Horizontal">
-            <TextBlock Text="Password" Width="150" FontSize="24" VerticalAlignment="Center" FontFamily="Arial" Foreground="Gray"/>
-            <TextBox Text="{Binding NewAccount.Password, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Template="{StaticResource TextBoxBaseControlTemplate}" Width="500" Height="25" Margin="10" FontSize="20" FontFamily="Arial"/>
+            <TextBlock Text="Password" Width="150" FontSize="24" VerticalAlignment="Center" FontFamily="Arial" Foreground="Gray" Margin="20,0,0,0"/>
+            <PasswordBox local1:PasswordHelper.BindPassword="True" local1:PasswordHelper.BoundPassword="{Binding NewAccount.Password, UpdateSourceTrigger=PropertyChanged,Mode=OneWayToSource, ValidatesOnDataErrors=True}" Template="{StaticResource PasswordBoxControlTemplate}" Width="500" Height="25" Margin="10" FontSize="20" FontFamily="Arial"/>
         </StackPanel>
         <StackPanel Grid.Row="4" Orientation="Horizontal">
-            <TextBlock Text="Date Of Birth" FontSize="24" VerticalAlignment="Center" FontFamily="Arial" Foreground="Gray" Width="150"/>
+            <TextBlock Text="Date Of Birth" FontSize="24" VerticalAlignment="Center" FontFamily="Arial" Foreground="Gray" Width="150" Margin="20,0,0,0"/>
             <TextBox Style="{StaticResource WatermarkTextbox}"   Margin="10" Width="500" Height="25"  FontSize="20" FontFamily="Arial"/>
         </StackPanel>
         <StackPanel Grid.Row="5" Orientation="Horizontal">
-            <TextBlock Text="Height" Width="150" FontSize="24" VerticalAlignment="Center" FontFamily="Arial" Foreground="Gray"/>
+            <TextBlock Text="Height" Width="150" FontSize="24" VerticalAlignment="Center" FontFamily="Arial" Foreground="Gray" Margin="20,0,0,0"/>
             <TextBox Text="{Binding NewAccount.Height, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Template="{StaticResource TextBoxBaseControlTemplate}" Width="500" Height="25" Margin="10"  FontSize="20" Foreground="#FF080808" FontFamily="Arial"/>
         </StackPanel>
         <StackPanel Grid.Row="6" Orientation="Horizontal">
-            <TextBlock Text="Weight" Width="150" FontSize="24" VerticalAlignment="Center" FontFamily="Arial" Foreground="Gray"/>
+            <TextBlock Text="Weight" Width="150" FontSize="24" VerticalAlignment="Center" FontFamily="Arial" Foreground="Gray" Margin="20,0,0,0"/>
             <TextBox Text="{Binding NewAccount.Weight, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Template="{StaticResource TextBoxBaseControlTemplate}" Width="500" Height="25" Margin="10"  FontSize="20" Foreground="#FF080808" FontFamily="Arial"/>
         </StackPanel>
-        <Button Command="{Binding registerNow}" IsEnabled="{Binding NewAccount.AllPropertiesValid}" Grid.Row="7" HorizontalAlignment="Right" Width="400" Height="50" FontSize="20" Background="#FF5A7900" Content="GREAT, REGISTER MY ACCOUNT" Foreground="White">
+        <Button Command="{Binding registerNow}" IsEnabled="{Binding NewAccount.AllPropertiesValid}" Grid.Row="7" HorizontalAlignment="Right" Width="350" Height="50" FontSize="20" Background="#FF5A7900" Content="GREAT, REGISTER MY ACCOUNT" Foreground="White" Margin="0,0,100,0" >
         </Button>
 
     </Grid>

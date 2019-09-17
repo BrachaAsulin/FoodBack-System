@@ -28,5 +28,6 @@ namespace MonitoringLifestyle.Views
             InitializeComponent();
             foodInfoGrid.DataContext = new FoodInformationViewModel(dashboardVM);
         }
+      
     }
 }

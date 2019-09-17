@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MonitoringLifestyle"
+             xmlns:local1="clr-namespace:MonitoringLifestyle.Views"
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="700">
     <UserControl.Resources>
@@ -41,9 +42,9 @@
             </StackPanel>
             <TextBlock Grid.Row="1" IsEnabled="False" FontSize="22" FontFamily="Arial" FontWeight="Bold" Text="Sign Into FoodBack"/>
             <TextBlock Grid.Row="2" Text="EMAIL ADDRESS OR USER NUMBER" FontSize="18" VerticalAlignment="Bottom"/>
-            <TextBox x:Name="emailTextbox" Grid.Row="3" HorizontalAlignment="Left" Width="300" Text="{Binding User.EmailAddress, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+            <TextBox x:Name="emailTextbox" Grid.Row="3" AcceptsReturn="False" HorizontalAlignment="Left" Width="300" Text="{Binding User.EmailAddress, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" FontFamily="Arial" FontSize="16" />
             <TextBlock Grid.Row="4" Text="YOUR PASSWORD" VerticalAlignment="Bottom" FontSize="18"/>
-            <TextBox x:Name="passwordTextbox" Grid.Row="5" HorizontalAlignment="Left" Width="300" Text="{Binding User.Password, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+            <PasswordBox x:Name="passwordTextbox" Grid.Row="5" HorizontalAlignment="Left" Width="300" local1:PasswordHelper.BindPassword="True" local1:PasswordHelper.BoundPassword="{Binding User.Password,Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" FontFamily="Arial" FontSize="16" BorderBrush="#89C3ADAD" />
             <Button Grid.Row="7" Command="{Binding SignIn}" Background="#FF5A7900" Content="SIGN IN" Foreground="White" FontSize="22" Width="300" HorizontalAlignment="Left" FontFamily="Arial" IsEnabled="{Binding User.AllPropertiesValid}"/>
         </Grid>
         <Grid Width="350"  Background="White" Grid.Column="1">

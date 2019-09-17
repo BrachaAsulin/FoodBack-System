@@ -5,20 +5,29 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MonitoringLifestyle.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="400" d:DesignWidth="700">
-    <Grid >
+             d:DesignHeight="500" d:DesignWidth="1090">
+    <Grid Background="White" >
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="12*"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" TextAlignment="Center" Text="Setting Goals &amp; Starting a Healthy Eating" FontSize="24" FontFamily="Arial" Foreground="#FF5A7900" FontWeight="Bold" Background="White" Margin="0,0,0,0"/>
-        <StackPanel HorizontalAlignment="Center" Grid.Row="1" Orientation="Horizontal" Height="372">
-            <StackPanel Background="White" Width="200" Orientation="Vertical">
-                <TextBlock Background="#FF3F9C44" HorizontalAlignment="Center" FontWeight="Bold" TextWrapping="Wrap" Text="please mark a week and fill the table" VerticalAlignment="Top" Height="38" Width="150" Foreground="#FFF0F0F0" Margin="10"/>
-                <local:weekPickerUserControl x:Name="weekUC" Margin="10" HorizontalAlignment="Center" FontWeight="Bold" VerticalAlignment="Top" Width="150"/>
-                <Button Height="34" Width="150" Background="#FF3F9C44" Command="{Binding UpdateGoals}" Content="UPDATE" FontWeight="Bold" HorizontalAlignment="Center" Margin="10" VerticalAlignment="Top"/>
-            </StackPanel>
-            <Grid ShowGridLines="True" Width="500" IsEnabled="{Binding EnableGridGoal}" Background="#FF3F9C44">
+        <TextBlock Grid.Row="0" TextAlignment="Center" Text="Setting Goals &amp; Starting a Healthy Eating" FontSize="36" FontFamily="Arial" Foreground="#FF5A7900" FontWeight="Bold" Background="White"/>
+        <Grid HorizontalAlignment="Center" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Background="White" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="0.5*"/>
+                </Grid.RowDefinitions>
+                <local:weekPickerUserControl Grid.Row="1" x:Name="weekUC" Margin="10,0,10,0" HorizontalAlignment="Center" FontWeight="Bold" VerticalAlignment="Top"/>
+                <TextBlock Background="#FF3F9C44" Grid.Row="0" HorizontalAlignment="Center" FontWeight="Bold" TextWrapping="Wrap" Text="please mark a week and fill the table" VerticalAlignment="Top" Height="38" Width="150" Foreground="#FFF0F0F0" Margin="10"/>
+                <Button Grid.Row="2" Height="34" Width="150" Background="#FF3F9C44" Command="{Binding UpdateGoals}" Content="UPDATE" FontWeight="Bold" HorizontalAlignment="Center" Margin="10" VerticalAlignment="Top"/>
+            </Grid>
+            <Grid Grid.Column="1" ShowGridLines="True" IsEnabled="{Binding EnableGridGoal}" Background="#FF3F9C44">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*" />
                     <RowDefinition Height="1.5*"/>
@@ -29,11 +38,11 @@
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="2*"/>
-                    <ColumnDefinition Width="2*"/>
-                    <ColumnDefinition Width="2*"/>
-                    <ColumnDefinition Width="2*"/>
-                    <ColumnDefinition Width="2*"/>
-                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
 
                 </Grid.ColumnDefinitions>
                 <TextBlock Grid.Row="0" Grid.Column="1" Text="Calories" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="Arial" Foreground="White" />
@@ -46,7 +55,7 @@
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="Dinner" FontSize="16" Background="White" FontFamily="Arial" FontWeight="Bold"/>
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="Snacks" FontSize="16" Background="White" FontFamily="Arial" FontWeight="Bold"/>
                 <TextBlock Grid.Row="5" Grid.Column="0" Text="Daily goal" FontSize="16" Background="White" FontFamily="Arial" FontWeight="Bold"/>
-                <TextBox Grid.Row="1" Grid.Column="1" x:Name="breakfastCaloriesTextBox" Background="#FFF6F6F6" Text="{Binding BreakfastCalories}"/>
+                <TextBox Grid.Row="1" Grid.Column="1" x:Name="breakfastCaloriesTextBox" Text="{Binding BreakfastCalories}" Background="{x:Null}"/>
                 <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding BreakfastFats}"/>
                 <TextBox Grid.Row="1" Grid.Column="3" Text="{Binding BreakfastFibers}"/>
                 <TextBox Grid.Row="1" Grid.Column="4" Text="{Binding BreakfastProteins}"/>
@@ -72,6 +81,6 @@
                 <TextBlock x:Name="sumProteinsTextBox" Grid.Row="5" Grid.Column="4" Background="White" Text="{Binding SumProteins}" Foreground="#FFFF4B00"/>
                 <TextBlock x:Name="sumSugarTextBox" Grid.Row="5" Grid.Column="5" Background="White" Text="{Binding SumSugar}" Foreground="#FFFF4B00"/>
             </Grid>
-        </StackPanel>
+        </Grid>
     </Grid>
 </UserControl>

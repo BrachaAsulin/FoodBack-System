@@ -42,7 +42,7 @@
             </Grid>
         </DataTemplate>
     </UserControl.Resources>
-    <Grid Background="White">
+    <Grid x:Name="ParentGrid" Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="10*"/>
@@ -60,7 +60,7 @@
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
             </local1:AutoComplete>
-            <DatePicker Text="{Binding Date}" Width="110" BorderBrush="{x:Null}" Margin="0,14,0,10"/>
+            <DatePicker SelectedDate="{Binding Date, Mode=TwoWay}" Width="110" BorderBrush="{x:Null}" Margin="0,14,0,10"/>
 
         </StackPanel>
         <Grid Grid.Row="1" ShowGridLines="True" Background="#FF94DC88" Margin="0,10,0,0">
@@ -87,39 +87,38 @@
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="0.25*"/>
+                <ColumnDefinition Width="0.4*"/>
 
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Row="0" Grid.Column="2" Text="Calories" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="Arial" Foreground="White" FontWeight="Bold" />
             <TextBlock Grid.Row="0" Grid.Column="3" Text="Fats" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="Arial" Foreground="White" FontWeight="Bold"  />
-            <TextBlock Grid.Row="0" Grid.Column="4" Text="Fiber" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="Arial" Foreground="White" FontWeight="Bold" />
+            <TextBlock Grid.Row="0" Grid.Column="4" Text="Fibers" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="Arial" Foreground="White" FontWeight="Bold" />
 
             <TextBlock Grid.Row="0" Grid.Column="5" Text="Proteins" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="Arial" Foreground="White" FontWeight="Bold"/>
-            <TextBlock Grid.Row="0" Grid.Column="6" Text="Sugar" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="Arial" Foreground="White" FontWeight="Bold" />
+            <TextBlock Grid.Row="0" Grid.Column="6" Text="Sugars" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="Arial" Foreground="White" FontWeight="Bold" />
             <TextBlock Grid.Row="0" Grid.Column="1" Background="White" Text="Breakfast" FontFamily="Arial" FontSize="22" FontWeight="Bold" />
-            <ListBox x:Name="BreakfastList" Grid.Row="1" Grid.ColumnSpan="7" Grid.Column="1" ItemsSource="{Binding BreakfastFoods}" 
+            <ListBox x:Name="BreakfastList" Background="White" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Grid.Row="1" Grid.ColumnSpan="7" Grid.Column="1" ItemsSource="{Binding BreakfastFoods}" 
             >
                 <!--  ItemTemplate="{StaticResource ListBoxTemplate}" -->
-                <ListBox.ItemTemplate>
+                <ListBox.ItemTemplate >
                     <DataTemplate>
-                        <Grid HorizontalAlignment="Stretch" >
-
+                        <Grid  >
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="2*" />
-                                <ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="0.5*"/>
+                                <ColumnDefinition Width="2.5*" />
+                                <ColumnDefinition Width="1.3*"/>
+                                <ColumnDefinition Width="1.3*"/>
+                                <ColumnDefinition Width="1.3*"/>
+                                <ColumnDefinition Width="1.3*"/>
+                                <ColumnDefinition Width="1.3*"/>
+                                <ColumnDefinition Width="0.4*"/>
                             </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" Width="300" Text="{Binding Path=Name}" TextWrapping="WrapWithOverflow" HorizontalAlignment="Left" FontSize="12" FontFamily="Arial"/>
-                            <TextBlock Grid.Column="1" Margin="115,0,0,0" Width="160"  Text="{Binding Path=Calories}" HorizontalAlignment="Center" FontSize="16" FontFamily="Arial"/>
-                            <TextBlock Grid.Column="2" Margin="10,0,0,0" Width="150"  Text="{Binding Path=Fats}" HorizontalAlignment="Center" FontSize="16"/>
-                            <TextBlock Grid.Column="3" Margin="25,0,0,0"  Width="150" Text="{Binding Path=Fiber}" HorizontalAlignment="Center" FontSize="16" FontFamily="Arial"/>
-                            <TextBlock Grid.Column="4" Margin="20,0,0,0" Width="150" Text="{Binding Path=Proteins}" HorizontalAlignment="Center" FontSize="16"/>
-                            <TextBlock Grid.Column="5" Margin="20,0,0,0" Width="120"  Text="{Binding Path=Sugar}" FontSize="16"/>
-                            <Button Grid.Column="6"  Background="{x:Null}" BorderBrush="{x:Null}" Tag="Breakfast">
+                            <TextBlock Grid.Column="0"  Text="{Binding Path=Name}" TextWrapping="WrapWithOverflow" HorizontalAlignment="Left" FontSize="12" FontFamily="Arial" FontWeight="Bold"/>
+                            <TextBlock Grid.Column="1"    Text="{Binding Path=Calories}" HorizontalAlignment="center" FontSize="16" FontFamily="Arial" FontWeight="Bold"/>
+                            <TextBlock Grid.Column="2"   Text="{Binding Path=Fats}" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" FontFamily="Arial"/>
+                            <TextBlock Grid.Column="3"  Text="{Binding Path=Fiber}" HorizontalAlignment="Center" FontSize="16" FontFamily="Arial" FontWeight="Bold"/>
+                            <TextBlock Grid.Column="4"  Text="{Binding Path=Proteins}" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" FontFamily="Arial"/>
+                            <TextBlock Grid.Column="5"  Text="{Binding Path=Sugar}" HorizontalAlignment="Center" FontSize="16" FontFamily="Arial" FontWeight="Bold"/>
+                            <Button Grid.Column="6"  HorizontalAlignment="center" Background="{x:Null}" BorderBrush="{x:Null}" Tag="Breakfast">
                                 <materialDesign:PackIcon Kind="RemoveCircleOutline"/>
                                 <i:Interaction.Triggers >
                                     <i:EventTrigger EventName="Click" >
@@ -134,30 +133,30 @@
             </ListBox>
 
 
-            <Button  Grid.Row="1" Grid.Column="0" Command="{Binding AddingFood}" CommandParameter="Breakfast" FontFamily="Arial" Content="Add Food" FontWeight="Bold" Background="White" Foreground="#FFD62A9F"/>
+            <Button  Grid.Row="1" Grid.Column="0" Command="{Binding AddingFood}" CommandParameter="Breakfast" FontFamily="Arial" Content="Add Food" FontWeight="Bold" Background="White" Foreground="#FFD62A9F" FontSize="11"/>
             <TextBlock Grid.Row="2" Grid.Column="1" Background="White" Text="Lunch" FontFamily="Arial" FontSize="22" FontWeight="Bold" />
-            <ListBox x:Name="LunchList" Grid.Row="3" Grid.ColumnSpan="7" Grid.Column="1" ItemsSource="{Binding LunchFoods}" 
+            <ListBox x:Name="LunchList" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Background="White" Grid.Row="3" Grid.ColumnSpan="7" Grid.Column="1" ItemsSource="{Binding LunchFoods}" 
                >
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <Grid HorizontalAlignment="Stretch" >
+                        <Grid  >
 
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="2*" />
-                                <ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="0.5*"/>
+                                <ColumnDefinition Width="2.5*" />
+                                <ColumnDefinition Width="1.3*"/>
+                                <ColumnDefinition Width="1.3*"/>
+                                <ColumnDefinition Width="1.3*"/>
+                                <ColumnDefinition Width="1.3*"/>
+                                <ColumnDefinition Width="1.3*"/>
+                                <ColumnDefinition Width="0.4*"/>
                             </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" Width="300" Text="{Binding Path=Name}" TextWrapping="WrapWithOverflow" HorizontalAlignment="Left" FontSize="12" FontFamily="Arial"/>
-                            <TextBlock Grid.Column="1" Margin="115,0,0,0" Width="160"  Text="{Binding Path=Calories}" HorizontalAlignment="Center" FontSize="16" FontFamily="Arial"/>
-                            <TextBlock Grid.Column="2" Margin="10,0,0,0" Width="150"  Text="{Binding Path=Fats}" HorizontalAlignment="Center" FontSize="16"/>
-                            <TextBlock Grid.Column="3" Margin="25,0,0,0"  Width="150" Text="{Binding Path=Fiber}" HorizontalAlignment="Center" FontSize="16" FontFamily="Arial"/>
-                            <TextBlock Grid.Column="4" Margin="20,0,0,0" Width="150" Text="{Binding Path=Proteins}" HorizontalAlignment="Center" FontSize="16"/>
-                            <TextBlock Grid.Column="5" Margin="20,0,0,0" Width="120"  Text="{Binding Path=Sugar}" FontSize="16"/>
-                            <Button Grid.Column="6"  Background="{x:Null}" BorderBrush="{x:Null}" Tag="Lunch" >
+                            <TextBlock Grid.Column="0"  Text="{Binding Path=Name}" TextWrapping="WrapWithOverflow" HorizontalAlignment="Left" FontSize="12" FontFamily="Arial" FontWeight="Bold"/>
+                            <TextBlock Grid.Column="1"  Text="{Binding Path=Calories}" HorizontalAlignment="Center" FontSize="16" FontFamily="Arial" FontWeight="Bold"/>
+                            <TextBlock Grid.Column="2"  Text="{Binding Path=Fats}" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" FontFamily="Arial"/>
+                            <TextBlock Grid.Column="3"  Text="{Binding Path=Fiber}" HorizontalAlignment="Center" FontSize="16" FontFamily="Arial" FontWeight="Bold"/>
+                            <TextBlock Grid.Column="4"  Text="{Binding Path=Proteins}" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" FontFamily="Arial"/>
+                            <TextBlock Grid.Column="5"  Text="{Binding Path=Sugar}" HorizontalAlignment="Center" FontSize="16" FontFamily="Arial" FontWeight="Bold"/>
+                            <Button Grid.Column="6" HorizontalAlignment="Center"  Background="{x:Null}" BorderBrush="{x:Null}" Tag="Lunch" >
                                 <materialDesign:PackIcon Kind="RemoveCircleOutline"/>
                                 <i:Interaction.Triggers >
                                     <i:EventTrigger EventName="Click" >
@@ -169,31 +168,29 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-            <Button  Grid.Row="3" Grid.Column="0" Command="{Binding AddingFood}" CommandParameter="Lunch" FontFamily="Arial" Content="Add Food" FontWeight="Bold" Background="White" Foreground="#FFD62A9F"/>
+            <Button  Grid.Row="3" Grid.Column="0" Command="{Binding AddingFood}" CommandParameter="Lunch" FontFamily="Arial" Content="Add Food" FontWeight="Bold" Background="White" Foreground="#FFD62A9F" FontSize="11"/>
             <TextBlock Grid.Row="4" Grid.Column="1" Background="White" Text="Dinner" FontFamily="Arial" FontSize="22" FontWeight="Bold" />
-            <ListBox x:Name="DinnerList" Grid.Row="5" Grid.ColumnSpan="7" Grid.Column="1" ItemsSource="{Binding DinnerFoods}" 
+            <ListBox x:Name="DinnerList" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Background="White" Grid.Row="5" Grid.ColumnSpan="7" Grid.Column="1" ItemsSource="{Binding DinnerFoods}" 
                 >
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-
-                        <Grid HorizontalAlignment="Stretch" >
-
+                        <Grid >
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="2*" />
-                                <ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="0.5*"/>
+                                <ColumnDefinition Width="2.5*" />
+                                <ColumnDefinition Width="1.3*"/>
+                                <ColumnDefinition Width="1.3*"/>
+                                <ColumnDefinition Width="1.3*"/>
+                                <ColumnDefinition Width="1.3*"/>
+                                <ColumnDefinition Width="1.3*"/>
+                                <ColumnDefinition Width="0.4*"/>
                             </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" Width="300" Text="{Binding Path=Name}" TextWrapping="WrapWithOverflow" HorizontalAlignment="Left" FontSize="12" FontFamily="Arial"/>
-                            <TextBlock Grid.Column="1" Margin="115,0,0,0" Width="160"  Text="{Binding Path=Calories}" HorizontalAlignment="Center" FontSize="16" FontFamily="Arial"/>
-                            <TextBlock Grid.Column="2" Margin="10,0,0,0" Width="150"  Text="{Binding Path=Fats}" HorizontalAlignment="Center" FontSize="16"/>
-                            <TextBlock Grid.Column="3" Margin="25,0,0,0"  Width="150" Text="{Binding Path=Fiber}" HorizontalAlignment="Center" FontSize="16" FontFamily="Arial"/>
-                            <TextBlock Grid.Column="4" Margin="20,0,0,0" Width="150" Text="{Binding Path=Proteins}" HorizontalAlignment="Center" FontSize="16"/>
-                            <TextBlock Grid.Column="5" Margin="20,0,0,0" Width="120"  Text="{Binding Path=Sugar}" FontSize="16"/>
-                            <Button Grid.Column="6"  Background="{x:Null}" BorderBrush="{x:Null}" Tag="Dinner" >
+                            <TextBlock Grid.Column="0" Text="{Binding Path=Name}" TextWrapping="WrapWithOverflow" HorizontalAlignment="Left" FontSize="12" FontFamily="Arial" FontWeight="Bold"/>
+                            <TextBlock Grid.Column="1"   Text="{Binding Path=Calories}" HorizontalAlignment="Center" FontSize="16" FontFamily="Arial" FontWeight="Bold"/>
+                            <TextBlock Grid.Column="2"   Text="{Binding Path=Fats}" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" FontFamily="Arial"/>
+                            <TextBlock Grid.Column="3"  Text="{Binding Path=Fiber}" HorizontalAlignment="Center" FontSize="16" FontFamily="Arial" FontWeight="Bold"/>
+                            <TextBlock Grid.Column="4"  Text="{Binding Path=Proteins}" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" FontFamily="Arial"/>
+                            <TextBlock Grid.Column="5"  Text="{Binding Path=Sugar}" HorizontalAlignment="Center" FontSize="16" FontFamily="Arial" FontWeight="Bold"/>
+                            <Button Grid.Column="6" HorizontalAlignment="Center"  Background="{x:Null}" BorderBrush="{x:Null}" Tag="Dinner" >
                                 <materialDesign:PackIcon Kind="RemoveCircleOutline"/>
                                 <i:Interaction.Triggers >
                                     <i:EventTrigger EventName="Click" >
@@ -205,29 +202,29 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-            <Button  Grid.Row="5" Grid.Column="0" Command="{Binding AddingFood}" CommandParameter="Dinner" FontFamily="Arial" Content="Add Food" FontWeight="Bold" Background="White" Foreground="#FFD62A9F"/>
+            <Button  Grid.Row="5" Grid.Column="0" Command="{Binding AddingFood}" CommandParameter="Dinner" FontFamily="Arial" Content="Add Food" FontWeight="Bold" Background="White" Foreground="#FFD62A9F" FontSize="11"/>
             <TextBlock Grid.Row="6" Grid.Column="1" Background="White" Text="Snacks" FontFamily="Arial" FontSize="22" FontWeight="Bold" />
-            <ListBox x:Name="SnacksList" Grid.Row="7" Grid.ColumnSpan="7" Grid.Column="1" ItemsSource="{Binding SnacksFoods}" >
+            <ListBox x:Name="SnacksList" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Background="White" Grid.Row="7" Grid.ColumnSpan="7" Grid.Column="1" ItemsSource="{Binding SnacksFoods}" >
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <Grid HorizontalAlignment="Stretch" >
+                        <Grid  >
 
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="2*" />
-                        <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="2.5*" />
+                        <ColumnDefinition Width="1.3*"/>
+                        <ColumnDefinition Width="1.3*"/>
+                        <ColumnDefinition Width="1.3*"/>
+                        <ColumnDefinition Width="1.3*"/>
+                        <ColumnDefinition Width="1.3*"/>
+                        <ColumnDefinition Width="0.4*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="0" Width="300" Text="{Binding Path=Name}" TextWrapping="WrapWithOverflow" HorizontalAlignment="Left" FontSize="12" FontFamily="Arial"/>
-                    <TextBlock Grid.Column="1" Margin="115,0,0,0" Width="160"  Text="{Binding Path=Calories}" HorizontalAlignment="Center" FontSize="16" FontFamily="Arial"/>
-                    <TextBlock Grid.Column="2" Margin="10,0,0,0" Width="150"  Text="{Binding Path=Fats}" HorizontalAlignment="Center" FontSize="16"/>
-                    <TextBlock Grid.Column="3" Margin="25,0,0,0"  Width="150" Text="{Binding Path=Fiber}" HorizontalAlignment="Center" FontSize="16" FontFamily="Arial"/>
-                    <TextBlock Grid.Column="4" Margin="20,0,0,0" Width="150" Text="{Binding Path=Proteins}" HorizontalAlignment="Center" FontSize="16"/>
-                    <TextBlock Grid.Column="5" Margin="20,0,0,0" Width="120"  Text="{Binding Path=Sugar}" FontSize="16"/>
-                    <Button Grid.Column="6"  Background="{x:Null}" BorderBrush="{x:Null}" Tag="Snacks" >
+                    <TextBlock Grid.Column="0" Text="{Binding Path=Name}" TextWrapping="WrapWithOverflow" HorizontalAlignment="Left" FontSize="12" FontFamily="Arial" FontWeight="Bold"/>
+                    <TextBlock Grid.Column="1"  Text="{Binding Path=Calories}" HorizontalAlignment="Center" FontSize="16" FontFamily="Arial" FontWeight="Bold"/>
+                    <TextBlock Grid.Column="2"  Text="{Binding Path=Fats}" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" FontFamily="Arial"/>
+                    <TextBlock Grid.Column="3"  Text="{Binding Path=Fiber}" HorizontalAlignment="Center" FontSize="16" FontFamily="Arial" FontWeight="Bold"/>
+                    <TextBlock Grid.Column="4" Text="{Binding Path=Proteins}" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" FontFamily="Arial"/>
+                    <TextBlock Grid.Column="5"   Text="{Binding Path=Sugar}" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" FontFamily="Arial"/>
+                    <Button Grid.Column="6" HorizontalAlignment="Center"  Background="{x:Null}" BorderBrush="{x:Null}" Tag="Snacks" >
                         <materialDesign:PackIcon Kind="RemoveCircleOutline"/>
                         <i:Interaction.Triggers >
                             <i:EventTrigger EventName="Click" >
@@ -239,15 +236,30 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-            <Button  Grid.Row="7" Grid.Column="0" Command="{Binding AddingFood}" CommandParameter="Snacks" FontFamily="Arial" Content="Add Food" FontWeight="Bold" Background="White" Foreground="#FFD62A9F"/>
-            <TextBlock Grid.Row="8" Grid.Column="1" Text="Totals" FontSize="18"/>
-            <TextBlock Grid.Row="9" Grid.Column="1" Text="Your Daily Goals" FontSize="18" Height="41" VerticalAlignment="Top"/>
-            <TextBlock Grid.Row="10" Grid.Column="1" Text="Remaining" FontSize="18"/>
+            <Button  Grid.Row="7" Grid.Column="0" Command="{Binding AddingFood}" CommandParameter="Snacks" FontFamily="Arial" Content="Add Food" FontWeight="Bold" Background="White" Foreground="#FFD62A9F" FontSize="11"/>
+            <TextBlock Grid.Row="8" Grid.Column="1" Text="Totals" FontSize="18" FontWeight="Bold" FontFamily="Arial"/>
+            <TextBlock Grid.Row="9" Grid.Column="1" Text="Your Daily Goals" FontSize="18" Height="41" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Arial"/>
+            <TextBlock Grid.Row="10" Grid.Column="1" Text="Remaining" FontSize="18" FontWeight="Bold" FontFamily="Arial"/>
             <TextBlock Grid.Row="11" Grid.Column="2" Text="Calories" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="Arial" Foreground="White" FontWeight="Bold" />
             <TextBlock Grid.Row="11" Grid.Column="3" Text="Fats" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="Arial" Foreground="White" FontWeight="Bold"  />
-            <TextBlock Grid.Row="11" Grid.Column="4" Text="Carbs" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="Arial" Foreground="White" FontWeight="Bold" />
+            <TextBlock Grid.Row="11" Grid.Column="4" Text="Fibers" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="Arial" Foreground="White" FontWeight="Bold" />
             <TextBlock Grid.Row="11" Grid.Column="5" Text="Proteins" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="Arial" Foreground="White" FontWeight="Bold"/>
-            <TextBlock Grid.Row="11" Grid.Column="6" Text="Sugar" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="Arial" Foreground="White" FontWeight="Bold" />
+            <TextBlock Grid.Row="11" Grid.Column="6" Text="Sugars" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="Arial" Foreground="White" FontWeight="Bold" />
+            <TextBlock x:Name="TotalCalories" Grid.Row="8" Grid.Column="2" Text="{Binding TotalCalories}"  />
+            <TextBlock x:Name="TotalFats" Grid.Row="8" Grid.Column="3" Text="{Binding TotalFats }" />
+            <TextBlock x:Name="TotalFibers" Grid.Row="8" Grid.Column="4" Text="{Binding TotalFibers}"/>
+            <TextBlock x:Name="TotalProteins" Grid.Row="8" Grid.Column="5" Text="{Binding TotalProteins}" />
+            <TextBlock x:Name="TotalSugars" Grid.Row="8" Grid.Column="6" Text="{Binding TotalSugars}"/>
+            <TextBlock x:Name="GoalCalories" Grid.Row="9" Grid.Column="2" Text="{Binding GoalCalories }"/>
+            <TextBlock x:Name="GoalFats" Grid.Row="9" Grid.Column="3" Text="{Binding GoalFats}"/>
+            <TextBlock x:Name="GoalFibers" Grid.Row="9" Grid.Column="4" Text="{Binding GoalFibers}"/>
+            <TextBlock x:Name="GoalProteins" Grid.Row="9" Grid.Column="5" Text="{Binding GoalProteins}"/>
+            <TextBlock x:Name="GoalSugars" Grid.Row="9" Grid.Column="6" Text="{Binding GoalSugars}"/>
+            <TextBlock x:Name="RemainingCalories" Grid.Row="10" Grid.Column="2" Text="{Binding RemainingCalories}"/>
+            <TextBlock x:Name="RemainingFats" Grid.Row="10" Grid.Column="3" Text="{Binding RemainingFats}"/>
+            <TextBlock x:Name="RemainingFibers" Grid.Row="10" Grid.Column="4" Text="{Binding RemainingFibers}"/>
+            <TextBlock x:Name="RemainingProteins" Grid.Row="10" Grid.Column="5" Text="{Binding RemainingProteins}"/>
+            <TextBlock x:Name="RemainingSugars" Grid.Row="10" Grid.Column="6" Text="{Binding RemainingSugars}"/>
         </Grid>
     </Grid>
 </UserControl>

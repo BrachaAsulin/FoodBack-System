@@ -20,6 +20,17 @@ namespace BL
             return dal.findUserByEmail(emailAddress);
         }
         public void AddUser(User newUser) { dal.AddUser(newUser); }
+
+        public KeyValuePair<DateTime, float>[] GetWeekEvaluation(User currentUser, DateTime sundayWeek, string v)
+        {
+            return dal.GetWeekEvaluation(currentUser, sundayWeek, v);
+        }
+
+        public KeyValuePair<DateTime, float>[] GetMonthEvaluation(User currentUser, string selectedMonth, string v)
+        {
+            return dal.GetMonthEvaluation(currentUser, selectedMonth, v);
+        }
+
         public void RemoveUser(User userToRemove) { }
         public void UpdateUser(User userToUpdate) { }
         public void AddFood(Food newFood) { }
@@ -38,7 +49,18 @@ namespace BL
             return dal.GetMealPerUser(v, currentUser, date);
         }
 
+        public void RemoveFoodFromMeal(string meal, string id, User currentUser, DateTime date)
+        {
+            dal.RemoveFoodFromMeal(meal, id, currentUser, date);
+        }
+
         public void RemoveMeal(Meal mealToRemove) { }
+
+        public DailyGoalPerWeek GetDailyGoalForWeek(User currentUser, DateTime date)
+        {
+            return dal.GetDailyGoalForWeek(currentUser, date);
+        }
+
         public void UpdateMeal(Meal mealToUpdate) { }
         public void AddDailyGoalsPerWeek(DailyGoalPerWeek newDailyGoal, User currentUser)
         {

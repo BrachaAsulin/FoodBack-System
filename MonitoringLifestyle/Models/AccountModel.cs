@@ -121,15 +121,15 @@ namespace MonitoringLifestyle.Models
                 }
                 if (columnEmailAddress == "Password")
                 {
-                    if (String.IsNullOrWhiteSpace(EmailAddress))
+                    if (String.IsNullOrWhiteSpace(Password))
                     {
-                        Error = "Password Address can not be empty";
+                        Error = "Passwod can not be empty";
                       
                     }
                     else
                     {
                     
-                            Error = null;
+                        Error = null;
                         validProperties["Password"] = true;
                         ValidateProperties();
 

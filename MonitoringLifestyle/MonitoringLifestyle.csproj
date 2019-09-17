@@ -144,10 +144,12 @@
     <Compile Include="Commands\ShutDownCommand.cs" />
     <Compile Include="Commands\SignInCommand.cs" />
     <Compile Include="Converters\boolToVisibilityConverter.cs" />
+    <Compile Include="Converters\BoolToVisibilityConverter2.cs" />
     <Compile Include="Models\AccountModel.cs" />
     <Compile Include="Models\ContactUsModel.cs" />
     <Compile Include="Commands\SweetsInfoCommand.cs" />
     <Compile Include="Commands\UpdateGoalsCommand.cs" />
+    <Compile Include="Models\EvaluationModel.cs" />
     <Compile Include="Models\GoalsModel.cs" />
     <Compile Include="Models\MyDailyDietModel.cs" />
     <Compile Include="Models\NewAccountModel.cs" />
@@ -156,6 +158,7 @@
     <Compile Include="ViewModels\AboutUsViewModel.cs" />
     <Compile Include="ViewModels\AccountViewModel.cs" />
     <Compile Include="ViewModels\ContactUsViewModel.cs" />
+    <Compile Include="ViewModels\EvaluationViewModel.cs" />
     <Compile Include="ViewModels\FoodInformationViewModel.cs" />
     <Compile Include="ViewModels\GoalsViewModel.cs" />
     <Compile Include="ViewModels\IVM.cs" />
@@ -217,6 +220,7 @@
     <Compile Include="Views\NutritionalValuesCalculatorUC.xaml.cs">
       <DependentUpon>NutritionalValuesCalculatorUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\PasswordHelper.cs" />
     <Compile Include="Views\SearchFoodUserControl.xaml.cs">
       <DependentUpon>SearchFoodUserControl.xaml</DependentUpon>
     </Compile>
@@ -496,6 +500,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\LookupGlass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\beef.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cheese.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cheese2.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

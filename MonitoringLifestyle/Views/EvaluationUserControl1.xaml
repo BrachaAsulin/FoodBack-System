@@ -4,18 +4,145 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MonitoringLifestyle"
+             xmlns:bracha="clr-namespace:MonitoringLifestyle.Converters"
+             xmlns:local1="clr-namespace:MonitoringLifestyle.Views"
+             xmlns:DV="clr-namespace:System.Windows.Controls.DataVisualization;assembly=System.Windows.Controls.DataVisualization.Toolkit"  
+             xmlns:DVC="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"  
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="1090" >
-    <Grid Background="#FF97A3BB">
+    <UserControl.Resources>
+        <bracha:BoolToVisibilityConverter2 x:Key="converter"/>
+    </UserControl.Resources>
+    <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="2*"/>
+            <RowDefinition Height="12*"/>
         </Grid.RowDefinitions>
-        <Grid>
-            
-        </Grid>
-        <Grid>
-            
+        <TextBlock Grid.Row="0" Text="Evaluation"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="36" FontFamily="Arial" FontWeight="Bold" Foreground="#FF5A7900"/>
+        <Grid Background="white" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1.5*"/>
+                </Grid.ColumnDefinitions>
+                <Border BorderBrush="Black" Grid.Column="0"  BorderThickness="2" Margin="40,0,40,0" >
+                    <Grid x:Name="WeeklyEvaluation" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Week" FontFamily="Arial" HorizontalAlignment="Center" FontSize="14"  Grid.Row="0" Margin="68,0,69,24"  />
+                        <ToggleButton Grid.Row="0" x:Name="SelectWeekButton" Background="#FF4CAF50" BorderBrush="#FF707070" IsChecked="{Binding ButtonChecked}" Margin="0,20,0,0"/>
+                        <TextBlock Grid.Row="1" Text="Selected week:"/>
+                        <TextBlock Grid.Row="2" Text="{Binding DatesRange}"/>
+                    </Grid>
+                </Border>
+                <Border BorderBrush="Black" Grid.Column="1" BorderThickness="2" Margin="40,0,40,0" >
+                    <Grid x:Name="MonthlyEvaluation">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" HorizontalAlignment="Center" FontFamily="Arial" FontSize="14" Text="Month"/>
+                        <TextBlock Grid.Row="1" Text="Selected month:"/>
+                        <ComboBox Grid.Row="2" Width="70" SelectedValue="{Binding SelectedMonth}">
+                            <ComboBoxItem>01</ComboBoxItem>
+                            <ComboBoxItem>02</ComboBoxItem>
+                            <ComboBoxItem>03</ComboBoxItem>
+                            <ComboBoxItem>04</ComboBoxItem>
+                            <ComboBoxItem>05</ComboBoxItem>
+                            <ComboBoxItem>06</ComboBoxItem>
+                            <ComboBoxItem>07</ComboBoxItem>
+                            <ComboBoxItem>08</ComboBoxItem>
+                            <ComboBoxItem>09</ComboBoxItem>
+                            <ComboBoxItem>10</ComboBoxItem>
+                            <ComboBoxItem>11</ComboBoxItem>
+                            <ComboBoxItem>12</ComboBoxItem>
+                        </ComboBox>
+                    </Grid>
+                </Border>
+                <Border BorderBrush="Black" Grid.Column="3"  BorderThickness="2" Margin="160,0,40,0" >
+                    <Grid Grid.Column="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" Width="60" Text="Name:" HorizontalAlignment="Left"/>
+                        <TextBlock Grid.Row="0" Width="200"  HorizontalAlignment="Right" Text="{Binding FullName}"/>
+                        <TextBlock Grid.Row="1" Width="60" Text="Birth Date:" HorizontalAlignment="Left"/>
+                        <TextBlock Grid.Row="1" Width="200"  HorizontalAlignment="Right" Text="{Binding CurrentUser.BirthDate}"/>
+                        <TextBlock Grid.Row="2" Width="60" Text="Weight:" HorizontalAlignment="Left"/>
+                        <TextBlock Grid.Row="2" Width="200"  HorizontalAlignment="Right" Text="{Binding CurrentUser.Weight }"/>
+                        <TextBlock Grid.Row="3" Width="60" Text="Height:" HorizontalAlignment="Left"/>
+                        <TextBlock Grid.Row="3" Width="200"  HorizontalAlignment="Right" Text="{Binding CurrentUser.Height}"/>
+                    </Grid>
+                </Border>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <local1:weekPickerUserControl Grid.Column="0" Visibility="{Binding ElementName=SelectWeekButton,Path=IsChecked,Converter={StaticResource converter}}" />
+         <!--       <Grid Grid.Column="1" Margin="10,0,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="15*"/>
+                    </Grid.RowDefinitions>-->
+                    <DVC:Chart InkCanvas.Top="80" Width="700" Height="300" InkCanvas.Left="10" Grid.Column="1"   Name="MyChart">
+                        <DVC:Chart.Series>
+                            <DVC:LineSeries Title="Calories" 
+                        ItemsSource="{Binding CaloriesEvaluation}"
+                        IndependentValueBinding="{Binding Path=Key}"  
+                        DependentValueBinding="{Binding Path=Value}" FontFamily="Arial"/>
+                            <DVC:LineSeries Title="Fats" 
+                        ItemsSource="{Binding FatsEvaluation}"
+                        IndependentValueBinding="{Binding Path=Key}"  
+                        DependentValueBinding="{Binding Path=Value}" FontFamily="Arial"/>
+                            <DVC:LineSeries Title="Fibers" 
+                        ItemsSource="{Binding FibersEvaluation}"
+                        IndependentValueBinding="{Binding Path=Key}"  
+                        DependentValueBinding="{Binding Path=Value}" FontFamily="Arial"/>
+                            <DVC:LineSeries Title="Proteins" 
+                        ItemsSource="{Binding ProteinsEvaluation}"
+                        IndependentValueBinding="{Binding Path=Key}"  
+                        DependentValueBinding="{Binding Path=Value}" FontFamily="Arial"/>
+                            <DVC:LineSeries Title="Sugars" 
+                        ItemsSource="{Binding SugarsEvaluation}"
+                        IndependentValueBinding="{Binding Path=Key}"  
+                        DependentValueBinding="{Binding Path=Value}" FontFamily="Arial"/>
+                        </DVC:Chart.Series>
+
+                    </DVC:Chart>
+    <!--            <TextBlock Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Calories" VerticalAlignment="Bottom"/>
+                <ToggleButton Grid.Column="0" Grid.Row="0" Margin="47,0,0,0" />
+                <TextBlock Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Fats" VerticalAlignment="Bottom" />
+                <ToggleButton Grid.Column="1" Grid.Row="0" Margin="47,0,0,0" />
+                <TextBlock Grid.Column="2" Grid.Row="0" HorizontalAlignment="Left"  TextWrapping="Wrap" Text="Fibers" VerticalAlignment="Bottom"/>
+                <ToggleButton Grid.Column="2" Grid.Row="0" Margin="47,0,0,0"/>
+                <TextBlock Grid.Column="3" Grid.Row="0" HorizontalAlignment="Left"  TextWrapping="Wrap" Text="Proteins" VerticalAlignment="Bottom"/>
+                <ToggleButton Grid.Column="3" Grid.Row="0" Margin="47,0,0,0"/>
+                <TextBlock Grid.Column="4" Grid.Row="0" HorizontalAlignment="Left"  TextWrapping="Wrap" Text="Sugars" VerticalAlignment="Bottom"/>
+                <ToggleButton Grid.Column="4" Grid.Row="0" Margin="47,0,0,0"/>
+                </Grid>-->
+            </Grid>
         </Grid>
     </Grid>
 </UserControl>

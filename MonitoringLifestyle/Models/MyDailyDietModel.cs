@@ -37,5 +37,15 @@ namespace MonitoringLifestyle.Models
         {
             return BlObject.GetMealPerUser(v, currentUser, date);
         }
+
+        internal void RemoveFoodFromMeal(string meal, string id, User currentUser,DateTime date)
+        {
+            BlObject.RemoveFoodFromMeal(meal, id, currentUser, date);
+        }
+
+        internal DailyGoalPerWeek GetDailyGoalForWeek(User currentUser, DateTime date)
+        {
+            return BlObject.GetDailyGoalForWeek(currentUser, date);
+        }
     }
 }

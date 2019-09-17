@@ -31,7 +31,7 @@
 
         <Button Name="AboutUsButton" Grid.Column="1" Background="White" Command="{Binding AboutUs}" Content="About Us" BorderBrush="White" Margin="-5,0,0,0" FontSize="16"/>
         <Button Grid.Column="0" Background="White" Content="Home" BorderBrush="White" Command="{Binding Home}" FontSize="16"/>
-            <Button Grid.Column="2" Background="White" Content="Contact Us" Command="{Binding ContactUs}" BorderBrush="White" FontSize="16"/>
+        <Button Grid.Column="2" Background="White" Content="Contact Us" Command="{Binding ContactUs}" BorderBrush="White" FontSize="16"/>
         <Button Grid.Column="5" Command="{Binding ShutDown}" Background="White" BorderBrush="White">
             <materialDesign:PackIcon Kind="power"/>
         </Button>

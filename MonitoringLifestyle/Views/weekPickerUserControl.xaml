@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MonitoringLifestyle"
              mc:Ignorable="d" 
-             d:DesignHeight="163" d:DesignWidth="180">
-    <Calendar x:Name="calendar" SelectedDatesChanged="calendar_SelectedDatesChanged" SelectionMode="MultipleRange"/>
+             d:DesignHeight="350" d:DesignWidth="400">
+
+    <Calendar x:Name="calendar" HorizontalAlignment="Center"  SelectedDatesChanged="calendar_SelectedDatesChanged" SelectionMode="MultipleRange" />
 </UserControl>
