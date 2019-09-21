@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MonitoringLifestyle.Views"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="350" d:DesignWidth="1272">
     <UserControl.Resources>
@@ -86,8 +87,8 @@
             </TextBox.Background>
         </TextBox>
 
-        <TextBlock Text="       salty" FontSize="36" Grid.Column="0" FontFamily="Arial" FontWeight="Bold" Margin="10,0,0,29" HorizontalAlignment="Left" Width="182"/>
-        <TextBlock Text="foods" FontSize="36" FontFamily="Arial" FontWeight="Bold" Foreground="#FF9E9898" Margin="197,0,192,29" Grid.ColumnSpan="2"/>
+        <TextBlock FontSize="36" Grid.Column="0" FontFamily="Arial" FontWeight="Bold" Margin="160,0,0,29" HorizontalAlignment="Left" Width="192" Text="Salty"/>
+        <TextBlock Text="foods" FontSize="36" FontFamily="Arial" FontWeight="Bold" Foreground="#FF9E9898" Margin="270,0,192,29" Grid.ColumnSpan="2"/>
         <TextBlock HorizontalAlignment="Left" FontSize="16" Margin="177,0,0,0" Grid.Row="2" TextWrapping="Wrap" Text="popcorn" VerticalAlignment="Top" Width="101" Height="21" Foreground="#FF3F9C44"/>
         <TextBlock HorizontalAlignment="Left" FontSize="16" Margin="177,0,0,0" Grid.Row="1" TextWrapping="Wrap" Text="pretzels" VerticalAlignment="Top" Width="101" Height="21" Foreground="#FF3F9C44"/>
         <TextBlock HorizontalAlignment="Left" FontSize="16" Margin="177,0,0,0" Grid.Row="3" TextWrapping="Wrap" Text="chips" VerticalAlignment="Top" Width="101" Height="21" Foreground="#FF3F9C44"/>
@@ -112,7 +113,9 @@
         <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="186,39,0,0" Grid.Row="3" TextWrapping="Wrap" Text="44.5 fats,16.4 carbs ,0 Cholesterol" VerticalAlignment="Top" Width="170" Height="31"/>
         <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="186,21,0,31" Grid.Row="2" TextWrapping="Wrap" Text="348 calories, 18.8 proteins " Width="170"/>
         <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="186,39,0,0" Grid.Row="2" TextWrapping="Wrap" Text="16.2  fats, 31.7 carbs , 9 Cholesterol" VerticalAlignment="Top" Width="170" Height="31"/>
-
+        <Button HorizontalAlignment="Left" Command="{Binding BackWindowCommand}" VerticalAlignment="Top" Width="100" Grid.Row="0" Background="{x:Null}" BorderBrush="{x:Null}">
+            <materialDesign:PackIcon Kind="ArrowBack" Height="32" Width="72"/>
+        </Button>
 
 
 

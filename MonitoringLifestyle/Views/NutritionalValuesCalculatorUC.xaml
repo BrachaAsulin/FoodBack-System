@@ -3,8 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:MonitoringLifestyle.Views"
+             xmlns:local="clr-namespace:MonitoringLifestyle"
              xmlns:local1="clr-namespace:MonitoringLifestyle.Views"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="1090">
     <Grid x:Name="calculatorGrid" Background="White">
@@ -20,19 +23,29 @@
             <RowDefinition Height="0.5*"/>
 
         </Grid.RowDefinitions>
+        <Grid.Resources>
+            <ResourceDictionary Source="/MonitoringLifestyle;component/Styles/AutoComplete.Styles.xaml" />
+        </Grid.Resources>
         <TextBlock Text="Nutritional Values Calculator " FontSize="36" FontFamily="Arial" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#FF5A7900" />
 
-        <TextBlock Text="SELECT A DESIRABLE FOOD" HorizontalAlignment="Center" FontSize="24" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Bottom" FontFamily="Arial" Foreground="#FFD62A9F"/>
+        <TextBlock Text="SELECT A DESIRABLE FOOD" HorizontalAlignment="Center" FontSize="24" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Bottom" FontFamily="Arial" Foreground="#FF262523"/>
         <TextBlock FontSize="22"  HorizontalAlignment="Left" Margin="415,0,0,0"  Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top"  Foreground="#FFD62A9F" FontWeight="Bold" FontFamily="Arial">Calories</TextBlock>
         <TextBlock FontSize="22"  HorizontalAlignment="Left" Margin="415,0,0,0"  Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top"  Foreground="#FFD62A9F" FontWeight="Bold" FontFamily="Arial">Fats</TextBlock>
         <TextBlock FontSize="22"  HorizontalAlignment="Left" Margin="415,0,0,0"  Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Top"  Foreground="#FFD62A9F" FontFamily="Arial" FontWeight="Bold">Fibers</TextBlock>
         <TextBlock FontSize="22"  HorizontalAlignment="Left" Margin="415,0,0,0"  Grid.Row="7" TextWrapping="Wrap" VerticalAlignment="Top"  Foreground="#FFD62A9F" FontFamily="Arial" FontWeight="Bold">Proteins</TextBlock>
         <TextBlock FontSize="22"  HorizontalAlignment="Left"  Margin="415,0,0,0" Grid.Row="8" TextWrapping="Wrap" VerticalAlignment="Top"  Foreground="#FFD62A9F" FontWeight="Bold" FontFamily="Arial"> Sugars</TextBlock>
-        <local1:SearchFoodUserControl x:Name="serachFoodQuery" HorizontalAlignment="Center" Margin="0,10,0,0"  Grid.Row="2" VerticalAlignment="Top" Height="43" Width="446"/>
+        <local1:AutoComplete x:Name="autoFoods" SelectedValuePath="FoodID" DisplayMemberPath="Name" Grid.Row="2"
+                          Margin="10" Delay="500" Style="{StaticResource AutoCompleteComboBox}" Width="520" Height="50" SelectedValue="{Binding FoodIdSelected}" >
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="PatternChanged">
+                    <ei:CallMethodAction TargetObject="{Binding}" MethodName="autoFoods_PatternChanged"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </local1:AutoComplete>
         <TextBox x:Name="caloriesTextbox" HorizontalAlignment="Center" Height="23" Margin="120,0,0,0" Grid.Row="4" TextWrapping="Wrap" Text="{Binding calories}" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="sugarTextbox" HorizontalAlignment="Center" Height="23" Margin="120,0,0,0" Grid.Row="8" TextWrapping="Wrap" Text="{Binding sugar}" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="proteinsTextbox" HorizontalAlignment="Center" Height="23" Margin="120,0,0,0" Grid.Row="7" TextWrapping="Wrap" Text="{Binding proteins}" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="carbsTextbox" HorizontalAlignment="Center" Height="23" Margin="120,0,0,0" Grid.Row="6" TextWrapping="Wrap" Text="{Binding carbs}" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="carbsTextbox" HorizontalAlignment="Center" Height="23" Margin="120,0,0,0" Grid.Row="6" TextWrapping="Wrap" Text="{Binding fibers}" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="fatsTextbox" HorizontalAlignment="Center" Height="23" Margin="120,0,0,0" Grid.Row="5" TextWrapping="Wrap" Text="{Binding fats}" VerticalAlignment="Top" Width="120"/>
         <Button Command="{Binding NutrionalValues}" Content="click to see the result" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Top" FontSize="20" Width="250" Height="38"/>
 

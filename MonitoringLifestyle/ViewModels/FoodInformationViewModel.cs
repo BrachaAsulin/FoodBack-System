@@ -12,13 +12,14 @@ using System.Windows.Media;
 
 namespace MonitoringLifestyle.ViewModels
 {
-    class FoodInformationViewModel : IVM
+    public class FoodInformationViewModel : IVM
     {
         public ICommand Calculator { get; set; }
         public ICommand SweetsInfo { get; set; }
         public ICommand SaltyInfo { get; set; }
         public ICommand MeatInfo { get; set; }
         public ICommand DairyInfo { get; set; }
+        public ICommand BackWindowCommand { get; set; }
         public DashboardVM dashboardVM { get; set; }
 
         public FoodInformationViewModel(DashboardVM aDashboardVM)
@@ -28,6 +29,7 @@ namespace MonitoringLifestyle.ViewModels
             SaltyInfo = new SaltyInfoCommand(this);
             MeatInfo = new MeatInfoCommand(this);
             DairyInfo = new DairyInfoCommand(this);
+            BackWindowCommand = new BackCommand(this);
             dashboardVM = aDashboardVM;
         }
      
@@ -39,19 +41,24 @@ namespace MonitoringLifestyle.ViewModels
                 case 1:dashboardVM.ChildUserControl = new NutritionalValuesCalculatorUC();
                     break;
                 case 2:
-                   // MessageBox.Show("aaa");
-                    dashboardVM.ChildUserControl = new foodInfoSweetsUserControl();
+                   
+                    dashboardVM.ChildUserControl = new foodInfoSweetsUserControl(this);
                     break;
-                case 3:dashboardVM.ChildUserControl = new foodInfoSaltyUserControl();
+                case 3:dashboardVM.ChildUserControl = new foodInfoSaltyUserControl(this);
                     break;
                 case 4:
-                    dashboardVM.ChildUserControl = new foodInfoMeatUserControl();
+                    dashboardVM.ChildUserControl = new foodInfoMeatUserControl(this);
                     break;
-                case 5:dashboardVM.ChildUserControl = new foodInfoDairyUserControl();
+                case 5:dashboardVM.ChildUserControl = new foodInfoDairyUserControl(this);
                     break;
                 default:break;
 
             }
+        }
+
+        public void BackWindow()
+        {
+            this.dashboardVM.ChildUserControl = new foodInformationUserControl(dashboardVM);
         }
     }
 }

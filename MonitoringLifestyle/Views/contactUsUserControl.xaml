@@ -6,7 +6,7 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:MonitoringLifestyle"
              mc:Ignorable="d" 
-             d:DesignHeight="400" d:DesignWidth="550">
+             d:DesignHeight="400" d:DesignWidth="1090">
     <UserControl.Resources>
         <Style TargetType="TextBox">
             <Style.Triggers>
@@ -19,27 +19,27 @@
             </Style.Triggers>
         </Style>
     </UserControl.Resources>
-    <Grid Name="GridContact" Background="White">
+    <Grid Name="GridContact" Background="White" Margin="100,0,0,0">
         <Grid.RowDefinitions>
             <RowDefinition Height="42"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1.5*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="53*"/>
             <ColumnDefinition Width="547*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Row="0" HorizontalAlignment="left" VerticalAlignment="Bottom" Text="Contact Us" FontSize="24" FontFamily="Arial" Foreground="#FF5A7900" Height="39" Width="127" FontWeight="Bold" Grid.Column="1" />
+        <TextBlock Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Text="Contact Us" FontSize="24" FontFamily="Arial" Foreground="#FF5A7900" Height="39" Width="127" FontWeight="Bold" Grid.Column="1" />
 
         <materialDesign:PackIcon Grid.Column="0" Grid.Row="1" Kind="Person" Width="40" Height="35" Foreground="#FF5A7900" HorizontalAlignment="Center" Margin="10,0" Background="White" />
 
 
 
-        <Button Command="{Binding ContactUs}" IsEnabled="{Binding UserToContact.AllPropertiesValid}" Grid.Column="1"  BorderBrush="White" Grid.Row="5" Margin="420,0,0,0" Background="#FFE7E8EC">
-            <materialDesign:PackIcon Kind="send" Width="46" Height="20" Foreground="#FF5A7900" />
+        <Button Command="{Binding ContactUs}" IsEnabled="{Binding UserToContact.AllPropertiesValid}" Grid.Column="1"  BorderBrush="White" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#FFE7E8EC">
+            <materialDesign:PackIcon Kind="send" Width="150" Height="20" Foreground="#FF5A7900" />
         </Button>
 
         <materialDesign:PackIcon Grid.Column="0" Grid.Row="4" Kind="ArrowRight" Width="40" Height="35" Foreground="#FF5A7900" HorizontalAlignment="Center" Margin="10,0" />
@@ -47,9 +47,9 @@
 
         <materialDesign:PackIcon Grid.Column="0" Grid.Row="2" Kind="Telephone" Width="40" Height="35" Foreground="#FF5A7900" HorizontalAlignment="Center" Margin="10,0" />
         <materialDesign:PackIcon Grid.Column="0" Grid.Row="3" Kind="Email" Width="40" Height="35" Foreground="#FF5A7900" Margin="10,0" HorizontalAlignment="Center" />
-        <TextBox Grid.Column="1"  HorizontalAlignment="Left" Height="35" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="501" Foreground="#FFABADB3" FontSize="16" Background="White" Style="{StaticResource WatermarkNameTextbox}" />
+        <TextBox Grid.Column="1"  HorizontalAlignment="Left" Height="35" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="501" Foreground="#FFABADB3" FontSize="16" Style="{StaticResource WatermarkNameTextbox}" />
         <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="35" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="501" Foreground="#FFABADB3" FontSize="16" Style="{StaticResource WatermarkPhoneNumberTextbox}"/>
-        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="34" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="501" Foreground="#FFABADB3" FontSize="16" Style="{StaticResource WatermarkEmailAddressTextbox}"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="35" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="501" Foreground="#FFABADB3" FontSize="16" Style="{StaticResource WatermarkEmailAddressTextbox}"/>
         <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="69" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="501" Foreground="#FFABADB3" FontSize="16" Style="{StaticResource WatermarkMessageTextbox}"/>
     </Grid>
 </UserControl>

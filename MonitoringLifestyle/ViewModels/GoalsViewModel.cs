@@ -11,7 +11,7 @@ using System.Windows.Input;
 
 namespace MonitoringLifestyle.ViewModels
 {
-    public class GoalsViewModel:DependencyObject,IVM
+    public class GoalsViewModel:DependencyObject
     {
         
        // public DashboardVM dashboardVM;

@@ -9,7 +9,7 @@ using System.Windows.Input;
 
 namespace MonitoringLifestyle.ViewModels
 {
-    class ContactUsViewModel:IVM
+    class ContactUsViewModel
     {
         public ICommand ContactUs { get; set; }
         private ContactUsModel userToContact;
@@ -33,7 +33,7 @@ namespace MonitoringLifestyle.ViewModels
 
         internal void ConfirmMessage()
         {
-            throw new NotImplementedException();
+            UserToContact.SendMessage();
         }
     }
 }

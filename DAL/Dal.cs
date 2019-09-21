@@ -75,10 +75,14 @@ namespace DAL
         public bool emailCorrectToPassword(string emailAddress, string password)
         {
             User u = findUserByEmail(emailAddress);
-            if ((u.Password).Equals(password))
-                return true;
-            else
-                return false;
+            if (u != null)
+            {
+                if ((u.Password).Equals(password))
+                    return true;
+                else
+                    return false;
+            }
+            return false;
         }
 
         /// <summary>

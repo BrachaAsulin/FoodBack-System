@@ -34,7 +34,6 @@ namespace MonitoringLifestyle.Commands
         public void Execute(object parameter)
         {
             this.ContactUsViewModel.ConfirmMessage();
-            MessageBox.Show("aaa");
         }
     }
 }

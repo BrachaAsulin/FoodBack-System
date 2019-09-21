@@ -98,16 +98,17 @@ namespace MonitoringLifestyle.Models
 
         public static bool EmailIsValid(string email)
         {
-            string expression = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+               string expression = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
 
-            if (Regex.IsMatch(email, expression))
-            {
-                if (Regex.Replace(email, expression, string.Empty).Length == 0)
-                {
-                    return true;
-                }
-            }
-            return false;
+               if (Regex.IsMatch(email, expression))
+               {
+                   if (Regex.Replace(email, expression, string.Empty).Length == 0)
+                   {
+                       return true;
+                   }
+               }
+               return false;
+            return true;
         }
 
 
@@ -186,13 +187,12 @@ namespace MonitoringLifestyle.Models
         {
 
             if (bl.emailCorrectToPassword(    emailAddress, password))
-            {
-                MessageBox.Show("your details:" + " " + (bl.saveUser(emailAddress)).ToString());
+            { 
                 return bl.saveUser(emailAddress);
             }
             else
             {
-               // MessageBox.Show("user is not exist");
+               
                 return null;
             }
             

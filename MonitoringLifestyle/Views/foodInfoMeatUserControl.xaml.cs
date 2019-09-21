@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MonitoringLifestyle.ViewModels;
 
 namespace MonitoringLifestyle.Views
 {
@@ -20,10 +21,18 @@ namespace MonitoringLifestyle.Views
     /// </summary>
     public partial class foodInfoMeatUserControl : UserControl
     {
-        
+        private FoodInformationViewModel foodInformationViewModel;
+
         public foodInfoMeatUserControl()
         {
             InitializeComponent();
+        }
+
+        public foodInfoMeatUserControl(FoodInformationViewModel foodInformationViewModel)
+        {
+            InitializeComponent();
+            this.foodInformationViewModel = foodInformationViewModel;
+            this.DataContext = foodInformationViewModel;
         }
     }
 }

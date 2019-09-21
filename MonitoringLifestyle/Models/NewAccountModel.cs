@@ -82,13 +82,11 @@ namespace MonitoringLifestyle.Models
          public void SaveNewUser()
         {
             User u = new User(FirstName, LastName, EmailAddress, Password, DateOfBirth, Height, Weight);
-
-          //  
             if (allPropertiesValid)
             {
     
                 bl.AddUser(u);
-                MessageBox.Show(u.ToString() + " " + "registered successfully");
+                MessageBox.Show("Registered Successfully","System Message",MessageBoxButton.OK,MessageBoxImage.Information);
 
             }
             else

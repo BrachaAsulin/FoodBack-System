@@ -127,6 +127,7 @@
     <Compile Include="Commands\AboutUsCommand.cs" />
     <Compile Include="Commands\AccountCommand.cs" />
     <Compile Include="Commands\AddFoodCommand.cs" />
+    <Compile Include="Commands\BackCommand.cs" />
     <Compile Include="Commands\ConfirmContactUsCommand.cs" />
     <Compile Include="Commands\ContactUsCommand.cs" />
     <Compile Include="Commands\DailyCommand.cs" />
@@ -153,7 +154,7 @@
     <Compile Include="Models\GoalsModel.cs" />
     <Compile Include="Models\MyDailyDietModel.cs" />
     <Compile Include="Models\NewAccountModel.cs" />
-    <Compile Include="Models\SearchFoodComboBoxModel.cs" />
+    <Compile Include="Models\NutritionalValuesCalcModel.cs" />
     <Compile Include="Models\SelectOptionsModel.cs" />
     <Compile Include="ViewModels\AboutUsViewModel.cs" />
     <Compile Include="ViewModels\AccountViewModel.cs" />
@@ -162,19 +163,15 @@
     <Compile Include="ViewModels\FoodInformationViewModel.cs" />
     <Compile Include="ViewModels\GoalsViewModel.cs" />
     <Compile Include="ViewModels\IVM.cs" />
-    <Compile Include="ViewModels\ListOfFoodsViewModel.cs" />
     <Compile Include="ViewModels\MyDailyDietViewModel.cs" />
     <Compile Include="ViewModels\NewAccountViewModel.cs" />
-    <Compile Include="ViewModels\SearchFoodComboBoxViewModel.cs" />
+    <Compile Include="ViewModels\NutritionalValuesCalcViewModel.cs" />
     <Compile Include="ViewModels\SelectOptionViewModel.cs" />
     <Compile Include="Views\aboutUsUserControl.xaml.cs">
       <DependentUpon>aboutUsUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AccountUserControl.xaml.cs">
       <DependentUpon>AccountUserControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\AddFoodUserControl.xaml.cs">
-      <DependentUpon>AddFoodUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AutoComplete.xaml.cs">
       <DependentUpon>AutoComplete.xaml</DependentUpon>
@@ -205,9 +202,6 @@
     <Compile Include="Views\foodInfoSweetsUserControl.xaml.cs">
       <DependentUpon>foodInfoSweetsUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ListOfFoodsUserControl.xaml.cs">
-      <DependentUpon>ListOfFoodsUserControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\MyDailyDietUserControl1.xaml.cs">
       <DependentUpon>MyDailyDietUserControl1.xaml</DependentUpon>
     </Compile>
@@ -221,9 +215,6 @@
       <DependentUpon>NutritionalValuesCalculatorUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PasswordHelper.cs" />
-    <Compile Include="Views\SearchFoodUserControl.xaml.cs">
-      <DependentUpon>SearchFoodUserControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\selectOptionUserControl.xaml.cs">
       <DependentUpon>selectOptionUserControl.xaml</DependentUpon>
     </Compile>
@@ -243,10 +234,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AccountUserControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\AddFoodUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -298,10 +285,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ListOfFoodsUserControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\MyDailyDietUserControl1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -315,10 +298,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\NutritionalValuesCalculatorUC.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\SearchFoodUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

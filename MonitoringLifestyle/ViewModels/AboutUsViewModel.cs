@@ -13,5 +13,10 @@ namespace MonitoringLifestyle.ViewModels
         {
 
         }
+
+        public void BackWindow()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -14,7 +14,7 @@ using BE;
 
 namespace MonitoringLifestyle.ViewModels
 {
-    public class DashboardVM:DependencyObject,IVM
+    public class DashboardVM:DependencyObject
     {
         public User currentUser=null;
         public DashboardModel CurrentModel { get; set; }
@@ -64,7 +64,7 @@ namespace MonitoringLifestyle.ViewModels
                         ChildUserControl = new selectOptionUserControl(this, currentUser);
                     else
                     {
-                        MessageBox.Show("You have to sign in first or create a new account");
+                        
                         ChildUserControl = new AccountUserControl(this);
                     }
                     break;

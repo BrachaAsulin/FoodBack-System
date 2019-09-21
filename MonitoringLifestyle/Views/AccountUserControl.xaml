@@ -18,8 +18,18 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+        <Style TargetType="PasswordBox">
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="true">
+                    <Setter Property="ToolTip"
+
+                    Value="{Binding RelativeSource={x:Static RelativeSource.Self},
+                        Path=(Validation.Errors)[0].ErrorContent}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
     </UserControl.Resources>
-    <Grid >
+    <Grid Height="400" Width="700" HorizontalAlignment="Center">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
@@ -42,9 +52,9 @@
             </StackPanel>
             <TextBlock Grid.Row="1" IsEnabled="False" FontSize="22" FontFamily="Arial" FontWeight="Bold" Text="Sign Into FoodBack"/>
             <TextBlock Grid.Row="2" Text="EMAIL ADDRESS OR USER NUMBER" FontSize="18" VerticalAlignment="Bottom"/>
-            <TextBox x:Name="emailTextbox" Grid.Row="3" AcceptsReturn="False" HorizontalAlignment="Left" Width="300" Text="{Binding User.EmailAddress, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" FontFamily="Arial" FontSize="16" />
+            <TextBox  x:Name="emailTextbox" Grid.Row="3" HorizontalAlignment="Left" Width="300" Text="{Binding User.EmailAddress, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" FontFamily="Arial" FontSize="16" BorderBrush="#89C3ADAD" />
             <TextBlock Grid.Row="4" Text="YOUR PASSWORD" VerticalAlignment="Bottom" FontSize="18"/>
-            <PasswordBox x:Name="passwordTextbox" Grid.Row="5" HorizontalAlignment="Left" Width="300" local1:PasswordHelper.BindPassword="True" local1:PasswordHelper.BoundPassword="{Binding User.Password,Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" FontFamily="Arial" FontSize="16" BorderBrush="#89C3ADAD" />
+            <PasswordBox  x:Name="passwordTextbox" Grid.Row="5" HorizontalAlignment="Left" Width="300" local1:PasswordHelper.BindPassword="True" local1:PasswordHelper.BoundPassword="{Binding User.Password,Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" FontFamily="Arial" FontSize="16" BorderBrush="#89C3ADAD" />
             <Button Grid.Row="7" Command="{Binding SignIn}" Background="#FF5A7900" Content="SIGN IN" Foreground="White" FontSize="22" Width="300" HorizontalAlignment="Left" FontFamily="Arial" IsEnabled="{Binding User.AllPropertiesValid}"/>
         </Grid>
         <Grid Width="350"  Background="White" Grid.Column="1">

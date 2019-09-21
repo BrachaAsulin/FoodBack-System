@@ -8,16 +8,14 @@ using System.Windows.Input;
 
 namespace MonitoringLifestyle.Commands
 {
-    class NutrionalValuesCommand : ICommand
+    class BackCommand : ICommand
     {
         public event EventHandler CanExecuteChanged;
-        public NutritionalValuesCalcViewModel currentVN;
-
-        public NutrionalValuesCommand(NutritionalValuesCalcViewModel currentVN)
+        public IVM currentVM;
+        public BackCommand(IVM currentVM)
         {
-            this.currentVN = currentVN;
+            this.currentVM = currentVM;
         }
-
 
         public bool CanExecute(object parameter)
         {
@@ -26,7 +24,7 @@ namespace MonitoringLifestyle.Commands
 
         public void Execute(object parameter)
         {
-            currentVN.setNutritionalValues();
+            currentVM.BackWindow();
         }
     }
 }

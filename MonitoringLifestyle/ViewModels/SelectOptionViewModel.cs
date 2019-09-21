@@ -12,7 +12,7 @@ using System.Windows.Input;
 
 namespace MonitoringLifestyle.ViewModels
 {
-    public class SelectOptionViewModel: DependencyObject,IVM
+    public class SelectOptionViewModel: DependencyObject
     {
         public DashboardVM DashboardVM { get; set;}
         public ICommand Goals { get; set; }
@@ -56,7 +56,7 @@ namespace MonitoringLifestyle.ViewModels
                     }
                     else
                     {
-                        MessageBox.Show("You have to sign in first or create a new account");
+                        MessageBox.Show("You have to sign in first or create a new account","System Message",MessageBoxButton.OK,MessageBoxImage.Information);
                         DashboardVM.ChildUserControl = new AccountUserControl(DashboardVM);
                     }
                     break;
@@ -65,7 +65,7 @@ namespace MonitoringLifestyle.ViewModels
                         DashboardVM.ChildUserControl = new MyDailyDietUserControl1(currentUser);
                     else
                     {
-                        MessageBox.Show("You have to sign in first or create a new account");
+                        MessageBox.Show("You have to sign in first or create a new account","System Message", MessageBoxButton.OK, MessageBoxImage.Information);
                         DashboardVM.ChildUserControl = new AccountUserControl(DashboardVM);
                     }
                     break;
@@ -74,7 +74,7 @@ namespace MonitoringLifestyle.ViewModels
                         DashboardVM.ChildUserControl = new EvaluationUserControl1(currentUser);
                     else
                     {
-                        MessageBox.Show("You have to sign in first or create a new account");
+                        MessageBox.Show("You have to sign in first or create a new account","System Message", MessageBoxButton.OK, MessageBoxImage.Information);
                         DashboardVM.ChildUserControl = new AccountUserControl(DashboardVM);
                     }
                     break;
@@ -83,7 +83,7 @@ namespace MonitoringLifestyle.ViewModels
                         DashboardVM.ChildUserControl = new foodInformationUserControl(DashboardVM);
                     else
                     {
-                        MessageBox.Show("You have to sign in first or create a new account");
+                        MessageBox.Show("You have to sign in first or create a new account","System Message", MessageBoxButton.OK, MessageBoxImage.Information);
                         DashboardVM.ChildUserControl = new AccountUserControl(DashboardVM);
                     }
                     break;

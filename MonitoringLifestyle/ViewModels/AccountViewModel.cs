@@ -67,7 +67,7 @@ namespace MonitoringLifestyle.ViewModels
             }
 
             else
-                MessageBox.Show("user is not exist!!!");
+                MessageBox.Show("This User does not exist!","System Message",MessageBoxButton.OK,MessageBoxImage.Information);
 
         }
     }

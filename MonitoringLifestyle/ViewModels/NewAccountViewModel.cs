@@ -11,7 +11,7 @@ using System.Windows.Input;
 
 namespace MonitoringLifestyle.ViewModels
 {
-    class NewAccountViewModel:IVM
+    class NewAccountViewModel
     {
         public DashboardVM DashboardVM { get; set; }
         private NewAccountModel newAccount;
@@ -40,7 +40,7 @@ namespace MonitoringLifestyle.ViewModels
             
             NewAccount.SaveNewUser();
             DashboardVM.ChildUserControl = new AccountUserControl(DashboardVM);
-            MessageBox.Show("you have to sign in");
+            
         }
     }
 }

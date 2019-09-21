@@ -8,5 +8,6 @@ namespace MonitoringLifestyle.ViewModels
 {
     public interface IVM
     {
+        void BackWindow();
     }
 }

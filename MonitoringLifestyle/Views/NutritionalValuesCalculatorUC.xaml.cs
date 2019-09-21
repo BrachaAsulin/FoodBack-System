@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MonitoringLifestyle.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace MonitoringLifestyle.Views
 {
     /// <summary>
@@ -23,7 +25,7 @@ namespace MonitoringLifestyle.Views
         public NutritionalValuesCalculatorUC()
         {
             InitializeComponent();
-            calculatorGrid.DataContext = serachFoodQuery.DataContext;
+            this.DataContext = new NutritionalValuesCalcViewModel();
         }
     }
 }
