@@ -24,8 +24,8 @@ namespace MonitoringLifestyle.Models
         {
 
             dailyGoal = new BE.DailyGoalPerWeek(aSundayOfWeek, aCalories, aFats, aCarbs, aProteins, aSugar, aFullGoals);
-            MessageBox.Show("current user" + u.ToString());
-            MessageBox.Show("this week begins at " + aSundayOfWeek + " " + "good luck!");
+           // MessageBox.Show("current user" + u.ToString());
+            MessageBox.Show("Good Luck","System Message",MessageBoxButton.OK,MessageBoxImage.Information);
             bl.AddDailyGoalsPerWeek(dailyGoal,u);
         }
     }

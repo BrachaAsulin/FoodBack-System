@@ -75,10 +75,6 @@ namespace MonitoringLifestyle.ViewModels
             DependencyProperty.Register("BreakfastCalories", typeof(string), typeof(GoalsViewModel));
 
 
-        //////
-
-
-
         public string BreakfastFats
         {
             get { return (string)GetValue(BreakfastFatsProperty); }
@@ -128,11 +124,6 @@ namespace MonitoringLifestyle.ViewModels
         // Using a DependencyProperty as the backing store for MyProperty.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty LunchCaloriesProperty =
             DependencyProperty.Register("LunchCalories", typeof(string), typeof(GoalsViewModel));
-
-
-        //////
-
-
 
         public string LunchFats
         {
@@ -185,8 +176,6 @@ namespace MonitoringLifestyle.ViewModels
         public static readonly DependencyProperty DinnerCaloriesProperty =
             DependencyProperty.Register("DinnerCalories", typeof(string), typeof(GoalsViewModel));
 
-
-        //////
 
 
 
