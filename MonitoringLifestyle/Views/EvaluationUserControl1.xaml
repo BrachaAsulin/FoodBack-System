@@ -93,20 +93,7 @@
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
                 <local1:weekPickerUserControl Grid.Column="0" Visibility="{Binding ElementName=SelectWeekButton,Path=IsChecked,Converter={StaticResource converter}}" />
-         <!--       <Grid Grid.Column="1" Margin="10,0,0,0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="1*"/>
-                        <RowDefinition Height="15*"/>
-                    </Grid.RowDefinitions>-->
-                    <DVC:Chart InkCanvas.Top="80" Width="700" Height="300" InkCanvas.Left="10" Grid.Column="1"   Name="MyChart">
+                <DVC:Chart InkCanvas.Top="80" Width="700" Height="300" InkCanvas.Left="10" Grid.Column="1"   Name="MyChart">
                         <DVC:Chart.Series>
                             <DVC:LineSeries Title="Calories" 
                         ItemsSource="{Binding CaloriesEvaluation}"

@@ -121,7 +121,7 @@
                             <Button Grid.Column="6"  HorizontalAlignment="center" Background="{x:Null}" BorderBrush="{x:Null}" Tag="Breakfast">
                                 <materialDesign:PackIcon Kind="RemoveCircleOutline"/>
                                 <i:Interaction.Triggers >
-                                    <i:EventTrigger EventName="Click" >
+                                    <i:EventTrigger EventName="Click">
                                         <ei:CallMethodAction TargetObject="{Binding ElementName=MyDailyDiet,Path=DataContext}" MethodName="Button_Click"/>
                                     </i:EventTrigger>
                                 </i:Interaction.Triggers>

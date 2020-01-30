@@ -16,15 +16,12 @@ namespace MonitoringLifestyle.Models
         
         public GoalsModel()
         {
-            //dailyGoal = new BE.DailyGoalPerWeek(null,"","","","","",null);
             bl = new BL.Bl();
-
         }
         public void UpdateGoalData(DateTime aSundayOfWeek, string aCalories, string aFats, string aCarbs, string aProteins, string aSugar, string[,] aFullGoals,User u)
         {
 
             dailyGoal = new BE.DailyGoalPerWeek(aSundayOfWeek, aCalories, aFats, aCarbs, aProteins, aSugar, aFullGoals);
-           // MessageBox.Show("current user" + u.ToString());
             MessageBox.Show("Good Luck","System Message",MessageBoxButton.OK,MessageBoxImage.Information);
             bl.AddDailyGoalsPerWeek(dailyGoal,u);
         }
