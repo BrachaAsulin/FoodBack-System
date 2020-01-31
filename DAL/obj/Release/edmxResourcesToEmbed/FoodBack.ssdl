@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FoodBackDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DailyGoalPerWeek">
+    <Key>
+      <PropertyRef Name="DailyId" />
+    </Key>
+    <Property Name="DailyId" Type="int" Nullable="false" />
+    <Property Name="SundayOfWeek" Type="date" />
+    <Property Name="Calories" Type="varchar" MaxLength="50" />
+    <Property Name="Fats" Type="varchar" MaxLength="50" />
+    <Property Name="Fibers" Type="varchar" MaxLength="50" />
+    <Property Name="Proteins" Type="varchar" MaxLength="50" />
+    <Property Name="Sugars" Type="varchar" MaxLength="50" />
+    <Property Name="FullGoals" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Food">
+    <Key>
+      <PropertyRef Name="FoodID" />
+    </Key>
+    <Property Name="FoodID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="Calories" Type="varchar" MaxLength="50" />
+    <Property Name="Fats" Type="varchar" MaxLength="50" />
+    <Property Name="Fiber" Type="varchar" MaxLength="50" />
+    <Property Name="Proteins" Type="varchar" MaxLength="50" />
+    <Property Name="Sugar" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Meal">
+    <Key>
+      <PropertyRef Name="MealId" />
+    </Key>
+    <Property Name="MealDate" Type="date" Nullable="false" />
+    <Property Name="Type" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MealId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="EmailAddress" />
+    </Key>
+    <Property Name="EmailAddress" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="BirthDate" Type="varchar" MaxLength="50" />
+    <Property Name="Height" Type="varchar" MaxLength="50" />
+    <Property Name="Weight" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="FoodBackDBModelStoreContainer">
+    <EntitySet Name="DailyGoalPerWeek" EntityType="Self.DailyGoalPerWeek" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Food" EntityType="Self.Food" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Meal" EntityType="Self.Meal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

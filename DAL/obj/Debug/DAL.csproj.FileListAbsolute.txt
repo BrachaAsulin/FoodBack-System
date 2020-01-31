@@ -1,0 +1,14 @@
+C:\Users\Bracha\Documents\שנה ג בעזה\סמסטר ב\הנדסת מערכות חלונות\MonitoringLifestyle\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Bracha\Documents\שנה ג בעזה\סמסטר ב\הנדסת מערכות חלונות\MonitoringLifestyle\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Bracha\Documents\שנה ג בעזה\סמסטר ב\הנדסת מערכות חלונות\MonitoringLifestyle\DAL\bin\Debug\DAL.dll.config
+C:\Users\Bracha\Documents\שנה ג בעזה\סמסטר ב\הנדסת מערכות חלונות\MonitoringLifestyle\DAL\bin\Debug\DAL.dll
+C:\Users\Bracha\Documents\שנה ג בעזה\סמסטר ב\הנדסת מערכות חלונות\MonitoringLifestyle\DAL\bin\Debug\DAL.pdb
+C:\Users\Bracha\Documents\שנה ג בעזה\סמסטר ב\הנדסת מערכות חלונות\MonitoringLifestyle\DAL\bin\Debug\BE.dll
+C:\Users\Bracha\Documents\שנה ג בעזה\סמסטר ב\הנדסת מערכות חלונות\MonitoringLifestyle\DAL\bin\Debug\EntityFramework.dll
+C:\Users\Bracha\Documents\שנה ג בעזה\סמסטר ב\הנדסת מערכות חלונות\MonitoringLifestyle\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Bracha\Documents\שנה ג בעזה\סמסטר ב\הנדסת מערכות חלונות\MonitoringLifestyle\DAL\bin\Debug\BE.pdb
+C:\Users\Bracha\Documents\שנה ג בעזה\סמסטר ב\הנדסת מערכות חלונות\MonitoringLifestyle\DAL\bin\Debug\BE.dll.config
+C:\Users\Bracha\Documents\שנה ג בעזה\סמסטר ב\הנדסת מערכות חלונות\MonitoringLifestyle\DAL\bin\Debug\EntityFramework.xml
+C:\Users\Bracha\Documents\שנה ג בעזה\סמסטר ב\הנדסת מערכות חלונות\MonitoringLifestyle\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Bracha\Documents\שנה ג בעזה\סמסטר ב\הנדסת מערכות חלונות\MonitoringLifestyle\DAL\obj\Debug\DAL.dll
+C:\Users\Bracha\Documents\שנה ג בעזה\סמסטר ב\הנדסת מערכות חלונות\MonitoringLifestyle\DAL\obj\Debug\DAL.pdb

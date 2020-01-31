@@ -1,0 +1,5 @@
+C:\Users\Bracha\Documents\שנה ג בעזה\סמסטר ב\הנדסת מערכות חלונות\MonitoringLifestyle\BE\bin\Release\BE.dll
+C:\Users\Bracha\Documents\שנה ג בעזה\סמסטר ב\הנדסת מערכות חלונות\MonitoringLifestyle\BE\bin\Release\BE.pdb
+C:\Users\Bracha\Documents\שנה ג בעזה\סמסטר ב\הנדסת מערכות חלונות\MonitoringLifestyle\BE\obj\Release\BE.csproj.CoreCompileInputs.cache
+C:\Users\Bracha\Documents\שנה ג בעזה\סמסטר ב\הנדסת מערכות חלונות\MonitoringLifestyle\BE\obj\Release\BE.dll
+C:\Users\Bracha\Documents\שנה ג בעזה\סמסטר ב\הנדסת מערכות חלונות\MonitoringLifestyle\BE\obj\Release\BE.pdb

@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FoodBackDBModelStoreContainer" CdmEntityContainer="FoodBackDBEntities">
+    <EntitySetMapping Name="DailyGoalPerWeeks">
+      <EntityTypeMapping TypeName="FoodBackDBModel.DailyGoalPerWeek">
+        <MappingFragment StoreEntitySet="DailyGoalPerWeek">
+          <ScalarProperty Name="DailyId" ColumnName="DailyId" />
+          <ScalarProperty Name="SundayOfWeek" ColumnName="SundayOfWeek" />
+          <ScalarProperty Name="Calories" ColumnName="Calories" />
+          <ScalarProperty Name="Fats" ColumnName="Fats" />
+          <ScalarProperty Name="Fibers" ColumnName="Fibers" />
+          <ScalarProperty Name="Proteins" ColumnName="Proteins" />
+          <ScalarProperty Name="Sugars" ColumnName="Sugars" />
+          <ScalarProperty Name="FullGoals" ColumnName="FullGoals" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Meals">
+      <EntityTypeMapping TypeName="FoodBackDBModel.Meal">
+        <MappingFragment StoreEntitySet="Meal">
+          <ScalarProperty Name="MealDate" ColumnName="MealDate" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="MealId" ColumnName="MealId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="FoodBackDBModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="FoodBackDBModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DailyGoalPerWeeks1">
+      <EntityTypeMapping TypeName="FoodBackDBModel.DailyGoalPerWeek1">
+        <MappingFragment StoreEntitySet="DailyGoalPerWeeks">
+          <ScalarProperty Name="FullGoals" ColumnName="FullGoals" />
+          <ScalarProperty Name="Sugars" ColumnName="Sugars" />
+          <ScalarProperty Name="Proteins" ColumnName="Proteins" />
+          <ScalarProperty Name="Fibers" ColumnName="Fibers" />
+          <ScalarProperty Name="Fats" ColumnName="Fats" />
+          <ScalarProperty Name="Calories" ColumnName="Calories" />
+          <ScalarProperty Name="SundayOfWeek" ColumnName="SundayOfWeek" />
+          <ScalarProperty Name="DailyId" ColumnName="DailyId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Foods1">
+      <EntityTypeMapping TypeName="FoodBackDBModel.Food1">
+        <MappingFragment StoreEntitySet="Foods">
+          <ScalarProperty Name="Sugar" ColumnName="Sugar" />
+          <ScalarProperty Name="Proteins" ColumnName="Proteins" />
+          <ScalarProperty Name="Fiber" ColumnName="Fiber" />
+          <ScalarProperty Name="Fats" ColumnName="Fats" />
+          <ScalarProperty Name="Calories" ColumnName="Calories" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="FoodID" ColumnName="FoodID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Meals1">
+      <EntityTypeMapping TypeName="FoodBackDBModel.Meal1">
+        <MappingFragment StoreEntitySet="Meals">
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="MealDate" ColumnName="MealDate" />
+          <ScalarProperty Name="MealId" ColumnName="MealId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users1">
+      <EntityTypeMapping TypeName="FoodBackDBModel.User1">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FoodMeals" TypeName="FoodBackDBModel.FoodMeals" StoreEntitySet="FoodMeals">
+      <EndProperty Name="Meal1">
+        <ScalarProperty Name="MealId" ColumnName="Meal_MealId" />
+      </EndProperty>
+      <EndProperty Name="Food1">
+        <ScalarProperty Name="FoodID" ColumnName="Food_FoodID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="MealUsers" TypeName="FoodBackDBModel.MealUsers" StoreEntitySet="MealUsers">
+      <EndProperty Name="User1">
+        <ScalarProperty Name="EmailAddress" ColumnName="User_EmailAddress" />
+      </EndProperty>
+      <EndProperty Name="Meal1">
+        <ScalarProperty Name="MealId" ColumnName="Meal_MealId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserDailyGoalPerWeeks" TypeName="FoodBackDBModel.UserDailyGoalPerWeeks" StoreEntitySet="UserDailyGoalPerWeeks">
+      <EndProperty Name="User1">
+        <ScalarProperty Name="EmailAddress" ColumnName="User_EmailAddress" />
+      </EndProperty>
+      <EndProperty Name="DailyGoalPerWeek1">
+        <ScalarProperty Name="DailyId" ColumnName="DailyGoalPerWeek_DailyId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FoodMeal" TypeName="FoodBackDBModel.FoodMeal" StoreEntitySet="FoodMeals">
+      <EndProperty Name="Meal">
+        <ScalarProperty Name="MealId" ColumnName="Meal_MealId" />
+      </EndProperty>
+      <EndProperty Name="Food">
+        <ScalarProperty Name="FoodID" ColumnName="Food_FoodID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="MealUser" TypeName="FoodBackDBModel.MealUser" StoreEntitySet="MealUsers">
+      <EndProperty Name="User">
+        <ScalarProperty Name="EmailAddress" ColumnName="User_EmailAddress" />
+      </EndProperty>
+      <EndProperty Name="Meal">
+        <ScalarProperty Name="MealId" ColumnName="Meal_MealId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="DailyGoalPerWeekUser" TypeName="FoodBackDBModel.DailyGoalPerWeekUser" StoreEntitySet="UserDailyGoalPerWeeks">
+      <EndProperty Name="User">
+        <ScalarProperty Name="EmailAddress" ColumnName="User_EmailAddress" />
+      </EndProperty>
+      <EndProperty Name="DailyGoalPerWeek">
+        <ScalarProperty Name="DailyId" ColumnName="DailyGoalPerWeek_DailyId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <EntitySetMapping Name="Foods">
+      <EntityTypeMapping TypeName="IsTypeOf(FoodBackDBModel.Food)">
+        <MappingFragment StoreEntitySet="Food">
+          <ScalarProperty Name="FoodID" ColumnName="FoodID" />
+          <ScalarProperty Name="Sugar" ColumnName="Sugar" />
+          <ScalarProperty Name="Proteins" ColumnName="Proteins" />
+          <ScalarProperty Name="Fiber" ColumnName="Fiber" />
+          <ScalarProperty Name="Fats" ColumnName="Fats" />
+          <ScalarProperty Name="Calories" ColumnName="Calories" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

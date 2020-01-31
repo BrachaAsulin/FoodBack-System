@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FoodBackDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="DailyGoalPerWeek">
+    <Key>
+      <PropertyRef Name="DailyId" />
+    </Key>
+    <Property Name="DailyId" Type="Int32" Nullable="false" />
+    <Property Name="SundayOfWeek" Type="DateTime" Precision="0" />
+    <Property Name="Calories" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Fats" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Fibers" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Proteins" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Sugars" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FullGoals" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Users" Relationship="FoodBackDBModel.DailyGoalPerWeekUser" FromRole="DailyGoalPerWeek" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Food">
+    <Key>
+      <PropertyRef Name="FoodID" />
+    </Key>
+    <Property Name="FoodID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Calories" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Fats" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Fiber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Proteins" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Sugar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Meals" Relationship="FoodBackDBModel.FoodMeal" FromRole="Food" ToRole="Meal" />
+  </EntityType>
+  <EntityType Name="Meal">
+    <Key>
+      <PropertyRef Name="MealId" />
+    </Key>
+    <Property Name="MealDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MealId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Foods" Relationship="FoodBackDBModel.FoodMeal" FromRole="Meal" ToRole="Food" />
+    <NavigationProperty Name="Users" Relationship="FoodBackDBModel.MealUser" FromRole="Meal" ToRole="User" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="EmailAddress" />
+    </Key>
+    <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BirthDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Height" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Weight" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="DailyGoalPerWeeks" Relationship="FoodBackDBModel.DailyGoalPerWeekUser" FromRole="User" ToRole="DailyGoalPerWeek" />
+    <NavigationProperty Name="Meals" Relationship="FoodBackDBModel.MealUser" FromRole="User" ToRole="Meal" />
+  </EntityType>
+  <EntityContainer Name="FoodBackDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DailyGoalPerWeeks" EntityType="Self.DailyGoalPerWeek" />
+    <EntitySet Name="Foods" EntityType="Self.Food" />
+    <EntitySet Name="Meals" EntityType="Self.Meal" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="DailyGoalPerWeekUser" Association="FoodBackDBModel.DailyGoalPerWeekUser">
+      <End Role="DailyGoalPerWeek" EntitySet="DailyGoalPerWeeks" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FoodMeal" Association="FoodBackDBModel.FoodMeal">
+      <End Role="Food" EntitySet="Foods" />
+      <End Role="Meal" EntitySet="Meals" />
+    </AssociationSet>
+    <AssociationSet Name="MealUser" Association="FoodBackDBModel.MealUser">
+      <End Role="Meal" EntitySet="Meals" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <EntitySet Name="C__MigrationHistory" EntityType="FoodBackDBModel.C__MigrationHistory" />
+    <EntitySet Name="DailyGoalPerWeeks1" EntityType="FoodBackDBModel.DailyGoalPerWeek1" />
+    <EntitySet Name="Foods1" EntityType="FoodBackDBModel.Food1" />
+    <EntitySet Name="Meals1" EntityType="FoodBackDBModel.Meal1" />
+    <EntitySet Name="Users1" EntityType="FoodBackDBModel.User1" />
+    <AssociationSet Name="FoodMeals" Association="FoodBackDBModel.FoodMeals">
+      <End Role="Food1" EntitySet="Foods1" />
+      <End Role="Meal1" EntitySet="Meals1" />
+    </AssociationSet>
+    <AssociationSet Name="MealUsers" Association="FoodBackDBModel.MealUsers">
+      <End Role="Meal1" EntitySet="Meals1" />
+      <End Role="User1" EntitySet="Users1" />
+    </AssociationSet>
+    <AssociationSet Name="UserDailyGoalPerWeeks" Association="FoodBackDBModel.UserDailyGoalPerWeeks">
+      <End Role="DailyGoalPerWeek1" EntitySet="DailyGoalPerWeeks1" />
+      <End Role="User1" EntitySet="Users1" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="DailyGoalPerWeekUser">
+    <End Type="FoodBackDBModel.DailyGoalPerWeek" Role="DailyGoalPerWeek" Multiplicity="*" />
+    <End Type="FoodBackDBModel.User" Role="User" Multiplicity="*" />
+  </Association>
+  <Association Name="FoodMeal">
+    <End Type="FoodBackDBModel.Food" Role="Food" Multiplicity="*" />
+    <End Type="FoodBackDBModel.Meal" Role="Meal" Multiplicity="*" />
+  </Association>
+  <Association Name="MealUser">
+    <End Type="FoodBackDBModel.Meal" Role="Meal" Multiplicity="*" />
+    <End Type="FoodBackDBModel.User" Role="User" Multiplicity="*" />
+  </Association>
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ContextKey" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Model" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="ProductVersion" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="DailyGoalPerWeek1">
+    <Key>
+      <PropertyRef Name="DailyId" />
+    </Key>
+    <Property Name="DailyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SundayOfWeek" Type="DateTime" Precision="3" />
+    <Property Name="Calories" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Fats" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Fibers" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Proteins" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Sugars" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FullGoals" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Users" Relationship="FoodBackDBModel.UserDailyGoalPerWeeks" FromRole="DailyGoalPerWeek1" ToRole="User1" />
+  </EntityType>
+  <EntityType Name="Food1">
+    <Key>
+      <PropertyRef Name="FoodID" />
+    </Key>
+    <Property Name="FoodID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Calories" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Fats" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Fiber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Proteins" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Sugar" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Meals" Relationship="FoodBackDBModel.FoodMeals" FromRole="Food1" ToRole="Meal1" />
+  </EntityType>
+  <EntityType Name="Meal1">
+    <Key>
+      <PropertyRef Name="MealId" />
+    </Key>
+    <Property Name="MealId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MealDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Foods" Relationship="FoodBackDBModel.FoodMeals" FromRole="Meal1" ToRole="Food1" />
+    <NavigationProperty Name="Users" Relationship="FoodBackDBModel.MealUsers" FromRole="Meal1" ToRole="User1" />
+  </EntityType>
+  <EntityType Name="User1">
+    <Key>
+      <PropertyRef Name="EmailAddress" />
+    </Key>
+    <Property Name="EmailAddress" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BirthDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Height" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Weight" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Meals" Relationship="FoodBackDBModel.MealUsers" FromRole="User1" ToRole="Meal1" />
+    <NavigationProperty Name="DailyGoalPerWeeks" Relationship="FoodBackDBModel.UserDailyGoalPerWeeks" FromRole="User1" ToRole="DailyGoalPerWeek1" />
+  </EntityType>
+  <Association Name="FoodMeals">
+    <End Type="FoodBackDBModel.Food1" Role="Food1" Multiplicity="*" />
+    <End Type="FoodBackDBModel.Meal1" Role="Meal1" Multiplicity="*" />
+  </Association>
+  <Association Name="MealUsers">
+    <End Type="FoodBackDBModel.Meal1" Role="Meal1" Multiplicity="*" />
+    <End Type="FoodBackDBModel.User1" Role="User1" Multiplicity="*" />
+  </Association>
+  <Association Name="UserDailyGoalPerWeeks">
+    <End Type="FoodBackDBModel.DailyGoalPerWeek1" Role="DailyGoalPerWeek1" Multiplicity="*" />
+    <End Type="FoodBackDBModel.User1" Role="User1" Multiplicity="*" />
+  </Association>
+</Schema>

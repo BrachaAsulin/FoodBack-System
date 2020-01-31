@@ -1,0 +1,11 @@
+C:\Users\Bracha\Documents\שנה ג בעזה\סמסטר ב\הנדסת מערכות חלונות\MonitoringLifestyle\BE\bin\Debug\BE.dll.config
+C:\Users\Bracha\Documents\שנה ג בעזה\סמסטר ב\הנדסת מערכות חלונות\MonitoringLifestyle\BE\bin\Debug\BE.dll
+C:\Users\Bracha\Documents\שנה ג בעזה\סמסטר ב\הנדסת מערכות חלונות\MonitoringLifestyle\BE\bin\Debug\BE.pdb
+C:\Users\Bracha\Documents\שנה ג בעזה\סמסטר ב\הנדסת מערכות חלונות\MonitoringLifestyle\BE\bin\Debug\EntityFramework.dll
+C:\Users\Bracha\Documents\שנה ג בעזה\סמסטר ב\הנדסת מערכות חלונות\MonitoringLifestyle\BE\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Bracha\Documents\שנה ג בעזה\סמסטר ב\הנדסת מערכות חלונות\MonitoringLifestyle\BE\bin\Debug\EntityFramework.xml
+C:\Users\Bracha\Documents\שנה ג בעזה\סמסטר ב\הנדסת מערכות חלונות\MonitoringLifestyle\BE\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Bracha\Documents\שנה ג בעזה\סמסטר ב\הנדסת מערכות חלונות\MonitoringLifestyle\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
+C:\Users\Bracha\Documents\שנה ג בעזה\סמסטר ב\הנדסת מערכות חלונות\MonitoringLifestyle\BE\obj\Debug\BE.dll
+C:\Users\Bracha\Documents\שנה ג בעזה\סמסטר ב\הנדסת מערכות חלונות\MonitoringLifestyle\BE\obj\Debug\BE.pdb
+C:\Users\Bracha\Documents\שנה ג בעזה\סמסטר ב\הנדסת מערכות חלונות\MonitoringLifestyle\BE\obj\Debug\BE.csprojResolveAssemblyReference.cache
